@@ -4,7 +4,6 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
-      <itemPath>src/rpi.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -38,8 +37,6 @@
       </compileType>
       <item path="src/hyperpan.c" ex="false" tool="0" flavor2="0">
       </item>
-      <item path="src/rpi.h" ex="false" tool="3" flavor2="0">
-      </item>
     </conf>
     <conf name="Release" type="1">
       <toolsSet>
@@ -67,8 +64,6 @@
         </linkerTool>
       </compileType>
       <item path="src/hyperpan.c" ex="false" tool="0" flavor2="0">
-      </item>
-      <item path="src/rpi.h" ex="false" tool="3" flavor2="0">
       </item>
     </conf>
   </confs>
