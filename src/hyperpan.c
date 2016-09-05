@@ -8,6 +8,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <bcm2835.h>
 
 int main(int argc,char**argv){
     int i;

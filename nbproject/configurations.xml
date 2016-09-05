@@ -30,6 +30,11 @@
         <rebuildPropChanged>true</rebuildPropChanged>
       </toolsSet>
       <compileType>
+        <linkerTool>
+          <linkerLibItems>
+            <linkerLibLibItem>bcm2835</linkerLibLibItem>
+          </linkerLibItems>
+        </linkerTool>
       </compileType>
       <item path="src/hyperpan.c" ex="false" tool="0" flavor2="0">
       </item>
