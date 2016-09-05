@@ -19,16 +19,18 @@ int main(int argc,char**argv){
     
     bcm2835_gpio_fsel(21,BCM2835_GPIO_FSEL_OUTP);
     
-//    while(1){
+    while(1){
         
-        printf("ON\n");
+//        printf("ON\n");
         bcm2835_gpio_write(21,HIGH);
-        bcm2835_delay(500);
-        printf("OFF\n");
+//        bcm2835_delay(1);
+        bcm2835_delayMicroseconds(50000);
+//        printf("OFF\n");
         bcm2835_gpio_write(21,LOW);
-        bcm2835_delay(500);
+//        bcm2835_delay(1);
+        bcm2835_delayMicroseconds(50000);
         
-//    }
+    }
 
     bcm2835_close();
  
