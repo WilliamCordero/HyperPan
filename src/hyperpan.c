@@ -12,22 +12,15 @@
 int main(int argc,char**argv){
 //    int i;
     struct trigger trigger;
-//    printf("Debug:\n");
+    verbose_level=255;
 //    for(i=0;i<argc;i++)printf("%i: %s\n",i,argv[i]);
-
     if(!bcm2835_init())return 1;
-    trigger=trigger_init(17,4,MF,0,100);
+    
+    
+    trigger=trigger_init(MF,0);
     trigger_shot(trigger,0);
 
-/*
-    while(1){
-        bcm2835_gpio_write(21,HIGH);
-        bcm2835_delayMicroseconds(50000);
-        bcm2835_gpio_write(21,LOW);
-        bcm2835_delayMicroseconds(50000);
-    }
- */
-
+    
     bcm2835_close();
     printf("Bye.\n");
     return 0;

@@ -16,6 +16,10 @@
 extern "C" {
 #endif
 
+#define ALERT_GPIO  21
+#define ALERT_BLINK 25000
+    
+int verbose_level;
 int verbose(int level, char msj[]);
 
 #ifdef __cplusplus

@@ -15,7 +15,9 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
-
+#define SHUTTER 17
+#define FOCUS   4
+#define SPEED   1000
 #define AF 1    
 #define MF 0    
     
@@ -27,7 +29,7 @@ typedef struct trigger{
     int focus_delay;
 }trigger;
 
-trigger trigger_init(int shutter,int focus,int focus_mode,int focus_delay,int shutter_speed);
+trigger trigger_init(int focus_mode,int focus_delay);
 int trigger_shot(trigger trigger,int speed);
 
 #ifdef __cplusplus

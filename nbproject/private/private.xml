@@ -9,7 +9,9 @@
         <group>
             <file>file:/C:/Users/wcordero/Documents/NetBeansProjects/HyperPan/src/trigger.c</file>
             <file>file:/C:/Users/wcordero/Documents/NetBeansProjects/HyperPan/src/trigger.h</file>
+            <file>file:/C:/Users/wcordero/Documents/NetBeansProjects/HyperPan/src/verbose.c</file>
             <file>file:/C:/Users/wcordero/Documents/NetBeansProjects/HyperPan/src/hyperpan.c</file>
+            <file>file:/C:/Users/wcordero/Documents/NetBeansProjects/HyperPan/src/verbose.h</file>
         </group>
     </open-files>
 </project-private>
