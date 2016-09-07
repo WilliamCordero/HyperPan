@@ -16,6 +16,9 @@
 extern "C" {
 #endif
 
+#define AF 1    
+#define MF 0    
+    
 typedef struct trigger{
     int shutter;
     int shutter_speed;
@@ -24,7 +27,7 @@ typedef struct trigger{
     int focus_delay;
 }trigger;
 
-trigger trigger_init(int shutter,int focus,int focus_mode,int focus_delay);
+trigger trigger_init(int shutter,int focus,int focus_mode,int focus_delay,int shutter_speed);
 int trigger_shot(trigger trigger,int speed);
 
 #ifdef __cplusplus
