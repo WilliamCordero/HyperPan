@@ -7,17 +7,17 @@
 #include <stdlib.h>
 #include <bcm2835.h>
 #include "trigger.h"
+#include "verbose.h"
 
 int main(int argc,char**argv){
 //    int i;
     struct trigger trigger;
-    
 //    printf("Debug:\n");
 //    for(i=0;i<argc;i++)printf("%i: %s\n",i,argv[i]);
 
     if(!bcm2835_init())return 1;
-    trigger=trigger_init(17,4,1,1);
-    trigger_shot(trigger,1);
+    trigger=trigger_init(17,4,MF,0,100);
+    trigger_shot(trigger,0);
 
 /*
     while(1){

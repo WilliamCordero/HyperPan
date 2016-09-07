@@ -36,7 +36,8 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/src/hyperpan.o \
-	${OBJECTDIR}/src/trigger.o
+	${OBJECTDIR}/src/trigger.o \
+	${OBJECTDIR}/verbose.o
 
 
 # C Compiler Flags
@@ -72,6 +73,11 @@ ${OBJECTDIR}/src/trigger.o: nbproject/Makefile-${CND_CONF}.mk src/trigger.c
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
 	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/trigger.o src/trigger.c
+
+${OBJECTDIR}/verbose.o: nbproject/Makefile-${CND_CONF}.mk verbose.c 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/verbose.o verbose.c
 
 # Subprojects
 .build-subprojects:
