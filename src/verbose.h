@@ -20,7 +20,9 @@ extern "C" {
 #define ALERT_BLINK 20000
     
 int verbose_level;
-int verbose(int level, char msj[]);
+int verbose(int level, char *msj);
+int warning(char *msj);
+int error(char *msj);
 
 #ifdef __cplusplus
 }

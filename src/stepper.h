@@ -16,8 +16,19 @@
 extern "C" {
 #endif
 
+typedef struct stepper{
+    int sleep;
+    int step;
+    int dir;    
+    int m0;
+    int m1;
+    char *name;
+}stepper;
 
-
+stepper stepper_init(int sleep,int step,int dir,int m0,int m1,char *name);
+int stepper_mode(stepper motor,int mode); /* Valid modes 1,2,4,8,16,32 everything else sets as 1 */
+int stepper_on(stepper motor);
+int stepper_off(stepper motor);
 
 #ifdef __cplusplus
 }

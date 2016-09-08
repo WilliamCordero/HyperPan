@@ -1,14 +1,26 @@
 /*
  * William Cordero (2016) <william.cordero@gmail.com>
  */
+#include <stdio.h>
 #include <bcm2835.h>
 #include "verbose.h"
 
-int verbose(int level, char msj[]){
+int verbose(int level, char *msj){
     if(level<=verbose_level){
         alert_led();
         printf("|> %s\n",msj);
     }
+}
+
+int warning(char *msj){
+    alert_led();alert_led();
+    fprintf(stderr,"|> Warning: %s\n",msj);
+}
+
+int error(char *msj){
+    alert_led();alert_led();
+    fprintf(stderr,"|> Error: %s\n",msj);
+    exit(1);
 }
 
 int alert_led(){
