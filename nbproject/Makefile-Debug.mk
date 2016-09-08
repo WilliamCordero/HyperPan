@@ -36,6 +36,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/src/hyperpan.o \
+	${OBJECTDIR}/src/stepper.o \
 	${OBJECTDIR}/src/trigger.o \
 	${OBJECTDIR}/src/verbose.o
 
@@ -68,6 +69,11 @@ ${OBJECTDIR}/src/hyperpan.o: nbproject/Makefile-${CND_CONF}.mk src/hyperpan.c
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
 	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/hyperpan.o src/hyperpan.c
+
+${OBJECTDIR}/src/stepper.o: nbproject/Makefile-${CND_CONF}.mk src/stepper.c 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/stepper.o src/stepper.c
 
 ${OBJECTDIR}/src/trigger.o: nbproject/Makefile-${CND_CONF}.mk src/trigger.c 
 	${MKDIR} -p ${OBJECTDIR}/src

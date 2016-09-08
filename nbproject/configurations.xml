@@ -4,6 +4,7 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <itemPath>src/stepper.h</itemPath>
       <itemPath>src/trigger.h</itemPath>
       <itemPath>src/verbose.h</itemPath>
     </logicalFolder>
@@ -15,6 +16,7 @@
                    displayName="Source Files"
                    projectFiles="true">
       <itemPath>src/hyperpan.c</itemPath>
+      <itemPath>src/stepper.c</itemPath>
       <itemPath>src/trigger.c</itemPath>
       <itemPath>src/verbose.c</itemPath>
     </logicalFolder>
@@ -40,6 +42,10 @@
         </linkerTool>
       </compileType>
       <item path="src/hyperpan.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="src/stepper.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="src/stepper.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/trigger.c" ex="false" tool="0" flavor2="0">
       </item>
@@ -76,6 +82,10 @@
         </linkerTool>
       </compileType>
       <item path="src/hyperpan.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="src/stepper.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="src/stepper.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/trigger.c" ex="false" tool="0" flavor2="0">
       </item>
