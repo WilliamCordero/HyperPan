@@ -16,6 +16,8 @@
 extern "C" {
 #endif
 
+#define PULSE 30
+    
 typedef struct stepper{
     int sleep;
     int step;

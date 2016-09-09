@@ -7,7 +7,7 @@
 
 int verbose(int level, char *msj){
     if(level<=verbose_level){
-        alert_led();
+//        alert_led();
         printf("|> %s\n",msj);
     }
 }

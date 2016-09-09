@@ -15,6 +15,7 @@ trigger trigger_init(int focus_mode,int focus_delay){
     temp.focus_mode=focus_mode;
     temp.focus_delay=focus_delay;
     verbose(3,"Initializing trigger.");
+    alert_led();
     return temp;
 }
 
