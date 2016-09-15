@@ -39,10 +39,15 @@ int main(int argc,char**argv){
     stepper_on(phi);
     stepper_on(theta);
 
-//    for(i=0;i<5;i++){
+    for(i=0;i<5;i++){
 //        stepper_walk(phi,1,200*8*32);
-        stepper_walk(theta,1,200*8*32);
-//    }
+//        stepper_walk(theta,1,200*8*32);
+//        stepper_walk_linear(phi,1,200*8*32);
+//        stepper_walk_linear(theta,1,200*8*32);
+//        stepper_walk_round(phi,1,200*8*32);
+        stepper_walk_round(theta,1,200*8*32);
+
+    }
 //    trigger_shot(trigger,0);
 
     stepper_off(phi);
