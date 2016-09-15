@@ -42,7 +42,6 @@ int main(int argc,char**argv){
         stepper_walk(phi,1,200*8*32);
         stepper_walk(theta,1,200*8*32);
 //    }
-
 //    trigger_shot(trigger,0);
 
     stepper_off(phi);

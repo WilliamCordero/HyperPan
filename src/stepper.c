@@ -2,9 +2,11 @@
  * William Cordero (2016) <william.cordero@gmail.com>
  */
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include <bcm2835.h>
 #include "stepper.h"
-
+#include "verbose.h"
 stepper stepper_init(int sleep,int step,int dir,int m0,int m1,char *name){
     char *msj;
     stepper tmp;
@@ -64,7 +66,6 @@ int stepper_on(stepper motor){
 int stepper_off(stepper motor){
     bcm2835_gpio_write(motor.sleep,LOW);
 }
-
 int stepper_walk(stepper motor,int dir,int steps){
     int i;
     bcm2835_gpio_write(motor.dir,dir?HIGH:LOW);

@@ -22,6 +22,14 @@ CND_ARTIFACT_PATH_Release=dist/Release/GNU-Linux/hyperpan
 CND_PACKAGE_DIR_Release=dist/Release/GNU-Linux/package
 CND_PACKAGE_NAME_Release=hyperpan.tar
 CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux/package/hyperpan.tar
+# OverLook configuration
+CND_PLATFORM_OverLook=GNU-Linux
+CND_ARTIFACT_DIR_OverLook=dist/OverLook/GNU-Linux
+CND_ARTIFACT_NAME_OverLook=hyperpan
+CND_ARTIFACT_PATH_OverLook=dist/OverLook/GNU-Linux/hyperpan
+CND_PACKAGE_DIR_OverLook=dist/OverLook/GNU-Linux/package
+CND_PACKAGE_NAME_OverLook=hyperpan.tar
+CND_PACKAGE_PATH_OverLook=dist/OverLook/GNU-Linux/package/hyperpan.tar
 #
 # include compiler specific variables
 #

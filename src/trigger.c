@@ -2,9 +2,11 @@
  * William Cordero (2016) <william.cordero@gmail.com>
  */
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include <bcm2835.h>
 #include "trigger.h"
-
+#include "verbose.h"
 trigger trigger_init(int focus_mode,int focus_delay){
     trigger temp;
     temp.shutter=SHUTTER;
@@ -18,7 +20,6 @@ trigger trigger_init(int focus_mode,int focus_delay){
     alert_led();
     return temp;
 }
-
 int trigger_shot(trigger trigger,int speed){
     char *msj;
     if(trigger.focus_mode){

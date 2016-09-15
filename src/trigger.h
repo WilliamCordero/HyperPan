@@ -1,14 +1,6 @@
 /*
  * William Cordero (2016) <william.cordero@gmail.com>
  */
-
-/* 
- * File:   trigger.h
- * Author: wcordero
- *
- * Created on September 7, 2016, 1:22 AM
- */
-
 #ifndef TRIGGER_H
 #define TRIGGER_H
 
@@ -18,8 +10,8 @@ extern "C" {
 #define SHUTTER 17
 #define FOCUS   4
 #define SPEED   1000
-#define AF 1    
-#define MF 0    
+#define AF      1    
+#define MF      0    
     
 typedef struct trigger{
     int shutter;
