@@ -10,6 +10,8 @@ extern "C" {
 
 #define PULSE 30
     
+#define PI 3.14159265
+    
 typedef struct stepper{
     int sleep;
     int step;
