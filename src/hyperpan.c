@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <math.h>
 #include <bcm2835.h>
 #include "verbose.h"
 #include "trigger.h"
