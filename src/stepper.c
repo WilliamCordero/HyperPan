@@ -67,77 +67,65 @@ int stepper_on(stepper motor){
 int stepper_off(stepper motor){
     bcm2835_gpio_write(motor.sleep,LOW);
 }
+int pulse(stepper motor){
+        bcm2835_gpio_write(motor.step,HIGH);
+        bcm2835_delayMicroseconds(PULSE);
+        bcm2835_gpio_write(motor.step,LOW);
+        bcm2835_delayMicroseconds(PULSE);
+}
 int stepper_walk(stepper motor,int dir,int n){
-    int i,ii,t=0;
-    double iii=0,e=150.0,x=1.0,ret;
-    char *msj;
-//    double pi=acos(-1);
-    for(i=e;0<i;i--){
-        t++;
-        bcm2835_gpio_write(motor.step,HIGH);
-        bcm2835_delayMicroseconds(PULSE);
-        bcm2835_gpio_write(motor.step,LOW);
-        bcm2835_delayMicroseconds(PULSE);
-    x=1.0;
-    iii=(double)90.0+x/e;
-    printf("sin(90.0*i) = %f i=%i\n",sin((double)(iii*M_PI/180)),i);
-//    x=0.0;
-//    printf("sin(0) = %f\n",sin(x*M_PI/180));
-//    x=45.0;
-//    printf("sin(45) = %f\n",sin(x*M_PI/180));
-//    printf("sin(-3*pi/4) = %f\n", sin(-3*pi/4));
-    // special values
-//    printf("sin(+0) = %f\n", sin(0.0));
-//    printf("sin(-0) = %f\n", sin(-0.0));
-        
-//        ret=sin(((90.0*ii)/e)*(PI/180));
-//        ret=sin((90.0*ii)*(PI/180));        
-//        x=((90*i)/e);
-//        x=90.0*i;
-//        printf("The sine of %lf\n",x);
-//        ret=sin(x*(pi/180.0));
-//        printf("The sine of %lf is %lf degrees\n",x,ret);
-//        for(ii=iii;0<ii;ii--){                    
-//         for(ii=i;0<ii;ii=ii-ret){            
-//            bcm2835_delayMicroseconds(PULSE*2);            
-//        }
+    for(;0<n;n--)pulse(motor);
+}
+int stepper_walk_sync(stepper phi,int phi_n,int phi_dir,stepper theta,int theta_n,int theta_dir){
+    int l_n,s_n,l_dir,s_dir,l,i,ii,t=1,tt=0;
+    stepper l_st,s_st;
+    char *msj,*steps;
+    if(phi_n<theta_n){
+        l_st=theta;l_n=theta_n;l_dir=theta_dir;
+        s_st=phi;s_n=phi_n;s_dir=phi_dir;
+    }else{
+        l_st=phi;l_n=phi_n;l_dir=phi_dir;
+        s_st=theta;s_n=theta_n;s_dir=theta_dir;
+    }
+    steps=(char *)malloc(l=(sizeof(char)*l_n)+(BORDER*BORDER));
+    for(i=0;i<ii;steps[i++]=0);
+    for(i=BORDER;0<i;i--,t++,tt++){
+        steps[tt]=steps[tt]|1|((t%(s_n?(l_n/s_n):t+1))?0:2);
+        for(ii=i;0<ii;ii--,tt++);
     } 
-/*    asprintf(&msj,"%s: t=%i",motor.name,t);
-    verbose(3,msj);free(msj);
-    for(i=(n-(t*2));0<i;i--,t++){
-        bcm2835_gpio_write(motor.step,HIGH);
+    for(i=(l_n-((t-1)*2));0<i;i--,t++,tt++)steps[tt]=steps[tt]|1|((t%(s_n?(l_n/s_n):t+1))?0:2);
+    for(i=0;i<BORDER;i++,t++,tt++){
+        for(ii=0;ii<i;ii++,tt++);
+        steps[tt]=steps[tt]|1|((t%(s_n?(l_n/s_n):t+1))?0:2);
+    }
+    bcm2835_gpio_write(l_st.dir,l_dir?HIGH:LOW);
+    bcm2835_gpio_write(s_st.dir,s_dir?HIGH:LOW);
+//    ii=(sizeof(char)*l_n)+(BORDER*BORDER);
+    for(i=0;i<l;i++){
+        if(steps[i]&1)bcm2835_gpio_write(l_st.step,HIGH);
+        if(steps[i]&2)bcm2835_gpio_write(s_st.step,HIGH);
         bcm2835_delayMicroseconds(PULSE);
-        bcm2835_gpio_write(motor.step,LOW);
+        if(steps[i]&1)bcm2835_gpio_write(l_st.step,LOW);
+        if(steps[i]&2)bcm2835_gpio_write(s_st.step,LOW);
         bcm2835_delayMicroseconds(PULSE);
     }
-    asprintf(&msj,"%s: t=%i",motor.name,t);
-    verbose(3,msj);free(msj);
-    for(i=0;i<e;i++,t++){
-        for(ii=0;ii<i;ii++){            
-            bcm2835_delayMicroseconds(PULSE*2);            
-        }
-        bcm2835_gpio_write(motor.step,HIGH);
-        bcm2835_delayMicroseconds(PULSE);
-        bcm2835_gpio_write(motor.step,LOW);
-        bcm2835_delayMicroseconds(PULSE);
+}
+int stepper_walk_round(stepper motor,int dir,int n){
+    int i,ii,t=0;
+    char *msj;
+    for(i=BORDER;0<i;i--,t++){
+        pulse(motor);
+        for(ii=(sin(((((i*90)/BORDER)*M_PI)/180))*i);0<ii;ii--)bcm2835_delayMicroseconds(PULSE*2);
     } 
-    asprintf(&msj,"%s: t=%i",motor.name,t);
+    asprintf(&msj,"%s: rt=%i",motor.name,t);
     verbose(3,msj);free(msj);
-*/
-  
-//    ret=sin(x*(PI/180));
-//    printf("The sine of %lf is %lf degrees\n",x,ret);
-    
-/*
-    asprintf(&msj,"%s: sin(1)=%lf",motor.name,sin(0.0*(PI/180)));
+    for(i=(n-(t*2));0<i;i--,t++)pulse(motor);
+    asprintf(&msj,"%s: rt=%i",motor.name,t);
     verbose(3,msj);free(msj);
-    asprintf(&msj,"%s: sin(0.5)=%lf",motor.name,sin(45.0*(PI/180)));
+    for(i=0;i<BORDER;i++,t++){
+        for(ii=0;ii<(sin(((((i*90)/BORDER)*M_PI)/180))*i);ii++)bcm2835_delayMicroseconds(PULSE*2);
+        pulse(motor);
+    } 
+    asprintf(&msj,"%s: rt=%i",motor.name,t);
     verbose(3,msj);free(msj);
-    asprintf(&msj,"%s: sin(0)=%lf",motor.name,sin(90.0*(PI/180)));
-    verbose(3,msj);free(msj);
-*/
-    
-//            asprintf(&msj,"%s: i=%i\t ii=%i\t iii=%i",motor.name,i,ii,iii);
-//            verbose(3,msj);free(msj);
-
 }

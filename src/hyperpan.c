@@ -38,18 +38,10 @@ int main(int argc,char**argv){
     stepper_mode(theta,THETA_MODE);
     stepper_on(phi);
     stepper_on(theta);
-
     for(i=0;i<5;i++){
-//        stepper_walk(phi,1,200*8*32);
-//        stepper_walk(theta,1,200*8*32);
-//        stepper_walk_linear(phi,1,200*8*32);
-//        stepper_walk_linear(theta,1,200*8*32);
-//        stepper_walk_round(phi,1,200*8*32);
-        stepper_walk_round(theta,1,200*8*32);
-
+      stepper_walk_sync(phi,200*8*16,0,theta,200*8*32,0);
+      stepper_walk_sync(phi,200*8*32,1,theta,200*8*16,1);
     }
-//    trigger_shot(trigger,0);
-
     stepper_off(phi);
     stepper_off(theta);
     bcm2835_close();

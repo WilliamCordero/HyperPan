@@ -79,6 +79,7 @@
           <linkerLibItems>
             <linkerLibLibItem>bcm2835</linkerLibLibItem>
           </linkerLibItems>
+          <commandLine>-lm</commandLine>
         </linkerTool>
       </compileType>
       <item path="src/hyperpan.c" ex="false" tool="0" flavor2="0">

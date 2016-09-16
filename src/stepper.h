@@ -8,10 +8,9 @@
 extern "C" {
 #endif
 
-#define PULSE 30
-    
-#define PI 3.14159265
-    
+#define PULSE  30
+#define BORDER 100
+   
 typedef struct stepper{
     int sleep;
     int step;
@@ -26,6 +25,8 @@ int stepper_mode(stepper motor,int mode); /* Valid modes 1,2,4,8,16,32 everythin
 int stepper_on(stepper motor);
 int stepper_off(stepper motor);
 int stepper_walk(stepper motor,int dir,int steps);
+int stepper_walk_sync(stepper phi,int phi_n,int phi_dir,stepper theta,int theta_n,int theta_dir);
+int stepper_walk_round(stepper motor,int dir,int n);
     
 #ifdef __cplusplus
 }
