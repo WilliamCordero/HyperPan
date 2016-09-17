@@ -76,42 +76,28 @@ int pulse(stepper motor){
 int stepper_walk(stepper motor,int dir,int n){
     for(;0<n;n--)pulse(motor);
 }
-int stepper_walk_sync(stepper phi,int phi_n,int phi_dir,stepper theta,int theta_n,int theta_dir){
-    int l_n,s_n,l_dir,s_dir,l,i,ii,x,b,t=1,tt=0,l_c=0,s_c=0;
-    stepper l_st,s_st;
+int stepper_walk_sync(stepper l_st,int l_n,int l_dir,stepper s_st,int s_n,int s_dir){
+    int l,i,ii,x,ts=0,t=0,tt=0,l_c=0,s_c=0,b=(l_n/16)/ACCEL;
+    double m=(double)l_n/(double)s_n;
     char *steps,*msj;
-    if(phi_n<theta_n){  
-        l_st=theta;l_n=theta_n;l_dir=theta_dir;
-        s_st=phi;s_n=phi_n;s_dir=phi_dir;
-    }else{
-        l_st=phi;l_n=phi_n;l_dir=phi_dir;
-        s_st=theta;s_n=theta_n;s_dir=theta_dir;
-    }
-    b=(l_n/16)/ACCEL;
+    if(l_n<s_n)return stepper_walk_sync(s_st,s_n,s_dir,l_st,l_n,l_dir);
     steps=(char *)malloc(l=(sizeof(char)*l_n)+((ACCEL*ACCEL)*b));
-    for(i=0;i<l;steps[i++]=0);
     for(i=ACCEL;0<i;i--)
         for(x=0;x<b;x++,t++,tt++){
-            steps[tt]=steps[tt]|1|((t%(s_n?(l_n/s_n):t+1))?0:2);
-            for(ii=i;0<ii;ii--,tt++);
+            steps[tt]=((m*ts)<=t)?(3|(ts++&0)):1;
+            for(ii=i;0<ii;ii--)steps[++tt]=0;
         }
-    for(i=(l_n-((t-1)*2));0<i;i--,t++,tt++)steps[tt]=steps[tt]|1|((t%(s_n?(l_n/s_n):t+1))?0:2);
+    for(i=l_n-(t*2);0<i;i--,t++,tt++)steps[tt]=((m*ts)<=t)?(3|(ts++&0)):1;
     for(i=0;i<ACCEL;i++)
         for(x=0;x<b;x++,t++,tt++){
-            for(ii=0;ii<i;ii++,tt++);
-            steps[tt]=steps[tt]|1|((t%(s_n?(l_n/s_n):t+1))?0:2);
+            for(ii=0;ii<i;ii++)steps[++tt]=0;
+            steps[tt]=((m*ts)<=t)?(3|(ts++&0)):1;
         }
     bcm2835_gpio_write(l_st.dir,l_dir?HIGH:LOW);
     bcm2835_gpio_write(s_st.dir,s_dir?HIGH:LOW);
     for(i=0;i<tt;i++){
-        if(steps[i]&1){
-            bcm2835_gpio_write(l_st.step,HIGH);
-            l_c++;
-        }
-        if(steps[i]&2){
-            bcm2835_gpio_write(s_st.step,HIGH);
-            s_c++;
-        }
+        if(steps[i]&1){bcm2835_gpio_write(l_st.step,HIGH);l_c++;}
+        if(steps[i]&2){bcm2835_gpio_write(s_st.step,HIGH);s_c++;}
         bcm2835_delayMicroseconds(PULSE);
         if(steps[i]&1)bcm2835_gpio_write(l_st.step,LOW);
         if(steps[i]&2)bcm2835_gpio_write(s_st.step,LOW);

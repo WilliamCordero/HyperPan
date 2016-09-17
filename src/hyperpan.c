@@ -38,10 +38,10 @@ int main(int argc,char**argv){
     stepper_mode(theta,THETA_MODE);
     stepper_on(phi);
     stepper_on(theta);
-    for(i=0;i<3;i++){
-      stepper_walk_sync(phi,200*8*32,0,theta,200*8*32,0);
+//    for(i=0;i<3;i++){
+      stepper_walk_sync(phi,4001,0,theta,200*8*32,0);
 //      stepper_walk_sync(phi,200*8*32,1,theta,200*8*32,1);
-    }
+//    }
 //    stepper_walk(phi,1,1000);
     stepper_off(phi);
     stepper_off(theta);

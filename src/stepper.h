@@ -25,7 +25,7 @@ int stepper_mode(stepper motor,int mode); /* Valid modes 1,2,4,8,16,32 everythin
 int stepper_on(stepper motor);
 int stepper_off(stepper motor);
 int stepper_walk(stepper motor,int dir,int steps);
-int stepper_walk_sync(stepper phi,int phi_n,int phi_dir,stepper theta,int theta_n,int theta_dir);
+int stepper_walk_sync(stepper l_st,int l_n,int l_dir,stepper s_st,int s_n,int s_dir);
 int stepper_walk_round(stepper motor,int dir,int n);
     
 #ifdef __cplusplus
