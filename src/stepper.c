@@ -77,53 +77,63 @@ int stepper_walk(stepper motor,int dir,int n){
     for(;0<n;n--)pulse(motor);
 }
 int stepper_walk_sync(stepper phi,int phi_n,int phi_dir,stepper theta,int theta_n,int theta_dir){
-    int l_n,s_n,l_dir,s_dir,l,i,ii,t=1,tt=0;
+    int l_n,s_n,l_dir,s_dir,l,i,ii,x,b,t=1,tt=0,l_c=0,s_c=0;
     stepper l_st,s_st;
-    char *msj,*steps;
-    if(phi_n<theta_n){
+    char *steps,*msj;
+    if(phi_n<theta_n){  
         l_st=theta;l_n=theta_n;l_dir=theta_dir;
         s_st=phi;s_n=phi_n;s_dir=phi_dir;
     }else{
         l_st=phi;l_n=phi_n;l_dir=phi_dir;
         s_st=theta;s_n=theta_n;s_dir=theta_dir;
     }
-    steps=(char *)malloc(l=(sizeof(char)*l_n)+(BORDER*BORDER));
-    for(i=0;i<ii;steps[i++]=0);
-    for(i=BORDER;0<i;i--,t++,tt++){
-        steps[tt]=steps[tt]|1|((t%(s_n?(l_n/s_n):t+1))?0:2);
-        for(ii=i;0<ii;ii--,tt++);
-    } 
+    b=(l_n/16)/ACCEL;
+    steps=(char *)malloc(l=(sizeof(char)*l_n)+((ACCEL*ACCEL)*b));
+    for(i=0;i<l;steps[i++]=0);
+    for(i=ACCEL;0<i;i--)
+        for(x=0;x<b;x++,t++,tt++){
+            steps[tt]=steps[tt]|1|((t%(s_n?(l_n/s_n):t+1))?0:2);
+            for(ii=i;0<ii;ii--,tt++);
+        }
     for(i=(l_n-((t-1)*2));0<i;i--,t++,tt++)steps[tt]=steps[tt]|1|((t%(s_n?(l_n/s_n):t+1))?0:2);
-    for(i=0;i<BORDER;i++,t++,tt++){
-        for(ii=0;ii<i;ii++,tt++);
-        steps[tt]=steps[tt]|1|((t%(s_n?(l_n/s_n):t+1))?0:2);
-    }
+    for(i=0;i<ACCEL;i++)
+        for(x=0;x<b;x++,t++,tt++){
+            for(ii=0;ii<i;ii++,tt++);
+            steps[tt]=steps[tt]|1|((t%(s_n?(l_n/s_n):t+1))?0:2);
+        }
     bcm2835_gpio_write(l_st.dir,l_dir?HIGH:LOW);
     bcm2835_gpio_write(s_st.dir,s_dir?HIGH:LOW);
-//    ii=(sizeof(char)*l_n)+(BORDER*BORDER);
-    for(i=0;i<l;i++){
-        if(steps[i]&1)bcm2835_gpio_write(l_st.step,HIGH);
-        if(steps[i]&2)bcm2835_gpio_write(s_st.step,HIGH);
+    for(i=0;i<tt;i++){
+        if(steps[i]&1){
+            bcm2835_gpio_write(l_st.step,HIGH);
+            l_c++;
+        }
+        if(steps[i]&2){
+            bcm2835_gpio_write(s_st.step,HIGH);
+            s_c++;
+        }
         bcm2835_delayMicroseconds(PULSE);
         if(steps[i]&1)bcm2835_gpio_write(l_st.step,LOW);
         if(steps[i]&2)bcm2835_gpio_write(s_st.step,LOW);
         bcm2835_delayMicroseconds(PULSE);
     }
+    asprintf(&msj,"%s: %i %s: %i",l_st.name,l_c,s_st.name,s_c);
+    verbose(3,msj);free(msj);
 }
 int stepper_walk_round(stepper motor,int dir,int n){
     int i,ii,t=0;
     char *msj;
-    for(i=BORDER;0<i;i--,t++){
+    for(i=ACCEL;0<i;i--,t++){
         pulse(motor);
-        for(ii=(sin(((((i*90)/BORDER)*M_PI)/180))*i);0<ii;ii--)bcm2835_delayMicroseconds(PULSE*2);
+        for(ii=(sin(((((i*90)/ACCEL)*M_PI)/180))*i);0<ii;ii--)bcm2835_delayMicroseconds(PULSE*2);
     } 
     asprintf(&msj,"%s: rt=%i",motor.name,t);
     verbose(3,msj);free(msj);
     for(i=(n-(t*2));0<i;i--,t++)pulse(motor);
     asprintf(&msj,"%s: rt=%i",motor.name,t);
     verbose(3,msj);free(msj);
-    for(i=0;i<BORDER;i++,t++){
-        for(ii=0;ii<(sin(((((i*90)/BORDER)*M_PI)/180))*i);ii++)bcm2835_delayMicroseconds(PULSE*2);
+    for(i=0;i<ACCEL;i++,t++){
+        for(ii=0;ii<(sin(((((i*90)/ACCEL)*M_PI)/180))*i);ii++)bcm2835_delayMicroseconds(PULSE*2);
         pulse(motor);
     } 
     asprintf(&msj,"%s: rt=%i",motor.name,t);

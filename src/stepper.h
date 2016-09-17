@@ -9,7 +9,7 @@ extern "C" {
 #endif
 
 #define PULSE  30
-#define BORDER 100
+#define ACCEL  8
    
 typedef struct stepper{
     int sleep;
