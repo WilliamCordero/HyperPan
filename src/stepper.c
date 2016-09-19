@@ -29,7 +29,6 @@ stepper stepper_init(int sleep,int step,int dir,int m0,int m1,char *name){
     asprintf(&tmp.name,"%s",name);
     asprintf(&msj,"%s: init().",tmp.name);
     verbose(L_FALL,msj);free(msj);
-    alert_led();
     return tmp;
 }
 int stepper_mode(stepper motor,int mode){

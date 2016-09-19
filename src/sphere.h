@@ -9,13 +9,23 @@
 extern "C" {
 #endif
 
+#define STEPS_LOOP 51200 //200*8*32
+    
 typedef struct sphere{
-    int rho;
-    int theta;
-    int phi;    
+    double rho;
+    double theta;
+    double phi;
+    stepper st_rho;
+    stepper st_theta;
+    stepper st_phi;
+    int s_rho;
+    int s_theta;
+    int s_phi;
+    char *name;
 }sphere;
 
-sphere sphere_init();
+sphere sphere_init(stepper rho,stepper theta,stepper phi,char *name);
+int go(sphere sphere,double rho,double theta,double phi);
 
 #ifdef __cplusplus
 }
