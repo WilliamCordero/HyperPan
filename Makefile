@@ -71,7 +71,6 @@
 #
 # NOCDDL
 
-
 # Environment 
 MKDIR=mkdir
 CP=cp

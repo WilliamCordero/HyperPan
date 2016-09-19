@@ -1,3 +1,3 @@
 # HyperPan
 
-HyperPan Control Software
+HyperPan Control Software.
