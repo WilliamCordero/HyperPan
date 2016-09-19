@@ -35,7 +35,9 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/src/dummy/bcm2835.o \
 	${OBJECTDIR}/src/hyperpan.o \
+	${OBJECTDIR}/src/sphere.o \
 	${OBJECTDIR}/src/stepper.o \
 	${OBJECTDIR}/src/trigger.o \
 	${OBJECTDIR}/src/verbose.o
@@ -55,7 +57,7 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=-lbcm2835
+LDLIBSOPTIONS=
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
@@ -65,10 +67,20 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/hyperpan: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.c} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/hyperpan ${OBJECTFILES} ${LDLIBSOPTIONS}
 
+${OBJECTDIR}/src/dummy/bcm2835.o: nbproject/Makefile-${CND_CONF}.mk src/dummy/bcm2835.c 
+	${MKDIR} -p ${OBJECTDIR}/src/dummy
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/dummy/bcm2835.o src/dummy/bcm2835.c
+
 ${OBJECTDIR}/src/hyperpan.o: nbproject/Makefile-${CND_CONF}.mk src/hyperpan.c 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
 	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/hyperpan.o src/hyperpan.c
+
+${OBJECTDIR}/src/sphere.o: nbproject/Makefile-${CND_CONF}.mk src/sphere.c 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/sphere.o src/sphere.c
 
 ${OBJECTDIR}/src/stepper.o: nbproject/Makefile-${CND_CONF}.mk src/stepper.c 
 	${MKDIR} -p ${OBJECTDIR}/src

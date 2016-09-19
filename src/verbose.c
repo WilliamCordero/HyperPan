@@ -4,7 +4,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+
+#ifndef  BCM_DUMMY
 #include <bcm2835.h>
+#else
+#include "dummy/bcm2835.h"
+#endif
+
 #include "verbose.h"
 int verbose(int level,char *msj){
     if(level<=verbose_l)printf("|> %s\n",msj);

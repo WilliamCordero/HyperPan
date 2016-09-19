@@ -4,7 +4,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#ifndef  BCM_DUMMY
 #include <bcm2835.h>
+#else
+#include "dummy/bcm2835.h"
+#endif
 #include "trigger.h"
 #include "verbose.h"
 trigger trigger_init(int focus_mode,int focus_delay,char *name){

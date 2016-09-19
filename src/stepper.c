@@ -5,7 +5,11 @@
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
+#ifndef  BCM_DUMMY
 #include <bcm2835.h>
+#else
+#include "dummy/bcm2835.h"
+#endif
 #include "stepper.h"
 #include "verbose.h"
 stepper stepper_init(int sleep,int step,int dir,int m0,int m1,char *name){

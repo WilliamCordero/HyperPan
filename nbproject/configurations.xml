@@ -16,6 +16,7 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <itemPath>src/dummy/bcm2835.c</itemPath>
       <itemPath>src/hyperpan.c</itemPath>
       <itemPath>src/sphere.c</itemPath>
       <itemPath>src/stepper.c</itemPath>
@@ -43,6 +44,8 @@
           </linkerLibItems>
         </linkerTool>
       </compileType>
+      <item path="src/dummy/bcm2835.c" ex="false" tool="0" flavor2="0">
+      </item>
       <item path="src/hyperpan.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="src/sphere.c" ex="false" tool="0" flavor2="0">
@@ -88,6 +91,8 @@
           <commandLine>-lm</commandLine>
         </linkerTool>
       </compileType>
+      <item path="src/dummy/bcm2835.c" ex="false" tool="0" flavor2="0">
+      </item>
       <item path="src/hyperpan.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="src/sphere.c" ex="false" tool="0" flavor2="0">
@@ -117,12 +122,9 @@
         <cTool>
           <commandLine>-D_GNU_SOURCE</commandLine>
         </cTool>
-        <linkerTool>
-          <linkerLibItems>
-            <linkerLibLibItem>bcm2835</linkerLibLibItem>
-          </linkerLibItems>
-        </linkerTool>
       </compileType>
+      <item path="src/dummy/bcm2835.c" ex="false" tool="0" flavor2="0">
+      </item>
       <item path="src/hyperpan.c" ex="false" tool="0" flavor2="9">
       </item>
       <item path="src/sphere.c" ex="false" tool="0" flavor2="0">
