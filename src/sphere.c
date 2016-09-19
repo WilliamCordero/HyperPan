@@ -19,17 +19,25 @@ sphere sphere_init(stepper rho,stepper theta,stepper phi,char *name){
 }
 int go(sphere sphere,double rho,double theta,double phi){
     char *msj;
-    double o_phi,o_theta,n_phi,n_theta;
-//    o_rho=sphere.rho*(STEPS_LOOP/360.0);    
-//    o_theta=sphere.theta*(STEPS_LOOP/360.0);
-//    o_phi=sphere.phi*(STEPS_LOOP/360.0);
+    int n_rho,n_theta,n_phi,d_rho,d_theta,d_phi;
 //    n_rho=rho*(STEPS_LOOP/360.0);    
     n_theta=theta*(STEPS_LOOP/360.0);
     n_phi=phi*(STEPS_LOOP/360.0);
+    
     msj=(char*)malloc(100*sizeof(char));
-    sprintf(msj,"%s: old(x,%i,%i) new(x,%f,%f)",sphere.name,sphere.s_theta,sphere.s_phi,n_theta,n_phi);
-    verbose(L_POSS,msj);free(msj);    
-
+    sprintf(msj,"%s: old(f,%f,%f) new(f,%f,%f)",sphere.name,sphere.theta,sphere.phi,theta,phi);
+    verbose(L_POSS,msj);
+    sprintf(msj,"%s: old(i,%i,%i) new(i,%i,%i)",sphere.name,sphere.s_theta,sphere.s_phi,n_theta,n_phi);
+    verbose(L_POSS,msj);
+    
+    //d_rho=((-180<(d_rho=n_rho-sphere.s_rho))||(d_rho>180)?1:-1)*d_rho;
+    d_theta=((-180<(d_theta=n_theta-sphere.s_theta))||(d_theta>180)?1:-1)*d_theta;
+    d_phi=((-180<(d_phi=n_phi-sphere.s_phi))||(d_phi>180)?1:-1)*d_phi;
+    
+    sprintf(msj,"%s: move(i,%i,%i)",sphere.name,d_theta,d_phi);
+    verbose(L_POSS,msj);
+    free(msj);    
+    
     
 /*
  * if(-180<d=n-o<180)move(d)
