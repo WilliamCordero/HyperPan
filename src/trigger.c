@@ -7,29 +7,30 @@
 #include <bcm2835.h>
 #include "trigger.h"
 #include "verbose.h"
-trigger trigger_init(int focus_mode,int focus_delay){
-    trigger temp;
-    temp.shutter=SHUTTER;
+trigger trigger_init(int focus_mode,int focus_delay,char *name){
+    trigger tmp;char *msj;
+    tmp.shutter=SHUTTER;
     bcm2835_gpio_fsel(SHUTTER,BCM2835_GPIO_FSEL_OUTP);
-    temp.shutter_speed=SPEED;
-    temp.focus=FOCUS;
+    tmp.shutter_speed=SPEED;
+    tmp.focus=FOCUS;
     bcm2835_gpio_fsel(FOCUS,BCM2835_GPIO_FSEL_OUTP);
-    temp.focus_mode=focus_mode;
-    temp.focus_delay=focus_delay;
-    verbose(3,"Initializing trigger.");
-    alert_led();
-    return temp;
+    tmp.focus_mode=focus_mode;
+    tmp.focus_delay=focus_delay;
+    asprintf(&tmp.name,"%s",name);
+    asprintf(&msj,"%s: init().",tmp.name);
+    verbose(L_FALL,msj);free(msj);
+    return tmp;
 }
 int trigger_shot(trigger trigger,int speed){
     char *msj;
     if(trigger.focus_mode){
-        asprintf(&msj,"Focusing for %i μs.",trigger.focus_delay);
-        verbose(1,msj);free(msj);
+        asprintf(&msj,"%s: Focus: %iμs.",trigger.name,trigger.focus_delay);
+        verbose(L_TRGR,msj);free(msj);
         bcm2835_gpio_write(trigger.focus,HIGH);
         bcm2835_delayMicroseconds(trigger.focus_delay);
     }
-    asprintf(&msj,"Shooting for %i μs.",speed?speed:trigger.shutter_speed);
-    verbose(1,msj);free(msj);
+    asprintf(&msj,"%s: Shoot: %iμs.",trigger.name,speed?speed:trigger.shutter_speed);
+    verbose(L_TRGR,msj);free(msj);
     bcm2835_gpio_write(trigger.shutter,HIGH);
     bcm2835_delayMicroseconds(speed?speed:trigger.shutter_speed);
     bcm2835_gpio_write(trigger.shutter,LOW);

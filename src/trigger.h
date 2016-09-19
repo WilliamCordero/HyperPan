@@ -19,9 +19,10 @@ typedef struct trigger{
     int focus;    
     int focus_mode;
     int focus_delay;
+    char *name;
 }trigger;
 
-trigger trigger_init(int focus_mode,int focus_delay);
+trigger trigger_init(int focus_mode,int focus_delay,char *name);
 int trigger_shot(trigger trigger,int speed);
 
 #ifdef __cplusplus

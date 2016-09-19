@@ -6,19 +6,16 @@
 #include <string.h>
 #include <bcm2835.h>
 #include "verbose.h"
-int verbose(int level, char *msj){
-    if(level<=verbose_level){
-//        alert_led();
-        printf("|> %s\n",msj);
-    }
+int verbose(int level,char *msj){
+    if(level<=verbose_l)printf("|> %s\n",msj);
 }
 int warning(char *msj){
     alert_led();alert_led();
-    fprintf(stderr,"|> Warning: %s\n",msj);
+    fprintf(stderr,"|> χ: %s\n",msj);
 }
 int error(char *msj){
     alert_led();alert_led();
-    fprintf(stderr,"|> Error: %s\n",msj);
+    fprintf(stderr,"|> χχ: %s\n",msj);
     exit(1);
 }
 int alert_led(){

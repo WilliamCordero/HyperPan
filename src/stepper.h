@@ -9,7 +9,8 @@ extern "C" {
 #endif
 
 #define PULSE  30
-#define ACCEL  8
+#define ACCEL  11
+#define BORDER 16
    
 typedef struct stepper{
     int sleep;
@@ -26,7 +27,6 @@ int stepper_on(stepper motor);
 int stepper_off(stepper motor);
 int stepper_walk(stepper motor,int dir,int steps);
 int stepper_walk_sync(stepper l_st,int l_n,int l_dir,stepper s_st,int s_n,int s_dir);
-int stepper_walk_round(stepper motor,int dir,int n);
     
 #ifdef __cplusplus
 }
