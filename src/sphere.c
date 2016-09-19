@@ -29,5 +29,10 @@ int go(sphere sphere,double rho,double theta,double phi){
     msj=(char*)malloc(100*sizeof(char));
     sprintf(msj,"%s: old(x,%i,%i) new(x,%f,%f)",sphere.name,sphere.s_theta,sphere.s_phi,n_theta,n_phi);
     verbose(L_POSS,msj);free(msj);    
-            
+
+    
+/*
+ * if(-180<d=n-o<180)move(d)
+ * else move((d<0?1:-1)*(360-d))
+ */    
 }
