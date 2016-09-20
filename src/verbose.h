@@ -18,7 +18,7 @@ extern "C" {
 #define L_ACCT 4
 #define L_ALL 10    
     
-extern int verbose_l;
+int verbose_l;
 
 int verbose(int level,char *msj);
 int warning(char *msj);

@@ -35,7 +35,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/src/dummy/bcm2835.o \
+	${OBJECTDIR}/src/dummy/bcm_dummy.o \
 	${OBJECTDIR}/src/hyperpan.o \
 	${OBJECTDIR}/src/sphere.o \
 	${OBJECTDIR}/src/stepper.o \
@@ -67,35 +67,35 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/hyperpan: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.c} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/hyperpan ${OBJECTFILES} ${LDLIBSOPTIONS}
 
-${OBJECTDIR}/src/dummy/bcm2835.o: nbproject/Makefile-${CND_CONF}.mk src/dummy/bcm2835.c 
+${OBJECTDIR}/src/dummy/bcm_dummy.o: nbproject/Makefile-${CND_CONF}.mk src/dummy/bcm_dummy.c 
 	${MKDIR} -p ${OBJECTDIR}/src/dummy
 	${RM} "$@.d"
-	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/dummy/bcm2835.o src/dummy/bcm2835.c
+	$(COMPILE.c) -g -DBCM_DUMMY -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/dummy/bcm_dummy.o src/dummy/bcm_dummy.c
 
 ${OBJECTDIR}/src/hyperpan.o: nbproject/Makefile-${CND_CONF}.mk src/hyperpan.c 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/hyperpan.o src/hyperpan.c
+	$(COMPILE.c) -g -DBCM_DUMMY -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/hyperpan.o src/hyperpan.c
 
 ${OBJECTDIR}/src/sphere.o: nbproject/Makefile-${CND_CONF}.mk src/sphere.c 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/sphere.o src/sphere.c
+	$(COMPILE.c) -g -DBCM_DUMMY -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/sphere.o src/sphere.c
 
 ${OBJECTDIR}/src/stepper.o: nbproject/Makefile-${CND_CONF}.mk src/stepper.c 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/stepper.o src/stepper.c
+	$(COMPILE.c) -g -DBCM_DUMMY -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/stepper.o src/stepper.c
 
 ${OBJECTDIR}/src/trigger.o: nbproject/Makefile-${CND_CONF}.mk src/trigger.c 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/trigger.o src/trigger.c
+	$(COMPILE.c) -g -DBCM_DUMMY -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/trigger.o src/trigger.c
 
 ${OBJECTDIR}/src/verbose.o: nbproject/Makefile-${CND_CONF}.mk src/verbose.c 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/verbose.o src/verbose.c
+	$(COMPILE.c) -g -DBCM_DUMMY -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/verbose.o src/verbose.c
 
 # Subprojects
 .build-subprojects:
