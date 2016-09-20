@@ -53,8 +53,8 @@ int main(int argc,char**argv){
     sphere=sphere_init(rho,theta,phi,"ο");
 
 //ALL READY.    
-#define SS 1200000
-//    for(x=3;x>0;x--){
+#define SS 7500000
+/*    for(x=3;x>0;x--){
         
     go(&sphere,0,50,0);
     trigger_shot(trigger,SS);
@@ -66,8 +66,8 @@ int main(int argc,char**argv){
     trigger_shot(trigger,SS);
     go(&sphere,0,120,180);
     trigger_shot(trigger,SS);
-//    }
-    
+    }
+*/    
 //GO OUT.
     go(&sphere,0,0,0);
     stepper_off(phi);
