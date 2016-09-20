@@ -74,6 +74,9 @@
       <compileType>
         <cTool>
           <developmentMode>5</developmentMode>
+          <preprocessorList>
+            <Elem>_GNU_SOURCE</Elem>
+          </preprocessorList>
         </cTool>
         <ccTool>
           <developmentMode>5</developmentMode>
@@ -120,9 +123,9 @@
       </toolsSet>
       <compileType>
         <cTool>
-          <commandLine>-D_GNU_SOURCE</commandLine>
           <preprocessorList>
             <Elem>BCM_DUMMY</Elem>
+            <Elem>_GNU_SOURCE</Elem>
           </preprocessorList>
         </cTool>
       </compileType>
