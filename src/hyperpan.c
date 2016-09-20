@@ -5,6 +5,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <math.h>
+#include <argp.h>
 #ifndef  BCM_DUMMY
 #  include <bcm2835.h>
 #else  //BCM_DUMMY
@@ -41,9 +42,7 @@ int main(int argc,char**argv){
     trigger trigger;
     stepper rho,theta,phi;
     sphere sphere;
-    int i;
-    verbose_l=L_POSS;
-//    for(i=0;i<argc;i++)printf("%i: %s\n",i,argv[i]);
+    verbose_init(argc,argv);
     if(!bcm2835_init())return 1;
     verbose(L_FALL,"α:");alert_led();
     trigger=trigger_init(MF,0,"μ");
