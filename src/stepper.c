@@ -25,8 +25,6 @@ stepper stepper_init(int sleep,int step,int dir,int m0,int m1,int mode,int steps
     bcm2835_gpio_write(dir,LOW);
     tmp.dir=dir;    
     tmp.m0=m0;    
-//    bcm2835_gpio_fsel(m1,BCM2835_GPIO_FSEL_OUTP);
-//    bcm2835_gpio_write(m1,LOW);
     tmp.m1=m1;
     tmp.mode=mode;
     tmp.steps=steps;
@@ -86,8 +84,8 @@ int stepper_walk_sync(stepper l_st,int l_n,stepper s_st,int s_n){
     double m=(double)abs(l_n)/(double)abs(s_n);
     char *msj;
     if(abs(l_n)<abs(s_n))return stepper_walk_sync(s_st,s_n,l_st,l_n);
-    bcm2835_gpio_write(l_st.dir,l_n<0?LOW:HIGH);
-    bcm2835_gpio_write(s_st.dir,s_n<0?LOW:HIGH);
+    bcm2835_gpio_write(l_st.dir,l_n<0?HIGH:LOW);
+    bcm2835_gpio_write(s_st.dir,s_n<0?HIGH:LOW);
     for(x=b;0<x;x--){
         bcm2835_gpio_write(l_st.step,HIGH);
         if((m*s_c)<=l_c)bcm2835_gpio_write(s_st.step,HIGH);

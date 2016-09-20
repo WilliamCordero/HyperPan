@@ -35,6 +35,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/src/dummy/bcm_dummy.o \
 	${OBJECTDIR}/src/hyperpan.o \
 	${OBJECTDIR}/src/sphere.o \
 	${OBJECTDIR}/src/stepper.o \
@@ -65,6 +66,11 @@ LDLIBSOPTIONS=-lbcm2835
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/hyperpan: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.c} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/hyperpan ${OBJECTFILES} ${LDLIBSOPTIONS}
+
+${OBJECTDIR}/src/dummy/bcm_dummy.o: nbproject/Makefile-${CND_CONF}.mk src/dummy/bcm_dummy.c 
+	${MKDIR} -p ${OBJECTDIR}/src/dummy
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/dummy/bcm_dummy.o src/dummy/bcm_dummy.c
 
 ${OBJECTDIR}/src/hyperpan.o: nbproject/Makefile-${CND_CONF}.mk src/hyperpan.c 
 	${MKDIR} -p ${OBJECTDIR}/src

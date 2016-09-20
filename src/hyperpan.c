@@ -38,6 +38,7 @@
 #define PHI_MODE    32
 #define PHI_STEPS   200*8
 
+int x;
 int main(int argc,char**argv){
     trigger trigger;
     stepper rho,theta,phi;
@@ -50,10 +51,24 @@ int main(int argc,char**argv){
     theta=stepper_init(THETA_SLEEP,THETA_STEP,THETA_DIR,THETA_M0,THETA_M1,THETA_MODE,THETA_STEPS,"θ");
     phi=stepper_init(PHI_SLEEP,PHI_STEP,PHI_DIR,PHI_M0,PHI_M1,PHI_MODE,PHI_STEPS,"φ");  
     sphere=sphere_init(rho,theta,phi,"ο");
-    go(&sphere,0,90,270);
-    trigger_shot(trigger,500000);
-    go(&sphere,0,180,180);
-    trigger_shot(trigger,500000);
+
+//ALL READY.    
+#define SS 1200000
+//    for(x=3;x>0;x--){
+        
+    go(&sphere,0,50,0);
+    trigger_shot(trigger,SS);
+    go(&sphere,0,70,45);
+    trigger_shot(trigger,SS);
+    go(&sphere,0,90,90);
+    trigger_shot(trigger,SS);
+    go(&sphere,0,110,135);
+    trigger_shot(trigger,SS);
+    go(&sphere,0,120,180);
+    trigger_shot(trigger,SS);
+//    }
+    
+//GO OUT.
     go(&sphere,0,0,0);
     stepper_off(phi);
     stepper_off(theta);
