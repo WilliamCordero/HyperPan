@@ -35,16 +35,17 @@ int test(){
     double v=15.6; //a77ii=23.5x15.6 35mm=36x24
     double h=23.5;
     double d=sqrt((h*h)+(v*v));
-    double aov_v=r2d(2*atan(v/(2*f)));
+    double aov_v=16.3;//r2d(2*atan(v/(2*f)));
     double aov_h=r2d(2*atan(h/(2*f)));
     double aov_d=r2d(2*atan(d/(2*f)));
-    double a_v=45;//360/(1+floor(360/aov_v));
+    double a_v=360/(1+floor(360/aov_v));
     double a_h=360/(1+floor(360/aov_h));
-    double va=135;
+    double va=50;
     printf("\n  f=%fmm\n  v=%fmm\n  d=%fmm\naov_v=%f°\naov_h=%f°\naov_d=%f°\n  a_v=%f°\n  a_h=%f°\n\n",f,v,d,aov_v,aov_h,aov_d,a_v,a_h);
-    for(x=floor(va/a_v);0<x;x--){
+    for(x=0;x<=floor(va/a_v);x++){
+//        double shift=((va-(aov_v*floor(va/aov_v)))/2)-(va/2);
         double shift=((va-(aov_v*floor(va/aov_v)))/2)-(va/2);
-        double pos_phi=(x*aov_v)+((va-(aov_v*floor(va/aov_v))-va)/2);
+        double pos_phi=(aov_v*x)+shift;
         printf(" x=%i>  phi=%f shift=%f\n",x,pos_phi,shift);
     }
     /*
