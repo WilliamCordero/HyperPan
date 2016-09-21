@@ -21,6 +21,7 @@ typedef struct sphere{
 }sphere;
 sphere sphere_init(stepper rho,stepper theta,stepper phi,char *name);
 int go(sphere *sphere,double rho,double theta,double phi);
+int pos_reset(sphere *sphere);
 #ifdef __cplusplus
 }
 #endif

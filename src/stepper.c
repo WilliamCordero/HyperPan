@@ -25,6 +25,8 @@ stepper stepper_init(int sleep,int step,int dir,int m0,int m1,int mode,int steps
     bcm2835_gpio_write(dir,LOW);
     tmp.dir=dir;    
     tmp.m0=m0;    
+    bcm2835_gpio_fsel(m1,BCM2835_GPIO_FSEL_OUTP);
+    bcm2835_gpio_write(m1,LOW);
     tmp.m1=m1;
     tmp.mode=mode;
     tmp.steps=steps;
@@ -70,7 +72,7 @@ int stepper_on(stepper motor){
 int stepper_off(stepper motor){
     bcm2835_gpio_write(motor.sleep,LOW);
 }
-int pulse(stepper motor){
+/*int pulse(stepper motor){
         bcm2835_gpio_write(motor.step,HIGH);
         bcm2835_delayMicroseconds(PULSE);
         bcm2835_gpio_write(motor.step,LOW);
@@ -78,7 +80,7 @@ int pulse(stepper motor){
 }
 int stepper_walk(stepper motor,int dir,int n){
     for(;0<n;n--)pulse(motor);
-}
+}*/
 int stepper_walk_sync(stepper l_st,int l_n,stepper s_st,int s_n){
     int x,l_c=0,s_c=0,b=abs(l_n)/BORDER;
     double m=(double)abs(l_n)/(double)abs(s_n);

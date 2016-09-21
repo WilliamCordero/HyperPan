@@ -4,6 +4,7 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <itemPath>src/camera.h</itemPath>
       <itemPath>src/sphere.h</itemPath>
       <itemPath>src/stepper.h</itemPath>
       <itemPath>src/trigger.h</itemPath>
@@ -17,6 +18,7 @@
                    displayName="Source Files"
                    projectFiles="true">
       <itemPath>src/dummy/bcm_dummy.c</itemPath>
+      <itemPath>src/camera.c</itemPath>
       <itemPath>src/hyperpan.c</itemPath>
       <itemPath>src/sphere.c</itemPath>
       <itemPath>src/stepper.c</itemPath>
@@ -44,6 +46,10 @@
           </linkerLibItems>
         </linkerTool>
       </compileType>
+      <item path="src/camera.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="src/camera.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/dummy/bcm_dummy.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="src/hyperpan.c" ex="false" tool="0" flavor2="0">
@@ -94,6 +100,10 @@
           <commandLine>-lm</commandLine>
         </linkerTool>
       </compileType>
+      <item path="src/camera.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="src/camera.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/dummy/bcm_dummy.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="src/hyperpan.c" ex="false" tool="0" flavor2="0">
@@ -134,6 +144,10 @@
           </linkerLibItems>
         </linkerTool>
       </compileType>
+      <item path="src/camera.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="src/camera.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/dummy/bcm_dummy.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="src/hyperpan.c" ex="false" tool="0" flavor2="9">

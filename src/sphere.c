@@ -36,3 +36,4 @@ int go(sphere *sphere,double rho,double theta,double phi){
     sphere->phi=phi;sphere->s_phi=n_phi;
     stepper_walk_sync(sphere->st_theta,d_theta,sphere->st_phi,d_phi);
 }
+int pos_reset(sphere *sphere){sphere->rho=sphere->theta=sphere->phi=sphere->s_rho=sphere->s_theta=sphere->s_phi=0;}
