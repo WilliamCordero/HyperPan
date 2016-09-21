@@ -128,6 +128,11 @@
             <Elem>_GNU_SOURCE</Elem>
           </preprocessorList>
         </cTool>
+        <linkerTool>
+          <linkerLibItems>
+            <linkerLibStdlibItem>Mathematics</linkerLibStdlibItem>
+          </linkerLibItems>
+        </linkerTool>
       </compileType>
       <item path="src/dummy/bcm_dummy.c" ex="false" tool="0" flavor2="0">
       </item>
