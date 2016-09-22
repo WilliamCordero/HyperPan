@@ -35,6 +35,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/src/camera.o \
 	${OBJECTDIR}/src/dummy/bcm_dummy.o \
 	${OBJECTDIR}/src/hyperpan.o \
 	${OBJECTDIR}/src/sphere.o \
@@ -66,6 +67,11 @@ LDLIBSOPTIONS=-lm
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/hyperpan: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.c} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/hyperpan ${OBJECTFILES} ${LDLIBSOPTIONS}
+
+${OBJECTDIR}/src/camera.o: nbproject/Makefile-${CND_CONF}.mk src/camera.c 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} "$@.d"
+	$(COMPILE.c) -g -DBCM_DUMMY -D_GNU_SOURCE -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/camera.o src/camera.c
 
 ${OBJECTDIR}/src/dummy/bcm_dummy.o: nbproject/Makefile-${CND_CONF}.mk src/dummy/bcm_dummy.c 
 	${MKDIR} -p ${OBJECTDIR}/src/dummy
