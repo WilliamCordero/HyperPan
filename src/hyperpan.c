@@ -53,12 +53,8 @@ int main(int argc,char**argv){
         "ο");
     camera=camera_init(&sphere,trigger_init(MF,0,"μ"),"δ");
 
-    v_shot(35,15.6,23.5,60,60);
 //ALL READY.    
-//    for(x=3;x>0;x--){
-//    go(&sphere,0,90,90);
-//    trigger_shot(trigger,SS);
-//    }
+    v_shot(&camera,35,15.6,23.5,60,60);    
     
 //GO OUT.
     camera_off(&camera);

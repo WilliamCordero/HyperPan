@@ -14,7 +14,7 @@ typedef struct camera{
 }camera;
 camera camera_init(sphere *sphere,trigger trigger,char *name);
 int camera_off(camera *camera);
-int v_shot(double f,double v,double h,double vv,double vh);
+int v_shot(camera *camera,double f,double v,double h,double vv,double vh);
 #ifdef __cplusplus
 }
 #endif
