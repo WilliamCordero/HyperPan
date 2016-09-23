@@ -31,8 +31,8 @@ double r2d(double r){return r*(180/M_PI);}
 double d2r(double d){return d*(M_PI/180);}
 int v_shot(camera *camera,double f,double v,double h,double vv,double vh){
     int x,y;char *msj;
-    double  a_v=r2d(2*atan( v/(2*f)));
-    double  a_h=r2d(2*atan( h/(2*f)));
+    double  a_v=(3*(r2d(2*atan( v/(2*f)))/4));
+    double  a_h=(3*(r2d(2*atan( h/(2*f)))/4));
     double va_v=r2d(2*atan(vv/(2*f)));
     double va_h=r2d(2*atan(vh/(2*f)));
     asprintf(&msj,"%s:     focal: %fmm",camera->name,f);verbose(L_ACCT,msj);free(msj);
@@ -45,6 +45,7 @@ int v_shot(camera *camera,double f,double v,double h,double vv,double vh){
         for(x=0;x<=floor(va_v/(a_v/cos(d2r(pos_theta))));x++){
             double pos_phi=(((a_v/cos(d2r(pos_theta)))*((x*2)-floor(va_v/(a_v/cos(d2r(pos_theta))))))/2);
             go(camera->sphere,0,pos_theta,pos_phi);
+            trigger_shot(camera->trigger,SS);
         }
     }
 }
