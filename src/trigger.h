@@ -8,7 +8,7 @@ extern "C" {
 #endif
 #define SHUTTER 17
 #define FOCUS   4
-#define SPEED   1000
+#define SPEED   750000
 #define AF      1    
 #define MF      0    
 typedef struct trigger{

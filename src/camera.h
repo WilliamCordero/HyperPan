@@ -6,7 +6,7 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
-#define SS 750000
+#define OFFSET 90
 typedef struct camera{
     trigger trigger;
     sphere *sphere;
@@ -14,7 +14,7 @@ typedef struct camera{
 }camera;
 camera camera_init(sphere *sphere,trigger trigger,char *name);
 int camera_off(camera *camera);
-int v_shot(camera *camera,double f,double v,double h,double vv,double vh);
+int virtual_shot(camera *camera,double f,double v,double h,double o,double vv,double vh);
 #ifdef __cplusplus
 }
 #endif

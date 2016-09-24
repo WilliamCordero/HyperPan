@@ -54,7 +54,7 @@ int main(int argc,char**argv){
     camera=camera_init(&sphere,trigger_init(MF,0,"μ"),"δ");
 
 //ALL READY.    
-    v_shot(&camera,28,15.6,23.5,60,60);    
+    virtual_shot(&camera,28,15.6,23.5,0.375,60,60);    
     
 //GO OUT.
     camera_off(&camera);
