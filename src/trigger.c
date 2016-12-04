@@ -35,7 +35,7 @@ int trigger_shot(trigger trigger,int speed){
     }
     asprintf(&msj,"%s: Shoot: %iμs.",trigger.name,speed?speed:trigger.shutter_speed);
     verbose(L_TRGR,msj);free(msj);
-    bcm2835_delayMicroseconds(7*1000000);
+    //bcm2835_delayMicroseconds(7*1000000);
     bcm2835_gpio_write(trigger.shutter,HIGH);
     bcm2835_delayMicroseconds(speed?speed:trigger.shutter_speed);
     bcm2835_gpio_write(trigger.shutter,LOW);
