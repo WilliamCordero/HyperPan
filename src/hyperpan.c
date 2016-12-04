@@ -43,8 +43,8 @@ int x;
 int main(int argc,char**argv){
     sphere sphere;
     camera camera;
+    if(!bcm2835_init())error("Broadcom BCM 2835");
     verbose_init(argc,argv);
-    if(!bcm2835_init())return 1;
     verbose(L_FALL,"α:");alert_led();
     sphere=sphere_init(
         stepper_init(RHO_SLEEP,RHO_STEP,RHO_DIR,RHO_M0,RHO_M1,RHO_MODE,RHO_STEPS,"ρ"),
@@ -54,8 +54,13 @@ int main(int argc,char**argv){
     camera=camera_init(&sphere,trigger_init(MF,0,"μ"),"δ");
 
 //ALL READY.
-    printf("\n\n%d, %6.1f, %6.1f, %6.1f, %6.4f, %s\n\n\n",verbose_l,focal,width,height,overlap,file);
-    virtual_shot(&camera,focal,width,height,overlap,60,60);    
+//    printf("\n=\n= v:%d f:%f w:%f h:%f o:%f file:%s\n=\n\n",verbose_l,focal,width,height,overlap,file);
+    switch(action){
+        case ACT_VIRTUAL:
+            virtual_shot(&camera,focal,width,height,overlap,vwidth,vheight);break;
+        case ACT_XXX:
+            break;
+    }
     
 //GO OUT.
     camera_off(&camera);

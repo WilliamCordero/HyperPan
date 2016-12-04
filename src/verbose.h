@@ -10,19 +10,24 @@ extern "C" {
 #define ALERT_BLINK 20000
 #define L_NONE 0
 #define L_FALL 1
-#define L_POSS 3
+#define L_POSS 2
 #define L_ACCT 4
-#define L_TRGR 5
-#define L_ALL 10
-#define D_LEVEL   "3"    
-#define D_FOCAL   "35"
-#define D_WIDTH   "15.6"
-#define D_HEIGHT  "23.5"
-#define D_OVERLAP "0.375"
+#define L_TRGR 8
+#define L_ALL 16
+#define D_LEVEL   3
+#define D_FOCAL   50.0
+#define D_WIDTH   15.6
+#define D_HEIGHT  23.5
+#define D_OVERLAP  0.375
+#define D_VWIDTH  60.0
+#define D_VHEIGHT 60.0
 #define D_FILE    "out"
-#define MAX_ARGL 30    
+//#define MAX_ARGL 30
+#define ACT_VIRTUAL 1
+#define ACT_XXX     2    
 int verbose_l;
-double focal,width,height,overlap;
+int dummy,action;
+double focal,width,height,overlap,vwidth,vheight;
 char *file;
 int verbose(int level,char *msj);
 int warning(char *msj);
