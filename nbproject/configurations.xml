@@ -169,5 +169,49 @@
       <item path="src/verbose.h" ex="false" tool="3" flavor2="0">
       </item>
     </conf>
+    <conf name="Simone" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>true</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <preprocessorList>
+            <Elem>BCM_DUMMY</Elem>
+            <Elem>_GNU_SOURCE</Elem>
+          </preprocessorList>
+        </cTool>
+        <linkerTool>
+          <linkerLibItems>
+            <linkerLibStdlibItem>Mathematics</linkerLibStdlibItem>
+          </linkerLibItems>
+        </linkerTool>
+      </compileType>
+      <item path="src/camera.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="src/camera.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/dummy/bcm_dummy.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="src/hyperpan.c" ex="false" tool="0" flavor2="9">
+      </item>
+      <item path="src/sphere.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="src/sphere.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/stepper.c" ex="false" tool="0" flavor2="9">
+      </item>
+      <item path="src/stepper.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/trigger.c" ex="false" tool="0" flavor2="9">
+      </item>
+      <item path="src/trigger.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/verbose.c" ex="false" tool="0" flavor2="9">
+      </item>
+      <item path="src/verbose.h" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
   </confs>
 </configurationDescriptor>

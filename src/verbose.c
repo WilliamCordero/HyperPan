@@ -94,10 +94,9 @@ int verbose_init(int argc,char**argv){
     overlap=atof(args.overlap);
     vwidth=atof(args.vwidth);
     vheight=atof(args.vheight);
-//    asprintf(&action,"%s",args.action);
     asprintf(&file,"%s",args.file);
          if(!strcmp(args.action,"virtual"))action=ACT_VIRTUAL;
-    else if(!strcmp(args.action,"xxx"))   action=ACT_XXX;
+    else if(!strcmp(args.action,"xxx"))    action=ACT_XXX;
     else error("Invalid Action.");
 }
 int verbose(int level,char *msj){

@@ -52,7 +52,6 @@ int main(int argc,char**argv){
         stepper_init(PHI_SLEEP,PHI_STEP,PHI_DIR,PHI_M0,PHI_M1,PHI_MODE,PHI_STEPS,"φ"),
         "ο");
     camera=camera_init(&sphere,trigger_init(MF,0,"μ"),"δ");
-
 //ALL READY.
 //    printf("\n=\n= v:%d f:%f w:%f h:%f o:%f file:%s\n=\n\n",verbose_l,focal,width,height,overlap,file);
     switch(action){
@@ -61,7 +60,6 @@ int main(int argc,char**argv){
         case ACT_XXX:
             break;
     }
-    
 //GO OUT.
     camera_off(&camera);
     verbose(L_FALL,"ω:");alert_led();
