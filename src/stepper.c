@@ -31,8 +31,8 @@ stepper stepper_init(int sleep,int step,int dir,int m0,int m1,int mode,int steps
     tmp.mode=mode;
     tmp.steps=steps;
     asprintf(&tmp.name,"%s",name);
-    asprintf(&msj,"%s: init().",tmp.name);
-    verbose(L_FALL,msj);free(msj);
+    asprintf(&msj,"%s: init()",tmp.name);
+    verbose(L_INFO,msj);free(msj);
     stepper_mode(tmp,mode);
     stepper_on(tmp);
     return tmp;

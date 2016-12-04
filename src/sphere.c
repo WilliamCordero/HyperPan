@@ -13,8 +13,8 @@ sphere sphere_init(stepper rho,stepper theta,stepper phi,char *name){
     tmp.rho=tmp.theta=tmp.phi=tmp.s_rho=tmp.s_theta=tmp.s_phi=0;
     tmp.st_rho=rho;tmp.st_theta=theta;tmp.st_phi=phi;
     asprintf(&tmp.name,"%s",name);
-    asprintf(&msj,"%s: init().",tmp.name);
-    verbose(L_FALL,msj);free(msj);
+    asprintf(&msj,"%s: init()",tmp.name);
+    verbose(L_INFO,msj);free(msj);
     return tmp;
 }
 int go(sphere *sphere,double rho,double theta,double phi){
@@ -31,7 +31,7 @@ int go(sphere *sphere,double rho,double theta,double phi){
     d_phi=(((-1*md_phi)<=(d_phi=n_phi-sphere->s_phi))&&((md_phi)>=(d_phi=n_phi-sphere->s_phi)))?d_phi:((d_phi<0?1:-1)*((md_phi*2)-abs(d_phi)));
 //    asprintf(&msj,"%s: (%i,%i,%i)<>(%i,%i,%i).",sphere->name,sphere->s_rho,sphere->s_theta,sphere->s_phi,n_rho,n_theta,n_phi);
 //    asprintf(&msj,"%s: ( %4.2f, %7.2f,%7.2f )( %4.2f, %7.2f, %7.2f ).",sphere->name,sphere->rho,sphere->theta,sphere->phi,rho,theta,phi);
-    asprintf(&msj,"%s: %4.2f, %7.2f,%7.2f.",sphere->name,rho,theta,phi);
+    asprintf(&msj,"%s: %4.2f, %7.2f,%7.2f",sphere->name,rho,theta,phi);
     verbose(L_POSS,msj);free(msj);
     sphere->rho=rho;sphere->s_rho=n_rho;
     sphere->theta=theta;sphere->s_theta=n_theta;

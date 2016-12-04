@@ -43,9 +43,10 @@ int x;
 int main(int argc,char**argv){
     sphere sphere;
     camera camera;
+    args args;
     if(!bcm2835_init())error("Broadcom BCM 2835");
-    verbose_init(argc,argv);
-    verbose(L_FALL,"α:");alert_led();
+    args=verbose_init(argc,argv);
+    verbose(L_INFO,"α:");alert_led();
     sphere=sphere_init(
         stepper_init(RHO_SLEEP,RHO_STEP,RHO_DIR,RHO_M0,RHO_M1,RHO_MODE,RHO_STEPS,"ρ"),
         stepper_init(THETA_SLEEP,THETA_STEP,THETA_DIR,THETA_M0,THETA_M1,THETA_MODE,THETA_STEPS,"θ"),
@@ -53,16 +54,20 @@ int main(int argc,char**argv){
         "ο");
     camera=camera_init(&sphere,trigger_init(MF,0,"μ"),"δ");
 //ALL READY.
-//    printf("\n=\n= v:%d f:%f w:%f h:%f o:%f file:%s\n=\n\n",verbose_l,focal,width,height,overlap,file);
-    switch(action){
+    //printf("\n=\nv:%d\nf:%f\nw:%f\nh:%f\no:%f\nx:%f\ny:%f\nfile:%s\nd:%d\na:%d\n=\n\n",args.level,args.focal,args.width,args.height,args.overlap,args.vwidth,args.vheight,args.file,args.dummy,args.action);
+    switch(args.action){
         case ACT_VIRTUAL:
-            virtual_shot(&camera,focal,width,height,overlap,vwidth,vheight);break;
+            virtual_shot(&camera,args.focal,args.width,args.height,args.overlap,args.vwidth,args.vheight);break;
+        case ACT_SPHERE:
+            verbose(L_INFO,"Not Implemented");
+            break;
         case ACT_XXX:
+            verbose(L_INFO,"Not Implemented");
             break;
     }
 //GO OUT.
     camera_off(&camera);
-    verbose(L_FALL,"ω:");alert_led();
+    verbose(L_INFO,"ω:");alert_led();
     bcm2835_close();
     return 0;
 }

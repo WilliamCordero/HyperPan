@@ -15,8 +15,8 @@ camera camera_init(sphere *sphere,trigger trigger,char *name){
     tmp.sphere=sphere;
     tmp.trigger=trigger;
     asprintf(&tmp.name,"%s",name);
-    asprintf(&msj,"%s: init().",tmp.name);
-    verbose(L_FALL,msj);free(msj);
+    asprintf(&msj,"%s: init()",tmp.name);
+    verbose(L_INFO,msj);free(msj);
     return tmp;
 }
 int camera_off(camera *camera){
@@ -32,14 +32,14 @@ int virtual_shot(camera *camera,double f,double v,double h,double o,double vv,do
     double  a_h=r2d(2*atan( h/(2*f)));
     double va_v=r2d(2*atan(vv/(2*f)));
     double va_h=r2d(2*atan(vh/(2*f)));
-    asprintf(&msj,"%s:     focal: %6.2f mm",camera->name,f);verbose(L_FALL,msj);free(msj);
-    asprintf(&msj,"%s: υ: sensor: %6.2f • %6.2f mm",camera->name,h,v);verbose(L_FALL,msj);free(msj);
-    asprintf(&msj,"%s: υ:      α: %6.2f • %6.2f °",camera->name,a_v,a_h);verbose(L_FALL,msj);free(msj);
+    asprintf(&msj,"%s:     focal: %6.2f mm",camera->name,f);verbose(L_INFO,msj);free(msj);
+    asprintf(&msj,"%s: υ: sensor: %6.2f • %6.2f mm",camera->name,h,v);verbose(L_INFO,msj);free(msj);
+    asprintf(&msj,"%s: υ:      α: %6.2f • %6.2f °",camera->name,a_v,a_h);verbose(L_INFO,msj);free(msj);
     a_v=a_v*(1-(o/2));a_h=a_h*(1-(o/2));
-    asprintf(&msj,"%s: υ:     α': %6.2f • %6.2f °",camera->name,a_v,a_h);verbose(L_FALL,msj);free(msj);
-    asprintf(&msj,"%s: υ:      Ξ: %6.3f",camera->name,o);verbose(L_FALL,msj);free(msj);
-    asprintf(&msj,"%s: ν: sensor: %6.2f • %6.2f mm",camera->name,vh,vv);verbose(L_FALL,msj);free(msj);
-    asprintf(&msj,"%s: ν:      α: %6.2f • %6.2f °",camera->name,va_v,va_h);verbose(L_FALL,msj);free(msj);
+    asprintf(&msj,"%s: υ:     α': %6.2f • %6.2f °",camera->name,a_v,a_h);verbose(L_INFO,msj);free(msj);
+    asprintf(&msj,"%s: υ:      Ξ: %6.3f",camera->name,o);verbose(L_INFO,msj);free(msj);
+    asprintf(&msj,"%s: ν: sensor: %6.2f • %6.2f mm",camera->name,vh,vv);verbose(L_INFO,msj);free(msj);
+    asprintf(&msj,"%s: ν:      α: %6.2f • %6.2f °",camera->name,va_v,va_h);verbose(L_INFO,msj);free(msj);
     go(camera->sphere,0,OFFSET,OFFSET);
     pos_reset(camera->sphere);
     for(y=0;y<=floor(va_h/a_h);y++){

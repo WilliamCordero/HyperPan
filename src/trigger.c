@@ -21,8 +21,8 @@ trigger trigger_init(int focus_mode,int focus_delay,char *name){
     tmp.focus_mode=focus_mode;
     tmp.focus_delay=focus_delay;
     asprintf(&tmp.name,"%s",name);
-    asprintf(&msj,"%s: init().",tmp.name);
-    verbose(L_FALL,msj);free(msj);
+    asprintf(&msj,"%s: init()",tmp.name);
+    verbose(L_INFO,msj);free(msj);
     return tmp;
 }
 int trigger_shot(trigger trigger,int speed){
