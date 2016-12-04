@@ -1,4 +1,4 @@
-#Sun Dec 04 02:36:02 CST 2016
+#Sun Dec 04 02:44:19 CST 2016
 c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\8b\\bc3b95068386df998b86bcd1cc1374fee08de1=c1474448343556
 c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\c3\\1acfb62da999e035e7321b702a5f4392d0a058=c1474448343540
 c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\f9\\fd4236e23143282be86300614cbf68b00c2a46=c1473061535199
@@ -32,7 +32,7 @@ c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\cf\\
 c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\03\\7d47bb2b81579d369841b684896a29d4552b48=c1473061535204
 c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\a8\\fef120adab24a5768c54e47353570df68cd7e9=c1473246913915
 c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\de\\4aec362a6d68022ac50d848393c35168272408=c1473069060381
-c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\logs\\head=c1480828457274
+c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\logs\\head=c1480840884509
 c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\0a\\100c5ed6b51a6cdb9d4bc476014cb7d3006ead=c1473061535252
 c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\30\\a9f75f735e739f6a7e0bbb3adc9b4941a92792=c1473240360869
 c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\pack\\pack-4f3e41bf54a248034beb834d15bc6e2c3bfae0a1.idx=c1474437966846
@@ -114,7 +114,7 @@ c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\0a\\
 c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\0e\\32dabb39dc53a397b569a350ba5ee40e3c6e23=c1473246913963
 c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\9d\\29538393aad2bdecf0b44f60e963a90a761941=c1473325339052
 c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\nbproject\\makefile-overlook.mk=c1474512920230
-c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\dist\\release\\gnu-linux\\hyperpan=c1480840489465
+c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\dist\\release\\gnu-linux\\hyperpan=c1480841053356
 c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\4f\\2bde37ca382006f796115357094755280d5851=c1473314898511
 c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\06\\c8c2dfc8d754af1822bcdcb97221412c8cc34d=c1473054715222
 c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\16\\faee5a7c77d500c1246dff547aabb0b9d66173=c1473061535185
@@ -149,6 +149,7 @@ c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\a1\\
 c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\2d\\b0a303a8a7f024c7b05b4e6c8ccb2003a3d546=c1474093769588
 c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\5c\\e66013d3162abe8bf786ea5acf3b7b93b1006b=c1474270278771
 c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\91\\2ce52e462d880d8953ec66488f8d4945c16415=c1473062722507
+c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\8f\\899cd84a6055edf5d5ebe6399d0af3b18cb7a0=c1480840884450
 c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\fa\\c9a938d23ca42d8ede913e2582c38880dbe963=c1473976803901
 c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\5a\\f55af556a9cc641722320d2bf82223533d27db=c1473278575262
 c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\ec\\b14e074ca982b840c841da64466c9575130b85=c1473057490516
@@ -171,7 +172,8 @@ c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\3d\\
 c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\ed\\099abbdb9de85dff7309dd309e0370f19cef77=c1473069060423
 c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\51\\3e50f4549b3619133a75062e2f268fc28f1354=c1473052540430
 c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\ed\\c845297c659654eadbe5b170b4aaf1ec886337=c1473236946233
-c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\index=c1480828457269
+c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\49\\4b9b5fcf911b133a597ed0e37f401a77692ecb=c1480840884441
+c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\index=c1480840884515
 c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\48\\bffcec59bb3967c32cedd7a5e0db90e2e62850=c1473314898453
 c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\52\\6b9f7d35fe1595856cbda8ebee5ff6c2b44331=c1473236933599
 c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.gitignore=c1473925816964
@@ -184,12 +186,15 @@ c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\ea\\
 c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\c5\\c0bbd821c13be202c5eb2bd0dedeed39ce01be=c1473396256690
 c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\head=c1473051593275
 c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\nbproject\\private\\makefile-variables.mk=c1473925816985
+c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\ec\\0ce559bbfb95bb85b30a5d728a360ba397ddb3=c1480840884434
 c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\25\\0a938430792abed5159e559394c3bc5dadcb20=c1473236933569
+c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\28\\617ddf71ff42d6caa27b26d26b5e9817bfbc46=c1480840884446
 c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\6b\\63469b8b7d1ad402349eda1175681cdd12a3a2=c1473943555066
 c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\fe\\341747d8f659aa1c9d82b2770535fc8cbb4f69=c1473054715197
 c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\35\\26642cea0db4565cb9a77a4426319114524f48=c1473054715229
 c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\4e\\45bbc87810f15b12582e6d128c38956724c7a6=c1474361365603
 c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\17\\4f79564dc0c44e7916d73e7c953e5afed1b346=c1473278575266
+c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\56\\7abcf2bb2b8c5d9dbeea852357eff3c0a0ce3d=c1480840884496
 c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\64\\620a69d73cbd373bf0501d48baae2d0d8ad804=c1473062722472
 c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\f5\\4cb9e971a2c66eef8d79861fff5071aa640633=c1473064800391
 c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\1f\\49c2139e5a2ed7f2f04397897164ea7ad50991=c1473240291753
@@ -221,6 +226,7 @@ c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\pack
 c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\09\\5e429c3ee7643b7a67e03b92c677d3c2bd8112=c1473236933584
 c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\6d\\11cd4eb162aede141de5f306d37bb682200178=c1473396256720
 c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\79\\2e503fcac725efe6e92fd66c4913fc208924bb=c1474448343523
+c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\52\\ec06404c0b22cc070ecd3217591988b5cb553c=c1480840884492
 c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\8f\\18f3f7d3736ed511883f7e883a8f81422ce4bb=c1473236933590
 c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\e1\\030b8c1eb362d1b65fb7e9f692f3ea19b586bd=c1473052540449
 c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\38\\6d8df7d94217b2862f6c7ba7d8dbc59045bf83=c1473246913974
@@ -269,12 +275,14 @@ c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\75\\
 c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\pack\\pack-9d062a52d41a64bfff7f9cb3f37db71cf3c28d2d.pack=c1473923352712
 c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\47\\2b3713394142305e9a8ac2d4beee98c145b788=c1473397563487
 c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\f1\\a77aa47d925cddf934298ec5305ba1c6c3a12f=c1474111319898
+c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\83\\ead56ceaac35f015dabba600f3e781c8356422=c1480840884484
 c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\48\\c24965b1d51a62390799a703cd84c388c08799=c1474311389039
 c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\49\\2f38248bf1b71e3e9cee12a8e75bbac81e3436=c1474276079163
 c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\59\\76208a0d9d51b4cf5cfc795cd2214c579ad6de=c1473057490482
 c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\57\\b571dce236f505dc8bc480523e50bf00a36aa1=c1473054336390
 c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\40\\39bf7da1a67e6c442bc030d9b6601d4a33f6d0=c1473397563490
 c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\c9\\0ba748ae8744e43c4627704eb942332700f980=c1474270368411
+c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\50\\fc5f60786cc8c33b7d142875a78d1deb788a45=c1480840884500
 c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\2d\\79bfaddaeaaaaa91896145a1badf0e18af6dbd=c1474008795896
 c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\ee\\c377bf531c4f82ff969fb30a41862b1038c5ad=c1474624463775
 c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\47\\1ea5728732179b1f1e46c0fc6f65038d8f9ddd=c1473064800451
@@ -306,9 +314,9 @@ c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\a5\\
 c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\src\\hyperpan.h=c1473232016460
 c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\54\\18217ad7c8a9c5dfc586c5dc713af4d7fc3c3d=c1474471380230
 c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\56\\62da30bb8a37e7385345a4ea4b42d5274f7481=c1473239583430
-c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\logs\\refs\\heads\\master=c1480828457277
+c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\logs\\refs\\heads\\master=c1480840884512
 c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\cb\\4e254e8f3d52bf2c5e572a828226d2aa984c7c=c1473246913960
-c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\src\\hyperpan.c=c1480840556966
+c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\src\\hyperpan.c=c1480840758015
 c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\32\\867841f1e394753ce11d015a882fa1a16c2ca2=c1473057490502
 c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\bf\\f3dacb75ca6599ded960c3977fe8308d392310=c1473059593643
 c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\d7\\7f45d23891a3a649856ad42d1833d4af5d1589=c1473069060369
@@ -390,7 +398,7 @@ c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\1c\\
 c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\2b\\75c95bc8d581347162726c6ea19d88487710bf=c1473397563475
 c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\06\\717f727c36355e74c0d5006dcee6580addcf92=c1473062722476
 c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\2e\\6983db57f001abb6780c653941e50087e9e518=c1474475275696
-c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\refs\\heads\\master=c1480828457271
+c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\refs\\heads\\master=c1480840884506
 c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\pack\\pack-9d062a52d41a64bfff7f9cb3f37db71cf3c28d2d.idx=c1473923352712
 c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\d2\\1bbf3eadcf59de72005e0ded64fae397396d11=c1473236933575
 c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\95\\959a4351fb4395cd9f5833b7cff57fe6a12c7b=c1473240360866
@@ -401,6 +409,7 @@ c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\2e\\
 c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\12\\4e453b2a264d2b609018603d569c89d870efab=c1474093769555
 c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\12\\2ee7074097356606615e3173dc3690edd68442=c1473064800438
 c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\5c\\9a6f790a2551faceecdb3226ee087a2eaad424=c1473052540452
+c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\4f\\9d0a0eac979506cad3afbdd9895401b6956006=c1480840884488
 c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\pack\\pack-4f3e41bf54a248034beb834d15bc6e2c3bfae0a1.pack=c1474437966842
 c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\c9\\b0e9766fc4bad0babc26cda0567ea074dce932=c1474704334566
 c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\src\\camera.h=c1474668771528
@@ -473,6 +482,7 @@ c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\46\\
 c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\01\\10d9640ad3bda144706987d79844492c155fd9=c1473240360887
 c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\2e\\90ed2b8943c503d73740dfb82a0063a6061fed=c1473239583463
 c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\bf\\66d12a4ec6720061b948d8ea0a19eab9840151=c1474276079186
+c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\9c\\003038b851f583f571c566d01947e754e36f4a=c1480840884454
 c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\makefile=c1474270346341
 c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\ce\\48e1c270360b20a08bfaade2c435c0f70fdbc8=c1473325339020
 c\:\\users\\wcordero\\documents\\netbeansprojects\\hyperpan\\.git\\objects\\e7\\743cd2e8799ad0c090b990f65618003afd7a6f=c1474448343588
