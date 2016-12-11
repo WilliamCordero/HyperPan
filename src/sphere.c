@@ -10,7 +10,9 @@
 #include "sphere.h"
 sphere sphere_init(stepper rho,stepper theta,stepper phi,char *name){
     sphere tmp;char *msj;
-    tmp.rho=tmp.theta=tmp.phi=tmp.s_rho=tmp.s_theta=tmp.s_phi=0;
+    tmp.rho=tmp.s_rho=0;
+    tmp.theta=tmp.phi=OFFSET;
+    tmp.s_theta=tmp.s_phi=OFFSET*(STEPS_LOOP/360.0);
     tmp.st_rho=rho;tmp.st_theta=theta;tmp.st_phi=phi;
     asprintf(&tmp.name,"%s",name);
     asprintf(&msj,"%s: init()",tmp.name);
@@ -36,6 +38,20 @@ int go(sphere *sphere,double rho,double theta,double phi){
     sphere->rho=rho;sphere->s_rho=n_rho;
     sphere->theta=theta;sphere->s_theta=n_theta;
     sphere->phi=phi;sphere->s_phi=n_phi;
-    stepper_walk_sync(sphere->st_theta,d_theta,sphere->st_phi,d_phi);
+//    printf("pulse=%d\n",args.pulse);
+//    stepper_walk(sphere->st_theta,d_theta,sphere->st_phi,d_phi,args->pulse,args->accel,args->border);
+    stepper_walk(sphere->st_theta,d_theta,sphere->st_phi,d_phi,pulse,accel,border);
+    
 }
 int pos_reset(sphere *sphere){sphere->rho=sphere->theta=sphere->phi=sphere->s_rho=sphere->s_theta=sphere->s_phi=0;}
+
+/*
+int pos_offset(sphere *sphere,double o_rho,double o_theta,double o_phi){
+    sphere->rho=sphere->rho+o_rho;
+    sphere->theta=sphere->theta+o_theta;
+    sphere->phi=sphere->phi+o_phi;
+    sphere->s_rho=sphere->s_rho+()
+    sphere->s_theta=
+    sphere->s_phi=0;
+}
+ */

@@ -24,8 +24,9 @@ static struct argp_option options[]={
   {"overlap",'o',"OVERLAP",0,"Overlap area(Def:0.375)"},
   {"vwidth",'x',"VWIDTH",0,"Virtual sensor width(Def:60mm)"},
   {"vheight",'y',"VHEIGHT",0,"Virtual sensor height(Def:60mm)"},
+  {"sloth",'s',0,0,"Less vibration"},
   {"dummy",'d',0,0,"Mock-up behaviour"},
-  {"save",'s',"FILE",0,"Save to file"},
+//  {"save",'s',"FILE",0,"Save to file"},
   {0}
 };
 static error_t parse_opt(int key,char *arg,struct argp_state *state){
@@ -48,7 +49,10 @@ static error_t parse_opt(int key,char *arg,struct argp_state *state){
     case 'y':
       args->vheight=atof(arg);break;
     case 's':
-      args->file=arg;break;
+        args->pulse=PULSE_SLOTH;
+        args->accel=ACCEL_SLOTH;
+        args->border=BORDER_SLOTH;
+  //    args->file=arg;break;
     case 'd':
       args->dummy=1;break;        
     case ARGP_KEY_ARG:
@@ -56,6 +60,10 @@ static error_t parse_opt(int key,char *arg,struct argp_state *state){
           args->action=arg;
                if(!strcmp(arg,"virtual"))args->action=ACT_VIRTUAL;
           else if(!strcmp(arg,"sphere")) args->action=ACT_SPHERE;
+          else if(!strcmp(arg,"35"))     args->action=ACT_35;
+          else if(!strcmp(arg,"6x6"))    args->action=ACT_6x6;
+          else if(!strcmp(arg,"6x9"))    args->action=ACT_6x9;
+          else if(!strcmp(arg,"9x6"))    args->action=ACT_9x6;
           else if(!strcmp(arg,"xxx"))    args->action=ACT_XXX;
           else argp_usage(state);//error("Invalid Action.");
      }if(state->arg_num>0)argp_usage(state);
@@ -79,9 +87,15 @@ args verbose_init(int argc,char**argv){
     args.vwidth=D_VWIDTH;
     args.vheight=D_VHEIGHT;
     args.dummy=D_DUMMY;
+    args.pulse=PULSE_DEF;
+    args.accel=ACCEL_DEF;
+    args.border=BORDER_DEF;
     asprintf(&args.file,"%s",D_FILE);
     argp_parse(&argp,argc,argv,0,0,&args);
     verbose_l=args.level;
+    pulse=args.pulse;
+    accel=args.accel;
+    border=args.border;
      return args;
 }
 int verbose(int level,char *msj){

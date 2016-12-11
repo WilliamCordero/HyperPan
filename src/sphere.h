@@ -7,6 +7,7 @@
 extern "C" {
 #endif
 #define STEPS_LOOP 51200 //200*8*32
+#define OFFSET     -90
 typedef struct sphere{
     int s_rho;
     int s_theta;

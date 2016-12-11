@@ -20,6 +20,7 @@ camera camera_init(sphere *sphere,trigger trigger,char *name){
     return tmp;
 }
 int camera_off(camera *camera){
+    go(camera->sphere,0,OFFSET,OFFSET);
     stepper_off(camera->sphere->st_rho);
     stepper_off(camera->sphere->st_theta);
     stepper_off(camera->sphere->st_phi);
@@ -40,15 +41,12 @@ int virtual_shot(camera *camera,double f,double v,double h,double o,double vv,do
     asprintf(&msj,"%s: υ:      Ξ: %6.3f",camera->name,o);verbose(L_INFO,msj);free(msj);
     asprintf(&msj,"%s: ν: sensor: %6.2f • %6.2f mm",camera->name,vh,vv);verbose(L_INFO,msj);free(msj);
     asprintf(&msj,"%s: ν:      α: %6.2f • %6.2f °",camera->name,va_v,va_h);verbose(L_INFO,msj);free(msj);
-    go(camera->sphere,0,OFFSET,OFFSET);
-    pos_reset(camera->sphere);
     for(y=0;y<=floor(va_h/a_h);y++){
         double pos_theta=((a_h*((y*2)-floor(va_h/a_h)))/2); 
         for(x=0;x<=floor(va_v/(a_v/cos(d2r(pos_theta))));x++){
             double pos_phi=(((a_v/cos(d2r(pos_theta)))*((x*2)-floor(va_v/(a_v/cos(d2r(pos_theta))))))/2);
-            go(camera->sphere,0,pos_theta,pos_phi);
+            go(camera->sphere,0,pos_theta,(y%2==0?pos_phi:-pos_phi));
             trigger_shot(camera->trigger,0);
         }
     }
-    go(camera->sphere,0,-OFFSET,-OFFSET);
 }

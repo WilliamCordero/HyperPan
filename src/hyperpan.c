@@ -24,18 +24,18 @@
 #define RHO_M1      23
 #define RHO_MODE    32
 #define RHO_STEPS   200*8
-#define THETA_SLEEP 22
-#define THETA_STEP  27
-#define THETA_DIR   18
-#define THETA_M0    24
-#define THETA_M1    23
+#define THETA_SLEEP 12
+#define THETA_STEP  6
+#define THETA_DIR   5
+#define THETA_M0    16
+#define THETA_M1    13
 #define THETA_MODE  32
 #define THETA_STEPS 200*8
-#define PHI_SLEEP   12
-#define PHI_STEP    6
-#define PHI_DIR     5
-#define PHI_M0      16
-#define PHI_M1      13
+#define PHI_SLEEP   22
+#define PHI_STEP    27
+#define PHI_DIR     18
+#define PHI_M0      24
+#define PHI_M1      23
 #define PHI_MODE    32
 #define PHI_STEPS   200*8
 
@@ -58,6 +58,14 @@ int main(int argc,char**argv){
     switch(args.action){
         case ACT_VIRTUAL:
             virtual_shot(&camera,args.focal,args.width,args.height,args.overlap,args.vwidth,args.vheight);break;
+        case ACT_35:
+            virtual_shot(&camera,args.focal,args.width,args.height,args.overlap,24,36);break;
+        case ACT_6x6:
+            virtual_shot(&camera,args.focal,args.width,args.height,args.overlap,60,60);break;
+        case ACT_6x9:
+            virtual_shot(&camera,args.focal,args.width,args.height,args.overlap,60,90);break;
+        case ACT_9x6:
+            virtual_shot(&camera,args.focal,args.width,args.height,args.overlap,90,60);break;
         case ACT_SPHERE:
             verbose(L_INFO,"Not Implemented");
             break;
@@ -66,6 +74,7 @@ int main(int argc,char**argv){
             break;
     }
 //GO OUT.
+    printf("sloth=%d\n",args.pulse);
     camera_off(&camera);
     verbose(L_INFO,"ω:");alert_led();
     bcm2835_close();
