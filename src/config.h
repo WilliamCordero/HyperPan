@@ -6,55 +6,55 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
-//Steppers Configuration
+//STEPPER CONFIGURATION
 #define RHO_SLEEP   22    //GPIO 22
 #define RHO_STEP    27    //GPIO 27
 #define RHO_DIR     18    //GPIO 18
 #define RHO_M0      24    //GPIO 24
 #define RHO_M1      23    //GPIO 23
-#define RHO_MODE    32    //MICROSTEP MODE
+#define RHO_MODE    32    //MICROSTEP MODE 1/32
 #define RHO_STEPS   200*8 //STEPS PER ROTATION
 #define THETA_SLEEP 12    //GPIO 12
 #define THETA_STEP  6     //GPIO 6
 #define THETA_DIR   5     //GPIO 5
 #define THETA_M0    16    //GPIO 16
 #define THETA_M1    13    //GPIO 13
-#define THETA_MODE  32    //MICROSTEP MODE
+#define THETA_MODE  32    //MICROSTEP MODE 1/32
 #define THETA_STEPS 200*8 //STEPS PER ROTATION
 #define PHI_SLEEP   22    //GPIO 22
 #define PHI_STEP    27    //GPIO 27
 #define PHI_DIR     18    //GPIO 18
 #define PHI_M0      24    //GPIO 24
 #define PHI_M1      23    //GPIO 23
-#define PHI_MODE    32    //MICROSTEP MODE
+#define PHI_MODE    32    //MICROSTEP MODE 1/32
 #define PHI_STEPS   200*8 //STEPS PER ROTATION
-//Alert LED
+//ALERT LED
 #define ALERT_GPIO  21    //GPIO 21
 #define ALERT_BLINK 20000 //MILISEC
-//Trigger Config
+//TRIGGER CONFIGURATION
 #define SHUTTER     17    //GPIO 17
 #define FOCUS       4     //GPIO 4
-#define SPEED   750000
-#define AF      1    
-#define MF      0    
-//Verbose Levels
+#define SPEED       750000
+#define AF          1    
+#define MF          0    
+//VERVOSE LEVELS
 #define L_NONE 0b00000000
 #define L_INFO 0b00000001
 #define L_POSS 0b00000010
 #define L_ACCT 0b00000100
 #define L_TRGR 0b00001000
 #define L_ALL  0b00010000
-//Defaults ARGS
-#define D_LEVEL   3
-#define D_FOCAL   50.0
-#define D_WIDTH   15.6
-#define D_HEIGHT  23.5
-#define D_OVERLAP 0.375
-#define D_VWIDTH  60.0
-#define D_VHEIGHT 60.0
-#define D_FILE    "out"
-#define D_DUMMY   0
-//Actions
+//DEFAULT ARGS
+#define D_LEVEL    3
+#define D_FOCAL    50.0
+#define D_WIDTH    15.6
+#define D_HEIGHT   23.5
+#define D_OVERLAP  0.375
+#define D_VWIDTH   60.0
+#define D_VHEIGHT  60.0
+#define D_FILE     "out"
+#define D_DUMMY    0
+//ACTIONS
 #define ACT_VIRTUAL 1
 #define ACT_SPHERE  2
 #define ACT_XXX     3
@@ -70,7 +70,7 @@ extern "C" {
 #define ACT_9x6     19
 #define ACT_6x17    20
 #define ACT_17x6    21
-//Steppers Speed
+//MOVEMENT SPEED
 #define PULSE_DEF    30
 #define ACCEL_DEF    10
 #define BORDER_DEF   8
