@@ -16,90 +16,78 @@ const char *argp_program_bug_address=BUG_REP;
 static char doc[]=HELP_DOC;
 static char args_doc[]=ARGS_DOC;
 static struct argp_option options[]={
-  {"quiet",'q',0,0,"Quiet verbose"},
-  {"verbose",'v',"LEVEL",0,"Verbose level"},
-  {"focal",'f',"FOCAL",0,"Focal length(Def:50mm)"},
-  {"width",'w',"WIDTH",0,"Sensor width(Def:15.6mm)"},
-  {"height",'h',"HEIGHT",0,"Sensor height(Def:23.5mm)"},
+  {"quiet",  'q',0,        0,"Quiet output"},
+  {"verbose",'v',"LEVEL",  0,"Verbose level"},
+  {"focal",  'f',"FOCAL",  0,"Focal length(Def:50mm)"},
+  {"width",  'w',"WIDTH",  0,"Sensor width(Def:15.6mm)"},
+  {"height", 'h',"HEIGHT", 0,"Sensor height(Def:23.5mm)"},
   {"overlap",'o',"OVERLAP",0,"Overlap area(Def:0.375)"},
-  {"vwidth",'x',"VWIDTH",0,"Virtual sensor width(Def:60mm)"},
+  {"vwidth", 'x',"VWIDTH", 0,"Virtual sensor width(Def:60mm)"},
   {"vheight",'y',"VHEIGHT",0,"Virtual sensor height(Def:60mm)"},
-  {"sloth",'s',0,0,"Less vibration"},
-  {"dummy",'d',0,0,"Mock-up behaviour"},
+  {"sloth",  's',0,        0,"Less vibration"},
+  {"dummy",  'd',0,        0,"Mock-up behaviour"},
 //  {"save",'s',"FILE",0,"Save to file"},
   {0}
 };
 static error_t parse_opt(int key,char *arg,struct argp_state *state){
-  struct args *args=state->input;
   switch(key){
-    case 'q':
-      args->level=L_NONE;break;
-    case 'v':
-      args->level=atoi(arg);break;
-    case 'f':
-      args->focal=atof(arg);break;
-    case 'w':
-      args->width=atof(arg);break;
-    case 'h':
-      args->height=atof(arg);break;
-    case 'o':
-      args->overlap=atof(arg);break;
-    case 'x':
-      args->vwidth=atof(arg);break;
-    case 'y':
-      args->vheight=atof(arg);break;
-    case 's':
-        args->pulse=PULSE_SLOTH;
-        args->accel=ACCEL_SLOTH;
-        args->border=BORDER_SLOTH;
-  //    args->file=arg;break;
-    case 'd':
-      args->dummy=1;break;        
+    case 'q':a->level=L_NONE;break;
+    case 'v':a->level=atoi(arg);break;
+    case 'f':a->focal=atof(arg);break;
+    case 'w':a->width=atof(arg);break;
+    case 'h':a->height=atof(arg);break;
+    case 'o':a->overlap=atof(arg);break;
+    case 'x':a->vwidth=atof(arg);break;
+    case 'y':a->vheight=atof(arg);break;
+    case 's':a->pulse=PULSE_SLOTH;a->accel=ACCEL_SLOTH;a->border=BORDER_SLOTH;break;
+//        a->file=arg;break;
+    case 'd':a->dummy=1;break;        
     case ARGP_KEY_ARG:
-      if(state->arg_num==0){
-          args->action=arg;
-               if(!strcmp(arg,"virtual"))args->action=ACT_VIRTUAL;
-          else if(!strcmp(arg,"sphere")) args->action=ACT_SPHERE;
-          else if(!strcmp(arg,"35"))     args->action=ACT_35;
-          else if(!strcmp(arg,"6x6"))    args->action=ACT_6x6;
-          else if(!strcmp(arg,"6x9"))    args->action=ACT_6x9;
-          else if(!strcmp(arg,"9x6"))    args->action=ACT_9x6;
-          else if(!strcmp(arg,"xxx"))    args->action=ACT_XXX;
-          else argp_usage(state);//error("Invalid Action.");
-     }if(state->arg_num>0)argp_usage(state);
-      break;
+        if(state->arg_num==0){
+                 if(!strcmp(arg,"virtual"))a->action=ACT_VIRTUAL;
+            else if(!strcmp(arg,"sphere")) a->action=ACT_SPHERE;
+            else if(!strcmp(arg,"35"))     a->action=ACT_35;
+            else if(!strcmp(arg,"6x45"))   a->action=ACT_6x45;
+            else if(!strcmp(arg,"45x6"))   a->action=ACT_45x6;
+            else if(!strcmp(arg,"6x6"))    a->action=ACT_6x6;
+            else if(!strcmp(arg,"6x7"))    a->action=ACT_6x7;
+            else if(!strcmp(arg,"7x6"))    a->action=ACT_7x6;
+            else if(!strcmp(arg,"6x8"))    a->action=ACT_6x8;
+            else if(!strcmp(arg,"8x6"))    a->action=ACT_8x6;
+            else if(!strcmp(arg,"6x9"))    a->action=ACT_6x9;
+            else if(!strcmp(arg,"9x6"))    a->action=ACT_9x6;
+            else if(!strcmp(arg,"6x17"))   a->action=ACT_6x17;
+            else if(!strcmp(arg,"17x6"))   a->action=ACT_17x6;
+            else if(!strcmp(arg,"xxx"))    a->action=ACT_XXX;
+            else argp_usage(state);//error("Invalid Action.");
+        }
+        if(state->arg_num>0)argp_usage(state);break;
     case ARGP_KEY_END:
-      if (state->arg_num<1)argp_usage(state);
-      break;
+        if(state->arg_num<1)argp_usage(state);break;
     default:
-      return ARGP_ERR_UNKNOWN;
+        return ARGP_ERR_UNKNOWN;
     }
   return 0;
 }
 static struct argp argp={options,parse_opt,args_doc,doc};
-args verbose_init(int argc,char**argv){
-    args args;
-    args.level=D_LEVEL;
-    args.focal=D_FOCAL;
-    args.width=D_WIDTH;
-    args.height=D_HEIGHT;
-    args.overlap=D_OVERLAP;
-    args.vwidth=D_VWIDTH;
-    args.vheight=D_VHEIGHT;
-    args.dummy=D_DUMMY;
-    args.pulse=PULSE_DEF;
-    args.accel=ACCEL_DEF;
-    args.border=BORDER_DEF;
-    asprintf(&args.file,"%s",D_FILE);
-    argp_parse(&argp,argc,argv,0,0,&args);
-    verbose_l=args.level;
-    pulse=args.pulse;
-    accel=args.accel;
-    border=args.border;
-     return args;
+int verbose_init(int argc,char**argv){
+    a=(struct args*)malloc(sizeof(struct args));
+    a->level=D_LEVEL;
+    a->focal=D_FOCAL;
+    a->width=D_WIDTH;
+    a->height=D_HEIGHT;
+    a->overlap=D_OVERLAP;
+    a->vwidth=D_VWIDTH;
+    a->vheight=D_VHEIGHT;
+    a->dummy=D_DUMMY;
+    a->pulse=PULSE_DEF;
+    a->accel=ACCEL_DEF;
+    a->border=BORDER_DEF;
+    asprintf(&a->file,"%s",D_FILE);
+    argp_parse(&argp,argc,argv,0,0,a);    
 }
 int verbose(int level,char *msj){
-    if(level&verbose_l)printf("|> %s\n",msj);
+    if(level&a->level)printf("|> %s\n",msj);
 }
 int warning(char *msj){
     alert_led();alert_led();

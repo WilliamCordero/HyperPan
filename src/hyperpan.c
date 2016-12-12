@@ -43,9 +43,8 @@ int x;
 int main(int argc,char**argv){
     sphere sphere;
     camera camera;
-    args args;
     if(!bcm2835_init())error("Broadcom BCM 2835");
-    args=verbose_init(argc,argv);
+    verbose_init(argc,argv);
     verbose(L_INFO,"α:");alert_led();
     sphere=sphere_init(
         stepper_init(RHO_SLEEP,RHO_STEP,RHO_DIR,RHO_M0,RHO_M1,RHO_MODE,RHO_STEPS,"ρ"),
@@ -54,19 +53,21 @@ int main(int argc,char**argv){
         "ο");
     camera=camera_init(&sphere,trigger_init(MF,0,"μ"),"δ");
 //ALL READY.
-    //printf("\n=\nv:%d\nf:%f\nw:%f\nh:%f\no:%f\nx:%f\ny:%f\nfile:%s\nd:%d\na:%d\n=\n\n",args.level,args.focal,args.width,args.height,args.overlap,args.vwidth,args.vheight,args.file,args.dummy,args.action);
-    switch(args.action){
-        case ACT_VIRTUAL:
-            virtual_shot(&camera,args.focal,args.width,args.height,args.overlap,args.vwidth,args.vheight);break;
-        case ACT_35:
-            virtual_shot(&camera,args.focal,args.width,args.height,args.overlap,24,36);break;
-        case ACT_6x6:
-            virtual_shot(&camera,args.focal,args.width,args.height,args.overlap,60,60);break;
-        case ACT_6x9:
-            virtual_shot(&camera,args.focal,args.width,args.height,args.overlap,60,90);break;
-        case ACT_9x6:
-            virtual_shot(&camera,args.focal,args.width,args.height,args.overlap,90,60);break;
-        case ACT_SPHERE:
+    switch(a->action){
+        case      ACT_35:virtual_shot(&camera,a->focal,a->width,a->height,a->overlap,24,36);break;
+        case    ACT_6x45:virtual_shot(&camera,a->focal,a->width,a->height,a->overlap,60,45);break;
+        case    ACT_45x6:virtual_shot(&camera,a->focal,a->width,a->height,a->overlap,45,60);break;
+        case     ACT_6x6:virtual_shot(&camera,a->focal,a->width,a->height,a->overlap,60,60);break;
+        case     ACT_6x7:virtual_shot(&camera,a->focal,a->width,a->height,a->overlap,60,70);break;
+        case     ACT_7x6:virtual_shot(&camera,a->focal,a->width,a->height,a->overlap,70,60);break;
+        case     ACT_6x8:virtual_shot(&camera,a->focal,a->width,a->height,a->overlap,60,80);break;
+        case     ACT_8x6:virtual_shot(&camera,a->focal,a->width,a->height,a->overlap,80,60);break;
+        case     ACT_6x9:virtual_shot(&camera,a->focal,a->width,a->height,a->overlap,60,90);break;
+        case     ACT_9x6:virtual_shot(&camera,a->focal,a->width,a->height,a->overlap,90,60);break;
+        case    ACT_6x17:virtual_shot(&camera,a->focal,a->width,a->height,a->overlap,60,170);break;
+        case    ACT_17x6:virtual_shot(&camera,a->focal,a->width,a->height,a->overlap,170,60);break;
+        case ACT_VIRTUAL:virtual_shot(&camera,a->focal,a->width,a->height,a->overlap,a->vwidth,a->vheight);break;
+        case  ACT_SPHERE:
             verbose(L_INFO,"Not Implemented");
             break;
         case ACT_XXX:
@@ -74,7 +75,6 @@ int main(int argc,char**argv){
             break;
     }
 //GO OUT.
-    printf("sloth=%d\n",args.pulse);
     camera_off(&camera);
     verbose(L_INFO,"ω:");alert_led();
     bcm2835_close();

@@ -35,7 +35,7 @@ stepper stepper_init(int sleep,int step,int dir,int m0,int m1,int mode,int steps
     asprintf(&msj,"%s: init()",tmp.name);
     verbose(L_INFO,msj);free(msj);
     stepper_mode(tmp,mode);
-    stepper_on(tmp);
+    if(!a->dummy)stepper_on(tmp);
     return tmp;
 }
 int stepper_mode(stepper motor,int mode){
