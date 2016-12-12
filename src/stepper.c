@@ -11,6 +11,7 @@
 #else  //BCM_DUMMY
 #  include "dummy/bcm_dummy.h"
 #endif //BCM_DUMMY
+#include "config.h"
 #include "stepper.h"
 #include "verbose.h"
 stepper stepper_init(int sleep,int step,int dir,int m0,int m1,int mode,int steps,char *name){

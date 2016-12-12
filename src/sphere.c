@@ -5,21 +5,22 @@
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
+#include "config.h"
 #include "stepper.h"
 #include "verbose.h"
 #include "sphere.h"
-sphere sphere_init(stepper rho,stepper theta,stepper phi,char *name){
-    sphere tmp;char *msj;
-    tmp.rho=tmp.s_rho=0;
-    tmp.theta=tmp.phi=OFFSET;
-    tmp.s_theta=tmp.s_phi=OFFSET*(STEPS_LOOP/360.0);
-    tmp.st_rho=rho;tmp.st_theta=theta;tmp.st_phi=phi;
-    asprintf(&tmp.name,"%s",name);
-    asprintf(&msj,"%s: init()",tmp.name);
+int sphere_init(stepper rho,stepper theta,stepper phi,char *name){
+    char *msj;
+    sphere=(struct sph*)malloc(sizeof(struct sph));
+    sphere->rho=sphere->s_rho=0;
+    sphere->theta=sphere->phi=OFFSET;
+    sphere->s_theta=sphere->s_phi=OFFSET*(STEPS_LOOP/360.0);
+    sphere->st_rho=rho;sphere->st_theta=theta;sphere->st_phi=phi;
+    asprintf(&sphere->name,"%s",name);
+    asprintf(&msj,"%s: init()",sphere->name);
     verbose(L_INFO,msj);free(msj);
-    return tmp;
 }
-int go(sphere *sphere,double rho,double theta,double phi){
+int go(double rho,double theta,double phi){
     char *msj;
     int n_rho,n_theta,n_phi,d_rho,d_theta,d_phi;
     int md_rho=((sphere->st_rho.mode*sphere->st_rho.steps)/2);
@@ -40,4 +41,4 @@ int go(sphere *sphere,double rho,double theta,double phi){
     sphere->phi=phi;sphere->s_phi=n_phi;
     stepper_walk(sphere->st_theta,d_theta,sphere->st_phi,d_phi,a->pulse,a->accel,a->border);
 }
-int pos_reset(sphere *sphere){sphere->rho=sphere->theta=sphere->phi=sphere->s_rho=sphere->s_theta=sphere->s_phi=0;}
+int pos_reset(){sphere->rho=sphere->theta=sphere->phi=sphere->s_rho=sphere->s_theta=sphere->s_phi=0;}

@@ -10,6 +10,7 @@
 #else  //BCM_DUMMY
 #  include "dummy/bcm_dummy.h"
 #endif //BCM_DUMMY
+#include "config.h"
 #include "verbose.h"
 const char *argp_program_version=VERSION;
 const char *argp_program_bug_address=BUG_REP;
@@ -39,7 +40,10 @@ static error_t parse_opt(int key,char *arg,struct argp_state *state){
     case 'o':a->overlap=atof(arg);break;
     case 'x':a->vwidth=atof(arg);break;
     case 'y':a->vheight=atof(arg);break;
-    case 's':a->pulse=PULSE_SLOTH;a->accel=ACCEL_SLOTH;a->border=BORDER_SLOTH;break;
+    case 's':a->pulse=PULSE_SLOTH;
+             a->accel=ACCEL_SLOTH;
+             a->border=BORDER_SLOTH;
+             break;
 //        a->file=arg;break;
     case 'd':a->dummy=1;break;        
     case ARGP_KEY_ARG:
@@ -84,7 +88,8 @@ int verbose_init(int argc,char**argv){
     a->accel=ACCEL_DEF;
     a->border=BORDER_DEF;
     asprintf(&a->file,"%s",D_FILE);
-    argp_parse(&argp,argc,argv,0,0,a);    
+    argp_parse(&argp,argc,argv,0,0,a);
+    verbose(L_INFO,"α:");alert_led();
 }
 int verbose(int level,char *msj){
     if(level&a->level)printf("|> %s\n",msj);

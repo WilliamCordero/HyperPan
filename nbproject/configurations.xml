@@ -5,6 +5,7 @@
                    displayName="Header Files"
                    projectFiles="true">
       <itemPath>src/camera.h</itemPath>
+      <itemPath>src/config.h</itemPath>
       <itemPath>src/sphere.h</itemPath>
       <itemPath>src/stepper.h</itemPath>
       <itemPath>src/trigger.h</itemPath>
@@ -49,6 +50,8 @@
       <item path="src/camera.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="src/camera.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/config.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/dummy/bcm_dummy.c" ex="false" tool="0" flavor2="0">
       </item>
@@ -104,6 +107,8 @@
       </item>
       <item path="src/camera.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="src/config.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/dummy/bcm_dummy.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="src/hyperpan.c" ex="false" tool="0" flavor2="0">
@@ -148,6 +153,8 @@
       </item>
       <item path="src/camera.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="src/config.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/dummy/bcm_dummy.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="src/hyperpan.c" ex="false" tool="0" flavor2="9">
@@ -191,6 +198,8 @@
       <item path="src/camera.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="src/camera.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/config.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/dummy/bcm_dummy.c" ex="false" tool="0" flavor2="0">
       </item>

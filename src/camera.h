@@ -7,15 +7,15 @@
 extern "C" {
 #endif
 typedef struct camera{
-    trigger trigger;
-    sphere *sphere;
     char *name;
 }camera;
-camera camera_init(sphere *sphere,trigger trigger,char *name);
-int camera_off(camera *camera);
-int virtual_shot(camera *camera,double f,double v,double h,double o,double vv,double vh);
+struct camera *cam;
+int camera_on();
+int camera_off();
+int camera_action();
+int camera_vshot(double f,double v,double h,double o,double vv,double vh);
+
 #ifdef __cplusplus
 }
 #endif
 #endif /* CAMERA_H */
-
