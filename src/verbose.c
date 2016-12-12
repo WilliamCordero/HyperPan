@@ -75,6 +75,7 @@ static error_t parse_opt(int key,char *arg,struct argp_state *state){
 }
 static struct argp argp={options,parse_opt,args_doc,doc};
 int verbose_init(int argc,char**argv){
+    if(!bcm2835_init()){fprintf(stderr,"|> χχ: bcm2835 missing.\n");exit(1);}
     a=(struct args*)malloc(sizeof(struct args));
     a->level=D_LEVEL;
     a->focal=D_FOCAL;

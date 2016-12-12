@@ -33,6 +33,7 @@ int camera_off(){
     stepper_off(sphere->st_rho);
     stepper_off(sphere->st_theta);
     stepper_off(sphere->st_phi);
+    verbose(L_INFO,"ω:");alert_led();
 }
 int camera_action(){
     switch(a->action){
