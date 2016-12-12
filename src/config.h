@@ -78,7 +78,7 @@ extern "C" {
 #define ACCEL_SLOTH  4
 #define BORDER_SLOTH 2
 //ARGP
-#define VERSION  "HyperPan 0.6";
+#define VERSION  "HyperPan 0.61";
 #define BUG_REP  "William Cordero <william.cordero@gmail.com>";
 #define HELP_DOC "\n\
  * HyperPan Control Software.\n\
@@ -96,7 +96,7 @@ Actions:\n\n\
    6x9   9x6\tMedium Format 60x90mm\n\
    6x17 17x6\tMedium Format 60x170mm\n\n\
 Options:";
-#define ARGS_DOC "virtual|sphere|35|6x45|45x6|6x6|6x7|7x6|6x8|8x6|6x9|9x6|6x17|17x6"    
+#define ARGS_DOC "virtual|sphere|35|6x45|45x6|6x6|6x7|7x6|6x8|8x6|6x9|9x6|6x17|17x6"
 #ifdef __cplusplus
 }
 #endif

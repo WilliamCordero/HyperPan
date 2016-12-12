@@ -34,6 +34,7 @@ int camera_off(){
     stepper_off(sphere->st_theta);
     stepper_off(sphere->st_phi);
     verbose(L_INFO,"ω:");alert_led();
+    bcm2835_close();
 }
 int camera_action(){
     switch(a->action){

@@ -25,8 +25,8 @@ static struct argp_option options[]={
   {"overlap",'o',"OVERLAP",0,"Overlap area(Def:0.375)"},
   {"vwidth", 'x',"VWIDTH", 0,"Virtual sensor width(Def:60mm)"},
   {"vheight",'y',"VHEIGHT",0,"Virtual sensor height(Def:60mm)"},
-  {"sloth",  's',0,        0,"Less vibration"},
-  {"dummy",  'd',0,        0,"Mock-up behaviour"},
+  {"sloth",  'z',0,        0,"Minimize vibration"},
+  {"dummy",  'd',0,        0,""},
 //  {"save",'s',"FILE",0,"Save to file"},
   {0}
 };
@@ -40,7 +40,7 @@ static error_t parse_opt(int key,char *arg,struct argp_state *state){
     case 'o':a->overlap=atof(arg);break;
     case 'x':a->vwidth=atof(arg);break;
     case 'y':a->vheight=atof(arg);break;
-    case 's':a->pulse=PULSE_SLOTH;
+    case 'z':a->pulse=PULSE_SLOTH;
              a->accel=ACCEL_SLOTH;
              a->border=BORDER_SLOTH;
              break;
