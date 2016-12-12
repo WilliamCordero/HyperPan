@@ -6,15 +6,6 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
-/*
-#define PULSE  180
-#define ACCEL  4
-#define BORDER 2
-*/
-#define PULSE  30
-#define ACCEL  10
-#define BORDER 8
-    
 typedef struct stepper{
     int sleep;
     int step;

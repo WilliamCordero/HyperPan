@@ -14,7 +14,6 @@ int camera_on();
 int camera_off();
 int camera_action();
 int camera_vshot(double f,double v,double h,double o,double vv,double vh);
-
 #ifdef __cplusplus
 }
 #endif

@@ -3,7 +3,6 @@
  */
 #ifndef CONFIG_H
 #define CONFIG_H
-
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -98,11 +97,8 @@ Actions:\n\n\
    6x17 17x6\tMedium Format 60x170mm\n\n\
 Options:";
 #define ARGS_DOC "virtual|sphere|35|6x45|45x6|6x6|6x7|7x6|6x8|8x6|6x9|9x6|6x17|17x6"    
-    
-    
 #ifdef __cplusplus
 }
 #endif
-
 #endif /* CONFIG_H */
 
