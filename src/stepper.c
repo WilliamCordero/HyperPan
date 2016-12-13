@@ -15,7 +15,6 @@
 #include "stepper.h"
 #include "verbose.h"
 stepper stepper_init(int sleep,int step,int dir,int m0,int m1,int mode,int steps,char *name){
-    char *msj;
     stepper tmp;
     bcm2835_gpio_fsel(sleep,BCM2835_GPIO_FSEL_OUTP);
     bcm2835_gpio_write(sleep,LOW);
@@ -33,14 +32,12 @@ stepper stepper_init(int sleep,int step,int dir,int m0,int m1,int mode,int steps
     tmp.mode=mode;
     tmp.steps=steps;
     asprintf(&tmp.name,"%s",name);
-    asprintf(&msj,"%s: init()",tmp.name);
-    verbose(L_INFO,msj);free(msj);
+    verbose(L_INFO,"%s: init()",tmp.name);
     stepper_mode(tmp,mode);
     if(!a->dummy)stepper_on(tmp);
     return tmp;
 }
 int stepper_mode(stepper motor,int mode){
-    char *msj;
     switch(mode){ //M0
         case 2:case 16:
             bcm2835_gpio_fsel(motor.m0,BCM2835_GPIO_FSEL_OUTP);
@@ -60,12 +57,10 @@ int stepper_mode(stepper motor,int mode){
     }
     switch(mode){
         case 1:case 2:case 4:case 8:case 16:case 32:
-            asprintf(&msj,"%s: 1/%i mode.",motor.name,mode);
-            verbose(L_ACCT,msj);free(msj);
+            verbose(L_ACCT,"%s: 1/%i mode.",motor.name,mode);
             break;
         default:
-            asprintf(&msj,"%s: invalid mode 1/%i, using mode 1/1.",motor.name,mode);
-            warning(msj);free(msj);
+            warning("%s: invalid mode 1/%i, using mode 1/1.",motor.name,mode);
     }
 }
 int stepper_on(stepper motor){
@@ -105,8 +100,6 @@ int stepper_walk(stepper l_st,int l_n,stepper s_st,int s_n, int pulse, int accel
         bcm2835_gpio_write(l_st.step,LOW);l_c++;
         bcm2835_delayMicroseconds(pulse+(((pulse*accel*x)/b)/2));
     }
-    asprintf(&msj,"%s: %c%i steps.",l_st.name,l_n<0?'-':'+',l_c);
-    verbose(L_ACCT,msj);free(msj);
-    asprintf(&msj,"%s: %c%i steps.",s_st.name,s_n<0?'-':'+',s_c);
-    verbose(L_ACCT,msj);free(msj);
+    verbose(L_ACCT,"%s: %c%i steps.",l_st.name,l_n<0?'-':'+',l_c);
+    verbose(L_ACCT,"%s: %c%i steps.",s_st.name,s_n<0?'-':'+',s_c);
 }

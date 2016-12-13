@@ -14,11 +14,9 @@
 double r2d(double r){return r*(180/M_PI);}
 double d2r(double d){return d*(M_PI/180);}
 int camera_init(char *name){
-    char *msj;
     cam=(struct camera*)malloc(sizeof(struct camera));
     asprintf(&cam->name,"%s",name);
-    asprintf(&msj,"%s: init()",cam->name);
-    verbose(L_INFO,msj);free(msj);
+    verbose(L_INFO,"%s: init()",cam->name);
 }
 int camera_on(){
     sphere_init(stepper_init(RHO_SLEEP,RHO_STEP,RHO_DIR,RHO_M0,RHO_M1,RHO_MODE,RHO_STEPS,"ρ"),
@@ -33,7 +31,7 @@ int camera_off(){
     stepper_off(sphere->st_rho);
     stepper_off(sphere->st_theta);
     stepper_off(sphere->st_phi);
-    verbose(L_INFO,"ω:");alert_led();
+    verbose(L_INFO,"ω\n");alert_led();
     bcm2835_close();
 }
 int camera_action(){
@@ -56,19 +54,19 @@ int camera_action(){
     }
 }
 int camera_vshot(double f,double v,double h,double o,double vv,double vh){
-    int x,y;char *msj;
+    int x,y;
     double  a_v=r2d(2*atan( v/(2*f)));
     double  a_h=r2d(2*atan( h/(2*f)));
     double va_v=r2d(2*atan(vv/(2*f)));
     double va_h=r2d(2*atan(vh/(2*f)));
-    asprintf(&msj,"%s:     focal: %6.2f mm",cam->name,f);verbose(L_INFO,msj);free(msj);
-    asprintf(&msj,"%s: υ: sensor: %6.2f • %6.2f mm",cam->name,h,v);verbose(L_INFO,msj);free(msj);
-    asprintf(&msj,"%s: υ:      α: %6.2f • %6.2f °",cam->name,a_v,a_h);verbose(L_INFO,msj);free(msj);
+    verbose(L_INFO,"%s:     focal: %6.2f mm",cam->name,f);
+    verbose(L_INFO,"%s: υ: sensor: %6.2f • %6.2f mm",cam->name,h,v);
+    verbose(L_INFO,"%s: υ:      α: %6.2f • %6.2f °",cam->name,a_v,a_h);
     a_v=a_v*(1-(o/2));a_h=a_h*(1-(o/2));
-    asprintf(&msj,"%s: υ:     α': %6.2f • %6.2f °",cam->name,a_v,a_h);verbose(L_INFO,msj);free(msj);
-    asprintf(&msj,"%s: υ:      Ξ: %6.3f",cam->name,o);verbose(L_INFO,msj);free(msj);
-    asprintf(&msj,"%s: ν: sensor: %6.2f • %6.2f mm",cam->name,vh,vv);verbose(L_INFO,msj);free(msj);
-    asprintf(&msj,"%s: ν:      α: %6.2f • %6.2f °",cam->name,va_v,va_h);verbose(L_INFO,msj);free(msj);
+    verbose(L_INFO,"%s: υ:     α': %6.2f • %6.2f °",cam->name,a_v,a_h);
+    verbose(L_INFO,"%s: υ:      Ξ: %6.3f",cam->name,o);
+    verbose(L_INFO,"%s: ν: sensor: %6.2f • %6.2f mm",cam->name,vh,vv);
+    verbose(L_INFO,"%s: ν:      α: %6.2f • %6.2f °",cam->name,va_v,va_h);
     for(y=0;y<=floor(va_h/a_h);y++){
         double pos_theta=((a_h*((y*2)-floor(va_h/a_h)))/2); 
         for(x=0;x<=floor(va_v/(a_v/cos(d2r(pos_theta))));x++){

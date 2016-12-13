@@ -23,12 +23,12 @@ typedef struct args{
 }args;
 struct args *a;
 int verbose_init(int argc,char**argv);
-int verbose(int level,char *msj);
-int warning(char *msj);
-int error(char *msj);
+//int vebose(int level,char *msj);
+int verbose(int level,char *str,...);
+int warning(char *str,...);
+int error(char *str,...);
 int alert_led();
 #ifdef __cplusplus
 }
 #endif
 #endif /* VERBOSE_H */
-

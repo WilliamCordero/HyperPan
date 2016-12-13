@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdarg.h>
 #include <argp.h>
 #ifndef  BCM_DUMMY
 #  include <bcm2835.h>
@@ -92,16 +93,30 @@ int verbose_init(int argc,char**argv){
     argp_parse(&argp,argc,argv,0,0,a);
     verbose(L_INFO,"α:");alert_led();
 }
-int verbose(int level,char *msj){
-    if(level&a->level)printf("|> %s\n",msj);
+int verbose(int level,char *str,...){
+    va_list args;
+    if(level&a->level){
+        printf("\n|> ");
+        va_start(args,str);
+        vprintf(str,args);
+        va_end(args);
+    }
 }
-int warning(char *msj){
+int warning(char *str,...){
+    va_list args;
     alert_led();alert_led();
-    fprintf(stderr,"|> χ: %s\n",msj);
+    printf("\n|> χ: ");
+    va_start(args,str);
+    vprintf(str,args);
+    va_end(args);
 }
-int error(char *msj){
+int error(char *str,...){
+    va_list args;
     alert_led();alert_led();
-    fprintf(stderr,"|> χχ: %s\n",msj);
+    printf("\n|> χχ: ");
+    va_start(args,str);
+    vprintf(str,args);printf("\n");
+    va_end(args);
     exit(1);
 }
 int alert_led(){
