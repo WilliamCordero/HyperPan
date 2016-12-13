@@ -15,8 +15,7 @@ double r2d(double r){return r*(180/M_PI);}
 double d2r(double d){return d*(M_PI/180);}
 int camera_init(char *name){
     cam=(struct camera*)malloc(sizeof(struct camera));
-    asprintf(&cam->name,"%s",name);
-    verbose(L_INFO,"%s: init()",cam->name);
+    verbose(L_INFO,"%s: init()",cam->name=name);
 }
 int camera_on(){
     sphere_init(stepper_init(RHO_SLEEP,RHO_STEP,RHO_DIR,RHO_M0,RHO_M1,RHO_MODE,RHO_STEPS,"ρ"),
@@ -49,8 +48,8 @@ int camera_action(){
         case    ACT_6x17:camera_vshot(a->focal,a->width,a->height,a->overlap,60,170);break;
         case    ACT_17x6:camera_vshot(a->focal,a->width,a->height,a->overlap,170,60);break;
         case ACT_VIRTUAL:camera_vshot(a->focal,a->width,a->height,a->overlap,a->vwidth,a->vheight);break;
-        case  ACT_SPHERE:verbose(L_INFO,"Not Implemented");break;
-        case     ACT_XXX:verbose(L_INFO,"Not Implemented");break;
+        case  ACT_SPHERE:verbose(L_INFO,"Not Implemented yet");break;
+        case     ACT_XXX:verbose(L_INFO,"Not Implemented yet");break;
     }
 }
 int camera_vshot(double f,double v,double h,double o,double vv,double vh){

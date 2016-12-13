@@ -21,8 +21,7 @@ int trigger_init(int focus_mode,int focus_delay,char *name){
     bcm2835_gpio_fsel(FOCUS,BCM2835_GPIO_FSEL_OUTP);
     trigger->focus_mode=focus_mode;
     trigger->focus_delay=focus_delay;
-    asprintf(&trigger->name,"%s",name);
-    verbose(L_INFO,"%s: init()",trigger->name);
+    verbose(L_INFO,"%s: init()",trigger->name=name);
 }
 int trigger_shot(int speed){
     if(trigger->focus_mode){

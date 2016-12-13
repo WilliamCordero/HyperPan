@@ -31,10 +31,10 @@ stepper stepper_init(int sleep,int step,int dir,int m0,int m1,int mode,int steps
     tmp.m1=m1;
     tmp.mode=mode;
     tmp.steps=steps;
-    asprintf(&tmp.name,"%s",name);
-    verbose(L_INFO,"%s: init()",tmp.name);
+    verbose(L_INFO,"%s: init()",tmp.name=name);
     stepper_mode(tmp,mode);
     if(!a->dummy)stepper_on(tmp);
+    else verbose(L_INFO,"%s: dummy()",tmp.name);
     return tmp;
 }
 int stepper_mode(stepper motor,int mode){
@@ -57,7 +57,7 @@ int stepper_mode(stepper motor,int mode){
     }
     switch(mode){
         case 1:case 2:case 4:case 8:case 16:case 32:
-            verbose(L_ACCT,"%s: 1/%i mode.",motor.name,mode);
+            verbose(L_ACCT,"%s: mode(1/%i)",motor.name,mode);
             break;
         default:
             warning("%s: invalid mode 1/%i, using mode 1/1.",motor.name,mode);
