@@ -8,37 +8,37 @@ extern "C" {
 #endif
 #define M 1000000
 //STEPPER CONFIGURATION
-#define RHO_SLEEP   22    //GPIO 22
-#define RHO_STEP    27    //GPIO 27
-#define RHO_DIR     18    //GPIO 18
-#define RHO_M0      24    //GPIO 24
-#define RHO_M1      23    //GPIO 23
-#define RHO_MODE    32    //MICROSTEP MODE 1/32
-#define RHO_STEPS   200*8 //STEPS PER ROTATION
-#define THETA_SLEEP 12    //GPIO 12
-#define THETA_STEP  6     //GPIO 6
-#define THETA_DIR   5     //GPIO 5
-#define THETA_M0    16    //GPIO 16
-#define THETA_M1    13    //GPIO 13
-#define THETA_MODE  32    //MICROSTEP MODE 1/32
-#define THETA_STEPS 200*8 //STEPS PER ROTATION
-#define PHI_SLEEP   22    //GPIO 22
-#define PHI_STEP    27    //GPIO 27
-#define PHI_DIR     18    //GPIO 18
-#define PHI_M0      24    //GPIO 24
-#define PHI_M1      23    //GPIO 23
-#define PHI_MODE    32    //MICROSTEP MODE 1/32
-#define PHI_STEPS   200*8 //STEPS PER ROTATION
+#define RHO_SLEEP    22    //GPIO 22
+#define RHO_STEP     27    //GPIO 27
+#define RHO_DIR      18    //GPIO 18
+#define RHO_M0       24    //GPIO 24
+#define RHO_M1       23    //GPIO 23
+#define RHO_MODE     32    //MICROSTEP MODE 1/32
+#define RHO_STEPS    200*8 //STEPS PER ROTATION
+#define THETA_SLEEP  12    //GPIO 12
+#define THETA_STEP   6     //GPIO 6
+#define THETA_DIR    5     //GPIO 5
+#define THETA_M0     16    //GPIO 16
+#define THETA_M1     13    //GPIO 13
+#define THETA_MODE   32    //MICROSTEP MODE 1/32
+#define THETA_STEPS  200*8 //STEPS PER ROTATION
+#define PHI_SLEEP    22    //GPIO 22
+#define PHI_STEP     27    //GPIO 27
+#define PHI_DIR      18    //GPIO 18
+#define PHI_M0       24    //GPIO 24
+#define PHI_M1       23    //GPIO 23
+#define PHI_MODE     32    //MICROSTEP MODE 1/32
+#define PHI_STEPS    200*8 //STEPS PER ROTATION
 //ALERT LED
-#define ALERT_GPIO  21    //GPIO 21
-#define ALERT_BLINK 20000 //MILISEC
+#define ALERT_GPIO   21    //GPIO 21
+#define ALERT_BLINK  20000 //MILISEC
 //TRIGGER CONFIGURATION
-#define SHUTTER     4     //GPIO 17
-#define FOCUS       17      //GPIO 4
-#define SPEED       0.5 //1/125
-#define DELAY       0.0
-#define AF          1    
-#define MF          0  
+#define SHUTTER      4     //GPIO 17
+#define FOCUS        17    //GPIO 4
+#define SPEED        0.5   //1/125
+#define DELAY        0.0   //DELAY BEFORE SHOT
+#define AF           1     //AUTO FOCUS 
+#define MF           0     //MANUAL FOCUS 
 //VERVOSE LEVELS
 #define L_NONE 0b00000000
 #define L_INFO 0b00000001
@@ -47,15 +47,15 @@ extern "C" {
 #define L_TRGR 0b00001000
 #define L_ALL  0b00010000
 //DEFAULT ARGS
-#define D_LEVEL    3
-#define D_FOCAL    50.0
-#define D_WIDTH    15.6
-#define D_HEIGHT   23.5
-#define D_OVERLAP  0.375
-#define D_VWIDTH   60.0
-#define D_VHEIGHT  60.0
-#define D_FILE     "out"
-#define D_DUMMY    0
+#define D_LEVEL    3       //DEFAULT VERVOSE LEVEL
+#define D_FOCAL    50.0    //DEFAULT FOCAL LENGH
+#define D_WIDTH    15.6    //DEFAULT SENSOR WIDTH
+#define D_HEIGHT   23.5    //DEFAULT SENSOR HEIGHT 
+#define D_OVERLAP  0.375   //DEFAULT OVERLAP
+#define D_VWIDTH   60.0    //DEFAULT VIRTUAL WIDTH
+#define D_VHEIGHT  60.0    //DEFAULT VIRTUAL HEIGHT
+#define D_FILE     "out"   //DEFAULT FILE NAME
+#define D_DUMMY    0       //DEFAULT DUMMY
 //ACTIONS
 #define ACT_VIRTUAL 1
 #define ACT_SPHERE  2

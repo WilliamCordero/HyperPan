@@ -35,20 +35,20 @@ int camera_off(){
 }
 int camera_action(){
     switch(a->action){
-        case      ACT_35:camera_vshot(a->focal,a->width,a->height,a->overlap,24,36);break;
-        case    ACT_6x45:camera_vshot(a->focal,a->width,a->height,a->overlap,60,45);break;
-        case    ACT_45x6:camera_vshot(a->focal,a->width,a->height,a->overlap,45,60);break;
-        case     ACT_6x6:camera_vshot(a->focal,a->width,a->height,a->overlap,60,60);break;
-        case     ACT_6x7:camera_vshot(a->focal,a->width,a->height,a->overlap,60,70);break;
-        case     ACT_7x6:camera_vshot(a->focal,a->width,a->height,a->overlap,70,60);break;
-        case     ACT_6x8:camera_vshot(a->focal,a->width,a->height,a->overlap,60,80);break;
-        case     ACT_8x6:camera_vshot(a->focal,a->width,a->height,a->overlap,80,60);break;
-        case     ACT_6x9:camera_vshot(a->focal,a->width,a->height,a->overlap,60,90);break;
-        case     ACT_9x6:camera_vshot(a->focal,a->width,a->height,a->overlap,90,60);break;
-        case    ACT_6x17:camera_vshot(a->focal,a->width,a->height,a->overlap,60,170);break;
-        case    ACT_17x6:camera_vshot(a->focal,a->width,a->height,a->overlap,170,60);break;
-        case ACT_VIRTUAL:camera_vshot(a->focal,a->width,a->height,a->overlap,a->vwidth,a->vheight);break;
-        case  ACT_SPHERE:verbose(L_INFO,"Not Implemented yet");break;
+        case      ACT_35:camera_vshot(a->focal,a->height,a->width,a->overlap,36,24);break;
+        case    ACT_6x45:camera_vshot(a->focal,a->height,a->width,a->overlap,45,60);break;
+        case    ACT_45x6:camera_vshot(a->focal,a->height,a->width,a->overlap,60,45);break;
+        case     ACT_6x6:camera_vshot(a->focal,a->height,a->width,a->overlap,60,60);break;
+        case     ACT_6x7:camera_vshot(a->focal,a->height,a->width,a->overlap,70,60);break;
+        case     ACT_7x6:camera_vshot(a->focal,a->height,a->width,a->overlap,60,70);break;
+        case     ACT_6x8:camera_vshot(a->focal,a->height,a->width,a->overlap,80,60);break;
+        case     ACT_8x6:camera_vshot(a->focal,a->height,a->width,a->overlap,60,80);break;
+        case     ACT_6x9:camera_vshot(a->focal,a->height,a->width,a->overlap,90,60);break;
+        case     ACT_9x6:camera_vshot(a->focal,a->height,a->width,a->overlap,60,90);break;
+        case    ACT_6x17:camera_vshot(a->focal,a->height,a->width,a->overlap,170,60);break;
+        case    ACT_17x6:camera_vshot(a->focal,a->height,a->width,a->overlap,60,170);break;
+        case ACT_VIRTUAL:camera_vshot(a->focal,a->height,a->width,a->overlap,a->vheight,a->vwidth);break;
+        case ACT_SPHERE:camera_sphere(a->focal,a->height,a->width,a->overlap);break;
         case     ACT_XXX:verbose(L_INFO,"Not Implemented yet");break;
     }
 }
@@ -58,19 +58,40 @@ int camera_vshot(double f,double v,double h,double o,double vv,double vh){
     double  a_h=r2d(2*atan( h/(2*f)));
     double va_v=r2d(2*atan(vv/(2*f)));
     double va_h=r2d(2*atan(vh/(2*f)));
+    verbose(L_INFO,"%s: virtual",cam->name);
     verbose(L_INFO,"%s:     focal: %6.2f mm",cam->name,f);
-    verbose(L_INFO,"%s: υ: sensor: %6.2f • %6.2f mm",cam->name,h,v);
+    verbose(L_INFO,"%s: υ: sensor: %6.2f • %6.2f mm",cam->name,v,h);
     verbose(L_INFO,"%s: υ:      α: %6.2f • %6.2f °",cam->name,a_v,a_h);
     a_v=a_v*(1-(o/2));a_h=a_h*(1-(o/2));
     verbose(L_INFO,"%s: υ:     α': %6.2f • %6.2f °",cam->name,a_v,a_h);
     verbose(L_INFO,"%s: υ:      Ξ: %6.3f",cam->name,o);
-    verbose(L_INFO,"%s: ν: sensor: %6.2f • %6.2f mm",cam->name,vh,vv);
+    verbose(L_INFO,"%s: ν: sensor: %6.2f • %6.2f mm",cam->name,vv,vh);
     verbose(L_INFO,"%s: ν:      α: %6.2f • %6.2f °",cam->name,va_v,va_h);
-    for(y=0;y<=floor(va_h/a_h);y++){
-        double pos_theta=((a_h*((y*2)-floor(va_h/a_h)))/2); 
-        for(x=0;x<=floor(va_v/(a_v/cos(d2r(pos_theta))));x++){
-            double pos_phi=(((a_v/cos(d2r(pos_theta)))*((x*2)-floor(va_v/(a_v/cos(d2r(pos_theta))))))/2);
-            go(0,pos_theta,(y%2==0?pos_phi:-pos_phi));
+    for(y=0;y<=floor(va_v/a_v);y++){
+        double pos_theta=((a_v*((y*2)-floor(va_v/a_v)))/2); 
+        for(x=0;x<=floor(va_h/(a_h/cos(d2r(pos_theta))));x++){
+            double pos_phi=(((a_h/cos(d2r(pos_theta)))*((x*2)-floor(va_h/(a_h/cos(d2r(pos_theta))))))/2);
+            go(0,pos_theta,(y%2?-pos_phi:pos_phi));
+            trigger_shot(0);
+        }
+    }
+}
+int camera_sphere(double f,double v,double h,double o){
+    int x,y;
+    double  a_v=r2d(2*atan(v/(2*f)));
+    double  a_h=r2d(2*atan(h/(2*f)));
+    verbose(L_INFO,"%s: sphere",cam->name);
+    verbose(L_INFO,"%s:     focal: %6.2f mm",cam->name,f);
+    verbose(L_INFO,"%s: υ: sensor: %6.2f • %6.2f mm",cam->name,v,h);
+    verbose(L_INFO,"%s: υ:      α: %6.2f • %6.2f °",cam->name,a_v,a_h);
+    a_v=a_v*(1-(o/2));a_h=a_h*(1-(o/2));
+    verbose(L_INFO,"%s: υ:     α': %6.2f • %6.2f °",cam->name,a_v,a_h);
+    verbose(L_INFO,"%s: υ:      Ξ: %6.3f",cam->name,o);
+    for(y=0;y<=ceil(180/a_v);y++){
+        double pos_theta=(y*(180/ceil(180/a_v)))-90;
+        for(x=0;x<ceil(360/(a_h/cos(d2r(pos_theta))));x++){
+            double pos_phi=x*(360/ceil(360/(a_h/cos(d2r(pos_theta)))));
+            go(0,pos_theta,pos_phi);
             trigger_shot(0);
         }
     }
