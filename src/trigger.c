@@ -32,9 +32,9 @@ int trigger_shot(double speed){
         verbose(L_TRGR,"%s: Delay: %8.0fμs",trigger->name,trigger->shutter_delay*M);
         bcm2835_delayMicroseconds(trigger->shutter_delay*M);
     }
-    //verbose(L_TRGR,"%s: Shoot: %8.0fμs",trigger->name,speed?speed:trigger->shutter_speed*M);
-    //bcm2835_gpio_write(trigger->shutter,HIGH);
-    //bcm2835_delayMicroseconds(speed?speed:trigger->shutter_speed*M);
-    //bcm2835_gpio_write(trigger->shutter,LOW);
+    verbose(L_TRGR,"%s: Shoot: %8.0fμs",trigger->name,speed?speed:trigger->shutter_speed*M);
+    bcm2835_gpio_write(trigger->shutter,HIGH);
+    bcm2835_delayMicroseconds(speed?speed:trigger->shutter_speed*M);
+    bcm2835_gpio_write(trigger->shutter,LOW);
     if(trigger->focus_mode)bcm2835_gpio_write(trigger->focus,LOW);
 }

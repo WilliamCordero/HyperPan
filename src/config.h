@@ -33,8 +33,8 @@ extern "C" {
 #define ALERT_GPIO  21    //GPIO 21
 #define ALERT_BLINK 20000 //MILISEC
 //TRIGGER CONFIGURATION
-#define SHUTTER     17     //GPIO 17
-#define FOCUS       4      //GPIO 4
+#define SHUTTER     4     //GPIO 17
+#define FOCUS       17      //GPIO 4
 #define SPEED       0.5 //1/125
 #define DELAY       0.0
 #define AF          1    
@@ -73,7 +73,7 @@ extern "C" {
 #define ACT_6x17    20
 #define ACT_17x6    21
 //MOVEMENT SPEED
-#define PULSE_DEF    30
+#define PULSE_DEF    40
 #define ACCEL_DEF    10
 #define BORDER_DEF   8
 #define PULSE_SLOTH  180
