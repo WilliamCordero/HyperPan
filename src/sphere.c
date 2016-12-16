@@ -15,7 +15,7 @@ int sphere_init(stepper rho,stepper theta,stepper phi,char *name){
     sphere->theta=sphere->phi=OFFSET;
     sphere->s_theta=sphere->s_phi=OFFSET*(STEPS_LOOP/360.0);
     sphere->st_rho=rho;sphere->st_theta=theta;sphere->st_phi=phi;
-    verbose(L_INFO,"%s: init()",sphere->name=name);
+    verbose(L_INFO,"%s: ★",sphere->name=name);
 }
 int go(double rho,double theta,double phi){
     int n_rho,n_theta,n_phi,d_rho,d_theta,d_phi;

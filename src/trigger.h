@@ -17,6 +17,7 @@ typedef struct trig{
 struct trig *trigger;
 int trigger_init(char *name);
 int trigger_shot(double speed);
+int trigger_wakeup();
 #ifdef __cplusplus
 }
 #endif

@@ -52,7 +52,9 @@ static error_t parse_opt(int key,char *arg,struct argp_state *state){
              a->border=BORDER_SLOTH;
              break;
 //        a->file=arg;break;
-    case 'd':a->dummy=1;break;        
+    case 'd':
+        a->dummy=1;
+        break;        
     case ARGP_KEY_ARG:
         if(state->arg_num==0){
                  if(!strcmp(arg,"virtual"))a->action=ACT_VIRTUAL;
@@ -100,7 +102,7 @@ int verbose_init(int argc,char**argv){
     a->border=BORDER_DEF;
 //    asprintf(&a->file,"%s",D_FILE);
     argp_parse(&argp,argc,argv,0,0,a);
-    verbose(L_INFO,"α:");alert_led();
+    verbose(L_INFO,"α: %s",a->dummy?"dummy mode":"");alert_led();
 }
 int verbose(int level,char *str,...){
     va_list args;

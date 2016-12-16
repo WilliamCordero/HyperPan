@@ -15,7 +15,7 @@ double r2d(double r){return r*(180/M_PI);}
 double d2r(double d){return d*(M_PI/180);}
 int camera_init(char *name){
     cam=(struct camera*)malloc(sizeof(struct camera));
-    verbose(L_INFO,"%s: init()",cam->name=name);
+    verbose(L_INFO,"%s: ★",cam->name=name);
 }
 int camera_on(){
     sphere_init(stepper_init(RHO_SLEEP,RHO_STEP,RHO_DIR,RHO_M0,RHO_M1,RHO_MODE,RHO_STEPS,"ρ"),
