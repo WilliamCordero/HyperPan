@@ -8,15 +8,15 @@ extern "C" {
 #endif
 typedef struct trig{
     int shutter;
-    int shutter_speed;
+    double shutter_speed;
+    double shutter_delay;
     int focus;    
     int focus_mode;
-    int focus_delay;
     char *name;
 }trig;
 struct trig *trigger;
-int trigger_init(int focus_mode,int focus_delay,char *name);
-int trigger_shot(int speed);
+int trigger_init(char *name);
+int trigger_shot(double speed);
 #ifdef __cplusplus
 }
 #endif

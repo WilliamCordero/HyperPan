@@ -64,8 +64,9 @@
           <runcommandpicklistitem>"${OUTPUT_PATH}" virtual -f35</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" virtual</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" 35 -d</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" 35 </runcommandpicklistitem>
         </runcommandpicklist>
-        <runcommand>"${OUTPUT_PATH}" 35 -d</runcommand>
+        <runcommand>"${OUTPUT_PATH}" 35</runcommand>
         <rundir></rundir>
         <buildfirst>true</buildfirst>
         <console-type>2</console-type>

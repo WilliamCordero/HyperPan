@@ -6,6 +6,7 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
+#define M 1000000
 //STEPPER CONFIGURATION
 #define RHO_SLEEP   22    //GPIO 22
 #define RHO_STEP    27    //GPIO 27
@@ -32,11 +33,12 @@ extern "C" {
 #define ALERT_GPIO  21    //GPIO 21
 #define ALERT_BLINK 20000 //MILISEC
 //TRIGGER CONFIGURATION
-#define SHUTTER     17    //GPIO 17
-#define FOCUS       4     //GPIO 4
-#define SPEED       750000
+#define SHUTTER     17     //GPIO 17
+#define FOCUS       4      //GPIO 4
+#define SPEED       0.5 //1/125
+#define DELAY       0.0
 #define AF          1    
-#define MF          0    
+#define MF          0  
 //VERVOSE LEVELS
 #define L_NONE 0b00000000
 #define L_INFO 0b00000001

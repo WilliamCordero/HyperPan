@@ -13,12 +13,15 @@ typedef struct args{
     int    pulse;
     int    accel;
     int    border;
+    int    focus;
     double focal;
     double width;
     double height;
     double vwidth;
     double vheight;
     double overlap;
+    double speed;
+    double delay;
     char  *file;
 }args;
 struct args *a;

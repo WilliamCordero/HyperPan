@@ -18,22 +18,28 @@ const char *argp_program_bug_address=BUG_REP;
 static char doc[]=HELP_DOC;
 static char args_doc[]=ARGS_DOC;
 static struct argp_option options[]={
-  {"quiet",  'q',0,        0,"Quiet output"},
-  {"verbose",'v',"LEVEL",  0,"Verbose level"},
-  {"focal",  'f',"FOCAL",  0,"Focal length(Def:50mm)"},
-  {"width",  'w',"WIDTH",  0,"Sensor width(Def:15.6mm)"},
-  {"height", 'h',"HEIGHT", 0,"Sensor height(Def:23.5mm)"},
-  {"overlap",'o',"OVERLAP",0,"Overlap area(Def:0.375)"},
-  {"vwidth", 'x',"VWIDTH", 0,"Virtual sensor width(Def:60mm)"},
-  {"vheight",'y',"VHEIGHT",0,"Virtual sensor height(Def:60mm)"},
-  {"sloth",  'z',0,        0,"Minimize vibration"},
-  {"dummy",  'd',0,        0,""},
+    {"auto",   'a',0,        0,"Auto Focus On"},
+    {"delay",  'b',"DELAY",  0,"Shutter delay"},
+    {"dummy",  'd',0,        0,"Dummy mode"},
+    {"focal",  'f',"FOCAL",  0,"Focal length(Def:50mm)"},
+    {"height", 'h',"HEIGHT", 0,"Sensor height(Def:23.5mm)"},
+    {"overlap",'o',"OVERLAP",0,"Overlap area(Def:0.375)"},
+    {"quiet",  'q',0,        0,"Quiet output"},
+    {"speed",  's',"SPEED",  0,"Shutter speed(Def:0.5s)"},
+    {"verbose",'v',"LEVEL",  0,"Verbose level"},
+    {"vheight",'y',"VHEIGHT",0,"Virtual sensor height(Def:60mm)"},
+    {"vwidth", 'x',"VWIDTH", 0,"Virtual sensor width(Def:60mm)"},
+    {"width",  'w',"WIDTH",  0,"Sensor width(Def:15.6mm)"},
+    {"sloth",  'z',0,        0,"Minimize vibration"},
 //  {"save",'s',"FILE",0,"Save to file"},
-  {0}
+    {0}
 };
 static error_t parse_opt(int key,char *arg,struct argp_state *state){
   switch(key){
+    case 'a':a->focus=AF;break;
+    case 'b':a->delay=atof(arg);break;
     case 'q':a->level=L_NONE;break;
+    case 's':a->speed=atof(arg);break;
     case 'v':a->level=atoi(arg);break;
     case 'f':a->focal=atof(arg);break;
     case 'w':a->width=atof(arg);break;
@@ -78,6 +84,9 @@ static struct argp argp={options,parse_opt,args_doc,doc};
 int verbose_init(int argc,char**argv){
     if(!bcm2835_init()){fprintf(stderr,"|> χχ: bcm2835 missing.\n");exit(1);}
     a=(struct args*)malloc(sizeof(struct args));
+    a->focus=MF;
+    a->speed=SPEED;
+    a->delay=DELAY;
     a->level=D_LEVEL;
     a->focal=D_FOCAL;
     a->width=D_WIDTH;
@@ -89,7 +98,7 @@ int verbose_init(int argc,char**argv){
     a->pulse=PULSE_DEF;
     a->accel=ACCEL_DEF;
     a->border=BORDER_DEF;
-    asprintf(&a->file,"%s",D_FILE);
+//    asprintf(&a->file,"%s",D_FILE);
     argp_parse(&argp,argc,argv,0,0,a);
     verbose(L_INFO,"α:");alert_led();
 }

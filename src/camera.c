@@ -22,7 +22,7 @@ int camera_on(){
                 stepper_init(THETA_SLEEP,THETA_STEP,THETA_DIR,THETA_M0,THETA_M1,THETA_MODE,THETA_STEPS,"θ"),
                 stepper_init(PHI_SLEEP,PHI_STEP,PHI_DIR,PHI_M0,PHI_M1,PHI_MODE,PHI_STEPS,"φ"),
                 "ο");
-    trigger_init(MF,0,"μ");
+    trigger_init("μ");
     camera_init("δ");
 }
 int camera_off(){
