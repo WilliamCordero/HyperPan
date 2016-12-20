@@ -39,14 +39,15 @@ static error_t parse_opt(int key,char *arg,struct argp_state *state){
   switch(key){
     case 'a':a->focus=AF;break;
     case 'b':a->delay=atof(arg);break;
+    case 'd':a->dummy=1;break;        
+    case 'f':a->focal=atof(arg);break;
+    case 'h':a->height=atof(arg);break;
     case 'm':a->shutter=0;break;
+    case 'o':a->overlap=atof(arg);break;
     case 'q':a->level=L_NONE;break;
     case 's':a->speed=atof(arg);break;
     case 'v':a->level=atoi(arg);break;
-    case 'f':a->focal=atof(arg);break;
     case 'w':a->width=atof(arg);break;
-    case 'h':a->height=atof(arg);break;
-    case 'o':a->overlap=atof(arg);break;
     case 'x':a->vwidth=atof(arg);break;
     case 'y':a->vheight=atof(arg);break;
     case 'z':a->min=MIN_SLOTH;
@@ -54,9 +55,6 @@ static error_t parse_opt(int key,char *arg,struct argp_state *state){
              a->border=BORDER_SLOTH;
              break;
 //        a->file=arg;break;
-    case 'd':
-        a->dummy=1;
-        break;        
     case ARGP_KEY_ARG:
         if(state->arg_num==0){
                  if(!strcmp(arg,"test"))   a->action=ACT_TEST;
