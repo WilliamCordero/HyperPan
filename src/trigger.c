@@ -25,23 +25,27 @@ int trigger_init(char *name){
     trigger_wakeup();
 }
 int trigger_shot(double speed){
-    if(trigger->focus_mode){
-        verbose(L_TRGR,"%s: focus: ON",trigger->name);
-        if(!a->dummy)bcm2835_gpio_write(trigger->focus,HIGH);
+    if(a->shutter){
+        if(trigger->focus_mode){
+            verbose(L_TRGR,"%s: focus: ON",trigger->name);
+            if(!a->dummy)bcm2835_gpio_write(trigger->focus,HIGH);
+        }
+        if(trigger->shutter_delay){
+            verbose(L_TRGR,"%s: delay: %8.0fμs",trigger->name,trigger->shutter_delay*M);
+            bcm2835_delayMicroseconds(trigger->shutter_delay*M);
+        }
+        verbose(L_TRGR,"%s: shoot: %8.0fμs",trigger->name,speed?speed:trigger->shutter_speed*M);
+        if(!a->dummy)bcm2835_gpio_write(trigger->shutter,HIGH);
+        bcm2835_delayMicroseconds(speed?speed:trigger->shutter_speed*M);
+        if(!a->dummy)bcm2835_gpio_write(trigger->shutter,LOW);
+        if(trigger->focus_mode)if(!a->dummy)bcm2835_gpio_write(trigger->focus,LOW);
     }
-    if(trigger->shutter_delay){
-        verbose(L_TRGR,"%s: delay: %8.0fμs",trigger->name,trigger->shutter_delay*M);
-        bcm2835_delayMicroseconds(trigger->shutter_delay*M);
-    }
-    verbose(L_TRGR,"%s: shoot: %8.0fμs",trigger->name,speed?speed:trigger->shutter_speed*M);
-    if(!a->dummy)bcm2835_gpio_write(trigger->shutter,HIGH);
-    bcm2835_delayMicroseconds(speed?speed:trigger->shutter_speed*M);
-    if(!a->dummy)bcm2835_gpio_write(trigger->shutter,LOW);
-    if(trigger->focus_mode)if(!a->dummy)bcm2835_gpio_write(trigger->focus,LOW);
 }
 int trigger_wakeup(){
-    verbose(L_TRGR,"%s: ☼",trigger->name);
-    if(!a->dummy)bcm2835_gpio_write(trigger->focus,HIGH);
-    bcm2835_delayMicroseconds(trigger->shutter_speed*M);
-    if(!a->dummy)bcm2835_gpio_write(trigger->focus,LOW);
+    if(a->shutter){
+        verbose(L_TRGR,"%s: ☼",trigger->name);
+        if(!a->dummy)bcm2835_gpio_write(trigger->focus,HIGH);
+        bcm2835_delayMicroseconds(trigger->shutter_speed*M);
+        if(!a->dummy)bcm2835_gpio_write(trigger->focus,LOW);
+    }
 }

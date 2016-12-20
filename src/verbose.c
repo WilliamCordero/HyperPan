@@ -23,6 +23,7 @@ static struct argp_option options[]={
     {"dummy",  'd',0,        0,"Dummy mode"},
     {"focal",  'f',"FOCAL",  0,"Focal length(Def:50mm)"},
     {"height", 'h',"HEIGHT", 0,"Sensor height(Def:23.5mm)"},
+    {"motion", 'm',0,        0,"Only motion, no shutter"},
     {"overlap",'o',"OVERLAP",0,"Overlap area(Def:0.375)"},
     {"quiet",  'q',0,        0,"Quiet output"},
     {"speed",  's',"SPEED",  0,"Shutter speed(Def:0.5s)"},
@@ -38,6 +39,7 @@ static error_t parse_opt(int key,char *arg,struct argp_state *state){
   switch(key){
     case 'a':a->focus=AF;break;
     case 'b':a->delay=atof(arg);break;
+    case 'm':a->shutter=0;break;
     case 'q':a->level=L_NONE;break;
     case 's':a->speed=atof(arg);break;
     case 'v':a->level=atoi(arg);break;
@@ -98,6 +100,7 @@ int verbose_init(int argc,char**argv){
     a->vwidth=D_VWIDTH;
     a->vheight=D_VHEIGHT;
     a->dummy=D_DUMMY;
+    a->shutter=1;
     a->min=MIN_DEF;
     a->max=MAX_DEF;
     a->border=BORDER_DEF;

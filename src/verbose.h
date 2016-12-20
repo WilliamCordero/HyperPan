@@ -14,6 +14,7 @@ typedef struct args{
     int    max;
     int    border;
     int    focus;
+    int    shutter;
     double focal;
     double width;
     double height;
