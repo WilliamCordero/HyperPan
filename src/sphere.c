@@ -34,6 +34,6 @@ int go(double rho,double theta,double phi){
     sphere->rho=rho;sphere->s_rho=n_rho;
     sphere->theta=theta;sphere->s_theta=n_theta;
     sphere->phi=phi;sphere->s_phi=n_phi;
-    stepper_walk(sphere->st_theta,d_theta,sphere->st_phi,d_phi,a->pulse,a->accel,a->border);
+    stepper_walk(sphere->st_theta,d_theta,sphere->st_phi,d_phi,a->min,a->max,a->border);
 }
 int pos_reset(){sphere->rho=sphere->theta=sphere->phi=sphere->s_rho=sphere->s_theta=sphere->s_phi=0;}

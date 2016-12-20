@@ -47,8 +47,8 @@ static error_t parse_opt(int key,char *arg,struct argp_state *state){
     case 'o':a->overlap=atof(arg);break;
     case 'x':a->vwidth=atof(arg);break;
     case 'y':a->vheight=atof(arg);break;
-    case 'z':a->pulse=PULSE_SLOTH;
-             a->accel=ACCEL_SLOTH;
+    case 'z':a->min=MIN_SLOTH;
+             a->max=MAX_SLOTH;
              a->border=BORDER_SLOTH;
              break;
 //        a->file=arg;break;
@@ -57,7 +57,8 @@ static error_t parse_opt(int key,char *arg,struct argp_state *state){
         break;        
     case ARGP_KEY_ARG:
         if(state->arg_num==0){
-                 if(!strcmp(arg,"virtual"))a->action=ACT_VIRTUAL;
+                 if(!strcmp(arg,"test"))   a->action=ACT_TEST;
+            else if(!strcmp(arg,"virtual"))a->action=ACT_VIRTUAL;
             else if(!strcmp(arg,"sphere")) a->action=ACT_SPHERE;
             else if(!strcmp(arg,"35"))     a->action=ACT_35;
             else if(!strcmp(arg,"6x45"))   a->action=ACT_6x45;
@@ -97,8 +98,8 @@ int verbose_init(int argc,char**argv){
     a->vwidth=D_VWIDTH;
     a->vheight=D_VHEIGHT;
     a->dummy=D_DUMMY;
-    a->pulse=PULSE_DEF;
-    a->accel=ACCEL_DEF;
+    a->min=MIN_DEF;
+    a->max=MAX_DEF;
     a->border=BORDER_DEF;
 //    asprintf(&a->file,"%s",D_FILE);
     argp_parse(&argp,argc,argv,0,0,a);

@@ -47,6 +47,7 @@ int camera_action(){
         case     ACT_9x6:camera_vshot(a->focal,a->height,a->width,a->overlap,60,90);break;
         case    ACT_6x17:camera_vshot(a->focal,a->height,a->width,a->overlap,170,60);break;
         case    ACT_17x6:camera_vshot(a->focal,a->height,a->width,a->overlap,60,170);break;
+        case    ACT_TEST:camera_test();break;
         case ACT_VIRTUAL:camera_vshot(a->focal,a->height,a->width,a->overlap,a->vheight,a->vwidth);break;
         case ACT_SPHERE:camera_sphere(a->focal,a->height,a->width,a->overlap);break;
         case     ACT_XXX:verbose(L_INFO,"Not Implemented yet");break;
@@ -95,4 +96,7 @@ int camera_sphere(double f,double v,double h,double o){
             trigger_shot(0);
         }
     }
+}
+int camera_test(){
+    go(0,90,90);
 }

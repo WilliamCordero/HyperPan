@@ -45,7 +45,8 @@ extern "C" {
 #define L_POSS 0b00000010
 #define L_ACCT 0b00000100
 #define L_TRGR 0b00001000
-#define L_ALL  0b00010000
+#define L_TEST 0b00010000
+#define L_ALL  0b10000000
 //DEFAULT ARGS
 #define D_LEVEL    3       //DEFAULT VERVOSE LEVEL
 #define D_FOCAL    50.0    //DEFAULT FOCAL LENGH
@@ -57,6 +58,7 @@ extern "C" {
 #define D_FILE     "out"   //DEFAULT FILE NAME
 #define D_DUMMY    0       //DEFAULT DUMMY
 //ACTIONS
+#define ACT_TEST    0
 #define ACT_VIRTUAL 1
 #define ACT_SPHERE  2
 #define ACT_XXX     3
@@ -73,11 +75,11 @@ extern "C" {
 #define ACT_6x17    20
 #define ACT_17x6    21
 //MOVEMENT SPEED
-#define PULSE_DEF    40
-#define ACCEL_DEF    10
-#define BORDER_DEF   8
-#define PULSE_SLOTH  180
-#define ACCEL_SLOTH  4
+#define MIN_DEF     40 //40
+#define MAX_DEF    230 //400
+#define BORDER_DEF  14 //8
+#define MIN_SLOTH  200
+#define MAX_SLOTH  400
 #define BORDER_SLOTH 2
 //ARGP
 #define VERSION  "HyperPan 0.61";

@@ -10,8 +10,8 @@ typedef struct args{
     int    level;
     int    action;
     int    dummy;
-    int    pulse;
-    int    accel;
+    int    min;
+    int    max;
     int    border;
     int    focus;
     double focal;

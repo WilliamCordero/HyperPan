@@ -68,36 +68,42 @@ int stepper_on(stepper motor){
 int stepper_off(stepper motor){
     bcm2835_gpio_write(motor.sleep,LOW);
 }
-int stepper_walk(stepper l_st,int l_n,stepper s_st,int s_n, int pulse, int accel,int border){
-    int x,l_c=0,s_c=0,b=abs(l_n)/border;
+int stepper_walk(stepper l_st,int l_n,stepper s_st,int s_n,int min,int max,int border){
+    int x,l_c=0,s_c=0,b;
     double m=(double)abs(l_n)/(double)abs(s_n);
     char *msj;
-    if(abs(l_n)<abs(s_n))return stepper_walk(s_st,s_n,l_st,l_n,pulse,accel,border);
+    if(abs(l_n)<abs(s_n))return stepper_walk(s_st,s_n,l_st,l_n,min,max,border);
+    min=abs(l_n)<((l_st.steps/4)*l_st.mode)?min+(((max-min)*(((l_st.steps/4)*l_st.mode)-abs(l_n)))/((l_st.steps/4)*l_st.mode)):min;
+    b=abs(l_n)/(2+(((border-2)*abs(l_n))/((l_st.steps/4)*l_st.mode)));
     bcm2835_gpio_write(l_st.dir,l_n<0?HIGH:LOW);
     bcm2835_gpio_write(s_st.dir,s_n<0?HIGH:LOW);
     for(x=b;0<x;x--){
         bcm2835_gpio_write(l_st.step,HIGH);
         if((m*s_c)<=l_c)bcm2835_gpio_write(s_st.step,HIGH);
-        bcm2835_delayMicroseconds(pulse+(((pulse*accel*x)/b)/2));
+        bcm2835_delayMicroseconds(min+(((max*x)/b)/2));
         if((m*s_c)<=l_c){bcm2835_gpio_write(s_st.step,LOW);s_c++;}
         bcm2835_gpio_write(l_st.step,LOW);l_c++;
-        bcm2835_delayMicroseconds(pulse+(((pulse*accel*x)/b)/2));
+        bcm2835_delayMicroseconds(min+(((max*x)/b)/2));
+           verbose(L_TEST,"1: %d %d %d",min,min+((max*x)/b),b);
     }
     for(x=abs(l_n)-(b*2);0<x;x--){
         bcm2835_gpio_write(l_st.step,HIGH);
         if((m*s_c)<=l_c)bcm2835_gpio_write(s_st.step,HIGH);
-        bcm2835_delayMicroseconds(pulse);
+        bcm2835_delayMicroseconds(min);
         if((m*s_c)<=l_c){bcm2835_gpio_write(s_st.step,LOW);s_c++;}
         bcm2835_gpio_write(l_st.step,LOW);l_c++;
-        bcm2835_delayMicroseconds(pulse);
+        bcm2835_delayMicroseconds(min);
+           verbose(L_TEST,"2: %d:0",min);
+           verbose(L_TEST,"2: %d 0 %d",min,b);
     }
     for(x=0;x<b;x++){
         bcm2835_gpio_write(l_st.step,HIGH);
         if((m*s_c)<=l_c)bcm2835_gpio_write(s_st.step,HIGH);
-        bcm2835_delayMicroseconds(pulse+(((pulse*accel*x)/b)/2));
+        bcm2835_delayMicroseconds(min+(((max*x)/b)/2));
         if((m*s_c)<=l_c){bcm2835_gpio_write(s_st.step,LOW);s_c++;}
         bcm2835_gpio_write(l_st.step,LOW);l_c++;
-        bcm2835_delayMicroseconds(pulse+(((pulse*accel*x)/b)/2));
+        bcm2835_delayMicroseconds(min+(((max*x)/b)/2));
+           verbose(L_TEST,"3: %d %d %d %d",min,min+((max*x)/b),b,l_n);
     }
     verbose(L_ACCT,"%s: %c%i",l_st.name,l_n<0?'-':'+',l_c);
     verbose(L_ACCT,"%s: %c%i",s_st.name,s_n<0?'-':'+',s_c);
