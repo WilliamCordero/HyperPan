@@ -20,6 +20,7 @@ static char args_doc[]=ARGS_DOC;
 static struct argp_option options[]={
     {"auto",   'a',0,        0,"Auto Focus On"},
     {"delay",  'b',"DELAY",  0,"Shutter delay"},
+    {"fast",   'c',0,        0,"Max. speed, high vibration"},
     {"dummy",  'd',0,        0,"Dummy mode"},
     {"focal",  'f',"FOCAL",  0,"Focal length(Def:50mm)"},
     {"height", 'h',"HEIGHT", 0,"Sensor height(Def:23.5mm)"},
@@ -28,10 +29,10 @@ static struct argp_option options[]={
     {"quiet",  'q',0,        0,"Quiet output"},
     {"speed",  's',"SPEED",  0,"Shutter speed(Def:0.5s)"},
     {"verbose",'v',"LEVEL",  0,"Verbose level"},
-    {"vheight",'y',"VHEIGHT",0,"Virtual sensor height(Def:60mm)"},
-    {"vwidth", 'x',"VWIDTH", 0,"Virtual sensor width(Def:60mm)"},
     {"width",  'w',"WIDTH",  0,"Sensor width(Def:15.6mm)"},
-    {"sloth",  'z',0,        0,"Minimize vibration"},
+    {"vwidth", 'x',"VWIDTH", 0,"Virtual sensor width(Def:60mm)"},
+    {"vheight",'y',"VHEIGHT",0,"Virtual sensor height(Def:60mm)"},
+    {"slow",  'z',0,         0,"Min speed, low vibration"},
 //  {"save",'s',"FILE",0,"Save to file"},
     {0}
 };

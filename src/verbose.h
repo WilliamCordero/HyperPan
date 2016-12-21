@@ -7,27 +7,26 @@
 extern "C" {
 #endif
 typedef struct args{
-    int    level;
-    int    action;
-    int    dummy;
-    int    min;
-    int    max;
-    int    border;
-    int    focus;
-    int    shutter;
-    double focal;
-    double width;
-    double height;
-    double vwidth;
-    double vheight;
-    double overlap;
-    double speed;
-    double delay;
-    char  *file;
+    int level;
+    int action;
+    int dummy;
+    int min;
+    int max;
+    int border;
+    int focus;
+    int shutter;
+   char *file;    
+ double focal;
+ double width;
+ double height;
+ double vwidth;
+ double vheight;
+ double overlap;
+ double speed;
+ double delay;
 }args;
 struct args *a;
 int verbose_init(int argc,char**argv);
-//int vebose(int level,char *msj);
 int verbose(int level,char *str,...);
 int warning(char *str,...);
 int error(char *str,...);

@@ -28,8 +28,6 @@ int go(double rho,double theta,double phi){
     d_rho=(((-1*md_rho)<=(d_rho=n_rho-sphere->s_rho))&&((md_rho)>=(d_rho=n_rho-sphere->s_rho)))?d_rho:((d_rho<0?1:-1)*((md_rho*2)-abs(d_rho)));
     d_theta=(((-1*md_theta)<=(d_theta=n_theta-sphere->s_theta))&&((md_theta)>=(d_theta=n_theta-sphere->s_theta)))?d_theta:((d_theta<0?1:-1)*((md_theta*2)-abs(d_theta)));
     d_phi=(((-1*md_phi)<=(d_phi=n_phi-sphere->s_phi))&&((md_phi)>=(d_phi=n_phi-sphere->s_phi)))?d_phi:((d_phi<0?1:-1)*((md_phi*2)-abs(d_phi)));
-//    verbose(L_POSS,"%s: (%i,%i,%i)<>(%i,%i,%i).",sphere->name,sphere->s_rho,sphere->s_theta,sphere->s_phi,n_rho,n_theta,n_phi);
-//    verbose(L_POSS,"%s: ( %4.2f, %7.2f,%7.2f )( %4.2f, %7.2f, %7.2f ).",sphere->name,sphere->rho,sphere->theta,sphere->phi,rho,theta,phi);
     verbose(L_POSS,"%s: %4.2f, %7.2f,%7.2f",sphere->name,rho,theta,phi);
     sphere->rho=rho;sphere->s_rho=n_rho;
     sphere->theta=theta;sphere->s_theta=n_theta;

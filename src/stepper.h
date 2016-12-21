@@ -14,7 +14,7 @@ typedef struct stepper{
     int m1;
     int mode;
     int steps;
-    char *name;
+   char *name;
 }stepper;
 stepper stepper_init(int sleep,int step,int dir,int m0,int m1,int mode,int steps,char *name);
 int stepper_on(stepper motor);

@@ -49,7 +49,7 @@ int camera_action(){
         case    ACT_17x6:camera_vshot(a->focal,a->height,a->width,a->overlap,60,170);break;
         case    ACT_TEST:camera_test();break;
         case ACT_VIRTUAL:camera_vshot(a->focal,a->height,a->width,a->overlap,a->vheight,a->vwidth);break;
-        case ACT_SPHERE:camera_sphere(a->focal,a->height,a->width,a->overlap);break;
+        case  ACT_SPHERE:camera_sphere(a->focal,a->height,a->width,a->overlap);break;
         case     ACT_XXX:verbose(L_INFO,"Not Implemented yet");break;
     }
 }
@@ -79,8 +79,8 @@ int camera_vshot(double f,double v,double h,double o,double vv,double vh){
 }
 int camera_sphere(double f,double v,double h,double o){
     int x,y;
-    double  a_v=r2d(2*atan(v/(2*f)));
-    double  a_h=r2d(2*atan(h/(2*f)));
+    double a_v=r2d(2*atan(v/(2*f)));
+    double a_h=r2d(2*atan(h/(2*f)));
     verbose(L_INFO,"%s: sphere",cam->name);
     verbose(L_INFO,"%s:     focal: %6.2f mm",cam->name,f);
     verbose(L_INFO,"%s: υ: sensor: %6.2f • %6.2f mm",cam->name,v,h);
