@@ -66,8 +66,10 @@
           <runcommandpicklistitem>"${OUTPUT_PATH}" 35 </runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" test -v16</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" virtual</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" 35 -v255 -c</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" 35 -v13</runcommandpicklistitem>
         </runcommandpicklist>
-        <runcommand>"${OUTPUT_PATH}" virtual</runcommand>
+        <runcommand>"${OUTPUT_PATH}" 35 -v13</runcommand>
         <rundir></rundir>
         <buildfirst>true</buildfirst>
         <console-type>2</console-type>

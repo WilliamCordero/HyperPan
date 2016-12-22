@@ -47,7 +47,7 @@ extern "C" {
 #define       L_SPHR 0b00000100 //4
 #define       L_CAMR 0b00001000 //8
 #define       L_TRGR 0b00010000 //16
-#define       L_TEST 0b10000000 //128
+#define       L_TEST 0b00000000 //128
 
 //DEFAULT ARGS
 #define      D_LEVEL 9     //DEFAULT VERVOSE LEVEL
@@ -84,8 +84,8 @@ extern "C" {
 #define     MAX_SLOW 400
 #define  BORDER_SLOW 2
 #define     MIN_FAST 40
-#define     MAX_FAST 0
-#define  BORDER_FAST 10
+#define     MAX_FAST 40
+#define  BORDER_FAST 1000
 
 //ARGP
 #define      VERSION "HyperPan 0.61";
