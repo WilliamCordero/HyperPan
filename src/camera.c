@@ -5,6 +5,11 @@
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
+#ifndef  BCM_DUMMY
+#  include <bcm2835.h>
+#else  //BCM_DUMMY
+#  include "dummy/bcm_dummy.h"
+#endif //BCM_DUMMY
 #include "config.h"
 #include "verbose.h"
 #include "trigger.h"
@@ -15,7 +20,7 @@ double r2d(double r){return r*(180/M_PI);}
 double d2r(double d){return d*(M_PI/180);}
 int camera_init(char *name){
     cam=(struct camera*)malloc(sizeof(struct camera));
-    verbose(L_INFO,"%s: ★",cam->name=name);
+    verbose(L_CAMR,"%s: ★:",cam->name=name);
 }
 int camera_on(){
     sphere_init(stepper_init(RHO_SLEEP,RHO_STEP,RHO_DIR,RHO_M0,RHO_M1,RHO_MODE,RHO_STEPS,"ρ"),
@@ -30,7 +35,7 @@ int camera_off(){
     stepper_off(sphere->st_rho);
     stepper_off(sphere->st_theta);
     stepper_off(sphere->st_phi);
-    verbose(L_INFO,"ω\n");alert_led();
+    verbose(L_INFO,"ω:");alert_led();
     bcm2835_close();
 }
 int camera_action(){
@@ -50,7 +55,7 @@ int camera_action(){
         case    ACT_TEST:camera_test();break;
         case ACT_VIRTUAL:camera_vshot(a->focal,a->height,a->width,a->overlap,a->vheight,a->vwidth);break;
         case  ACT_SPHERE:camera_sphere(a->focal,a->height,a->width,a->overlap);break;
-        case     ACT_XXX:verbose(L_INFO,"Not Implemented yet");break;
+        case     ACT_XXX:warning("Not Implemented yet");break;
     }
 }
 int camera_vshot(double f,double v,double h,double o,double vv,double vh){
@@ -59,15 +64,14 @@ int camera_vshot(double f,double v,double h,double o,double vv,double vh){
     double  a_h=r2d(2*atan( h/(2*f)));
     double va_v=r2d(2*atan(vv/(2*f)));
     double va_h=r2d(2*atan(vh/(2*f)));
-    verbose(L_INFO,"%s: virtual",cam->name);
-    verbose(L_INFO,"%s:     focal: %6.2f mm",cam->name,f);
-    verbose(L_INFO,"%s: υ: sensor: %6.2f • %6.2f mm",cam->name,v,h);
-    verbose(L_INFO,"%s: υ:      α: %6.2f • %6.2f °",cam->name,a_v,a_h);
+    verbose(L_CAMR,"%s:     focal: %6.2f mm",cam->name,f);
+    verbose(L_CAMR,"%s: υ: sensor: %6.2f • %6.2f mm",cam->name,v,h);
+    verbose(L_CAMR,"%s: υ:      α: %6.2f • %6.2f °",cam->name,a_v,a_h);
     a_v=a_v*(1-(o/2));a_h=a_h*(1-(o/2));
-    verbose(L_INFO,"%s: υ:     α': %6.2f • %6.2f °",cam->name,a_v,a_h);
-    verbose(L_INFO,"%s: υ:      Ξ: %6.3f",cam->name,o);
-    verbose(L_INFO,"%s: ν: sensor: %6.2f • %6.2f mm",cam->name,vv,vh);
-    verbose(L_INFO,"%s: ν:      α: %6.2f • %6.2f °",cam->name,va_v,va_h);
+    verbose(L_CAMR,"%s: υ:     α': %6.2f • %6.2f °",cam->name,a_v,a_h);
+    verbose(L_CAMR,"%s: υ:      Ξ: %6.3f",cam->name,o);
+    verbose(L_CAMR,"%s: ν: sensor: %6.2f • %6.2f mm",cam->name,vv,vh);
+    verbose(L_CAMR,"%s: ν:      α: %6.2f • %6.2f °",cam->name,va_v,va_h);
     for(y=0;y<=floor(va_v/a_v);y++){
         double pos_theta=((a_v*((y*2)-floor(va_v/a_v)))/2); 
         for(x=0;x<=floor(va_h/(a_h/cos(d2r(pos_theta))));x++){
@@ -81,13 +85,12 @@ int camera_sphere(double f,double v,double h,double o){
     int x,y;
     double a_v=r2d(2*atan(v/(2*f)));
     double a_h=r2d(2*atan(h/(2*f)));
-    verbose(L_INFO,"%s: sphere",cam->name);
-    verbose(L_INFO,"%s:     focal: %6.2f mm",cam->name,f);
-    verbose(L_INFO,"%s: υ: sensor: %6.2f • %6.2f mm",cam->name,v,h);
-    verbose(L_INFO,"%s: υ:      α: %6.2f • %6.2f °",cam->name,a_v,a_h);
+    verbose(L_CAMR,"%s:     focal: %6.2f mm",cam->name,f);
+    verbose(L_CAMR,"%s: υ: sensor: %6.2f • %6.2f mm",cam->name,v,h);
+    verbose(L_CAMR,"%s: υ:      α: %6.2f • %6.2f °",cam->name,a_v,a_h);
     a_v=a_v*(1-(o/2));a_h=a_h*(1-(o/2));
-    verbose(L_INFO,"%s: υ:     α': %6.2f • %6.2f °",cam->name,a_v,a_h);
-    verbose(L_INFO,"%s: υ:      Ξ: %6.3f",cam->name,o);
+    verbose(L_CAMR,"%s: υ:     α': %6.2f • %6.2f °",cam->name,a_v,a_h);
+    verbose(L_CAMR,"%s: υ:      Ξ: %6.3f",cam->name,o);
     for(y=0;y<=ceil(180/a_v);y++){
         double pos_theta=(y*(180/ceil(180/a_v)))-90;
         for(x=0;x<ceil(360/(a_h/cos(d2r(pos_theta))));x++){

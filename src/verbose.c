@@ -40,6 +40,10 @@ static error_t parse_opt(int key,char *arg,struct argp_state *state){
   switch(key){
     case 'a':a->focus=AF;break;
     case 'b':a->delay=atof(arg);break;
+    case 'c':a->min=MIN_FAST;
+             a->max=MAX_FAST;
+             a->border=BORDER_FAST;
+             break;
     case 'd':a->dummy=1;break;        
     case 'f':a->focal=atof(arg);break;
     case 'h':a->height=atof(arg);break;
@@ -51,9 +55,9 @@ static error_t parse_opt(int key,char *arg,struct argp_state *state){
     case 'w':a->width=atof(arg);break;
     case 'x':a->vwidth=atof(arg);break;
     case 'y':a->vheight=atof(arg);break;
-    case 'z':a->min=MIN_SLOTH;
-             a->max=MAX_SLOTH;
-             a->border=BORDER_SLOTH;
+    case 'z':a->min=MIN_SLOW;
+             a->max=MAX_SLOW;
+             a->border=BORDER_SLOW;
              break;
 //        a->file=arg;break;
     case ARGP_KEY_ARG:
@@ -110,27 +114,30 @@ int verbose_init(int argc,char**argv){
 int verbose(int level,char *str,...){
     va_list args;
     if(level&a->level){
-        printf("\n|> ");
+        printf("|> ");
         va_start(args,str);
         vprintf(str,args);
         va_end(args);
+        printf("\n");
     }
 }
 int warning(char *str,...){
     va_list args;
     alert_led();alert_led();
-    printf("\n|> χ: ");
+    printf("|> χ: ");
     va_start(args,str);
     vprintf(str,args);
     va_end(args);
+    printf("\n");
 }
 int error(char *str,...){
     va_list args;
     alert_led();alert_led();
-    printf("\n|> χχ: ");
+    printf("|> χχ: ");
     va_start(args,str);
     vprintf(str,args);printf("\n");
     va_end(args);
+    printf("\n");
     exit(1);
 }
 int alert_led(){
