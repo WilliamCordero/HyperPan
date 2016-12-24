@@ -1,5 +1,5 @@
 /*
-  William Cordero (2016) <william.cordero@gmail.com>
+  William Cordero (2016) X <william.cordero@gmail.com>
  */
 #include "verbose.h"
 #include "camera.h"
