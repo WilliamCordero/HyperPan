@@ -105,8 +105,10 @@
           <runcommandpicklistitem>"${OUTPUT_PATH}"</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" virtual</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" virtual -v13</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" virtual 35 -v13</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" 35 -v13</runcommandpicklistitem>
         </runcommandpicklist>
-        <runcommand>"${OUTPUT_PATH}" virtual -v13</runcommand>
+        <runcommand>"${OUTPUT_PATH}" 35 -v13</runcommand>
         <rundir></rundir>
         <buildfirst>true</buildfirst>
         <console-type>2</console-type>

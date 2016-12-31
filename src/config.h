@@ -47,6 +47,7 @@ extern "C" {
 #define       L_SPHR 0b00000100 //4
 #define       L_CAMR 0b00001000 //8
 #define       L_TRGR 0b00010000 //16
+#define       L_SLVE 0b00100000 //32
 #define       L_TEST 0b00000000 //128
 
 //DEFAULT ARGS
@@ -57,7 +58,7 @@ extern "C" {
 #define    D_OVERLAP 0.375 //DEFAULT OVERLAP
 #define     D_VWIDTH 60.0  //DEFAULT VIRTUAL WIDTH
 #define    D_VHEIGHT 60.0  //DEFAULT VIRTUAL HEIGHT
-#define       D_FILE "out" //DEFAULT FILE NAME
+//#define       D_FILE "out" //DEFAULT FILE NAME
 #define      D_DUMMY 0     //DEFAULT DUMMY
 //ACTIONS
 #define     ACT_TEST 0

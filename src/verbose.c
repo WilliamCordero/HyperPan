@@ -12,6 +12,7 @@
 #  include "dummy/bcm_dummy.h"
 #endif //BCM_DUMMY
 #include "config.h"
+#include "slave.h"
 #include "verbose.h"
 const char *argp_program_version=VERSION;
 const char *argp_program_bug_address=BUG_REP;
@@ -23,6 +24,7 @@ static struct argp_option options[]={
     {"fast",   'c',0,        0,"High speed"},
     {"dummy",  'd',0,        0,"Dummy mode"},
     {"focal",  'f',"FOCAL",  0,"Focal length(Def:50mm)"},
+    {"save",   'g',"FILE",   0,"Save to file"},
     {"height", 'h',"HEIGHT", 0,"Sensor height(Def:23.5mm)"},
     {"motion", 'm',0,        0,"No shutter"},
     {"overlap",'o',"OVERLAP",0,"Overlap area(Def:0.375)"},
@@ -33,7 +35,6 @@ static struct argp_option options[]={
     {"vwidth", 'x',"VWIDTH", 0,"Virtual sensor width(Def:60mm)"},
     {"vheight",'y',"VHEIGHT",0,"Virtual sensor height(Def:60mm)"},
     {"slow",  'z',0,         0,"Low speed"},
-//  {"save",'s',"FILE",0,"Save to file"},
     {0}
 };
 static error_t parse_opt(int key,char *arg,struct argp_state *state){
@@ -46,6 +47,7 @@ static error_t parse_opt(int key,char *arg,struct argp_state *state){
              break;
     case 'd':a->dummy=1;break;        
     case 'f':a->focal=atof(arg);break;
+    case 'g':a->file=arg;break;
     case 'h':a->height=atof(arg);break;
     case 'm':a->shutter=0;break;
     case 'o':a->overlap=atof(arg);break;
@@ -59,7 +61,6 @@ static error_t parse_opt(int key,char *arg,struct argp_state *state){
              a->max=MAX_SLOW;
              a->border=BORDER_SLOW;
              break;
-//        a->file=arg;break;
     case ARGP_KEY_ARG:
         if(state->arg_num==0){
                  if(!strcmp(arg,"test"))   a->action=ACT_TEST;
@@ -97,6 +98,7 @@ int verbose_init(int argc,char**argv){
     a->delay=DELAY;
     a->level=D_LEVEL;
     a->focal=D_FOCAL;
+    a->file=0;
     a->width=D_WIDTH;
     a->height=D_HEIGHT;
     a->overlap=D_OVERLAP;
@@ -107,37 +109,50 @@ int verbose_init(int argc,char**argv){
     a->min=MIN_DEF;
     a->max=MAX_DEF;
     a->border=BORDER_DEF;
-//    asprintf(&a->file,"%s",D_FILE);
     argp_parse(&argp,argc,argv,0,0,a);
-    verbose(L_INFO,"α: %s",a->dummy?"dummy mode":"");alert_led();
+    slave_init("λ");
+    verbose(L_INFO,"α: %s",a->dummy?"dummy mode":"");
+    alert_led();
+}
+int verbose_stop(){
+    verbose(L_INFO,"ω:");alert_led();
+    bcm2835_close();
+    slave_stop();
 }
 int verbose(int level,char *str,...){
     va_list args;
     if(level&a->level){
-        printf("|> ");
+        printf("# ");
         va_start(args,str);
         vprintf(str,args);
         va_end(args);
         printf("\n");
     }
+    if(a->file){
+        fprintf(out,"# ");
+        va_start(args,str);
+        vfprintf(out,str,args);
+        va_end(args);
+        fprintf(out,"\n");
+    }
 }
 int warning(char *str,...){
     va_list args;
     alert_led();alert_led();
-    printf("|> χ: ");
+    fprintf(stderr,"# χ: ");
     va_start(args,str);
-    vprintf(str,args);
+    vfprintf(stderr,str,args);
     va_end(args);
-    printf("\n");
+    fprintf(stderr,"\n");
 }
 int error(char *str,...){
     va_list args;
     alert_led();alert_led();
-    printf("|> χχ: ");
+    fprintf(stderr,"# χχ: ");
     va_start(args,str);
-    vprintf(str,args);printf("\n");
+    vfprintf(stderr,str,args);printf("\n");
     va_end(args);
-    printf("\n");
+    fprintf(stderr,"\n");
     exit(1);
 }
 int alert_led(){

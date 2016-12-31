@@ -81,7 +81,7 @@ int stepper_walk(stepper l_st,int l_n,stepper s_st,int s_n,int mm,int max,int bo
         if((m*s_c)<=l_c){bcm2835_gpio_write(s_st.step,LOW);s_c++;}
         bcm2835_gpio_write(l_st.step,LOW);l_c++;
         bcm2835_delayMicroseconds(min+adj);
-        verbose(L_TEST,"1: %.0f+%.1f %d",min,adj*2,x);
+//        verbose(L_TEST,"1: %.0f+%.1f %d",min,adj*2,x);
     }
     for(x=abs(l_n)-(b*2);0<x;x--){
         bcm2835_gpio_write(l_st.step,HIGH);
@@ -90,7 +90,7 @@ int stepper_walk(stepper l_st,int l_n,stepper s_st,int s_n,int mm,int max,int bo
         if((m*s_c)<=l_c){bcm2835_gpio_write(s_st.step,LOW);s_c++;}
         bcm2835_gpio_write(l_st.step,LOW);l_c++;
         bcm2835_delayMicroseconds(min);
-        verbose(L_TEST,"2: %.0f+0 %d",min,x);
+//        verbose(L_TEST,"2: %.0f+0 %d",min,x);
     }
     for(x=0;x<b;x++){
         double adj=((max*x)/b)/2;
@@ -100,7 +100,7 @@ int stepper_walk(stepper l_st,int l_n,stepper s_st,int s_n,int mm,int max,int bo
         if((m*s_c)<=l_c){bcm2835_gpio_write(s_st.step,LOW);s_c++;}
         bcm2835_gpio_write(l_st.step,LOW);l_c++;
         bcm2835_delayMicroseconds(min+adj);
-        verbose(L_TEST,"3: %.0f+%.1f %d",min,adj*2,x);
+//        verbose(L_TEST,"3: %.0f+%.1f %d",min,adj*2,x);
     }
     verbose(L_STPR,"%s: %s: %d",l_st.name,l_n<0?"←":"→",l_c);
     verbose(L_STPR,"%s: %s: %d",s_st.name,s_n<0?"←":"→",s_c);

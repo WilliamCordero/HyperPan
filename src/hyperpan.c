@@ -8,5 +8,6 @@ int main(int argc,char**argv){
     camera_on();
     camera_action();
     camera_off();
+    verbose_stop();
     return 0;
 }

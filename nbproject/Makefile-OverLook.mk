@@ -38,6 +38,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/camera.o \
 	${OBJECTDIR}/src/dummy/bcm_dummy.o \
 	${OBJECTDIR}/src/hyperpan.o \
+	${OBJECTDIR}/src/slave.o \
 	${OBJECTDIR}/src/sphere.o \
 	${OBJECTDIR}/src/stepper.o \
 	${OBJECTDIR}/src/trigger.o \
@@ -82,6 +83,11 @@ ${OBJECTDIR}/src/hyperpan.o: nbproject/Makefile-${CND_CONF}.mk src/hyperpan.c
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
 	$(COMPILE.c) -g -DBCM_DUMMY -D_GNU_SOURCE -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/hyperpan.o src/hyperpan.c
+
+${OBJECTDIR}/src/slave.o: nbproject/Makefile-${CND_CONF}.mk src/slave.c 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} "$@.d"
+	$(COMPILE.c) -g -DBCM_DUMMY -D_GNU_SOURCE -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/slave.o src/slave.c
 
 ${OBJECTDIR}/src/sphere.o: nbproject/Makefile-${CND_CONF}.mk src/sphere.c 
 	${MKDIR} -p ${OBJECTDIR}/src
