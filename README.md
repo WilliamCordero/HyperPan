@@ -1,6 +1,7 @@
 **HyperPan Control Software**
 
 > [William Cordero Photo](http://williamcordero.com)
+> [william.cordero@gmail.com](william.cordero@gmail.com)
 
 ```
 root@pi: $./hyperpan -?
@@ -51,5 +52,5 @@ Options:
 Mandatory or optional arguments to long options are also mandatory or optional
 for any corresponding short options.
 
-Report bugs to William Cordero <[william.cordero@gmail.com](william.cordero@gmail.com)>.
+Report bugs to William Cordero <william.cordero@gmail.com>.
 ```
