@@ -3,7 +3,7 @@
 #
 # NOCDDL
 #
-# Simone configuration
 # Release configuration
 # OverLook configuration
 # Debug configuration
+# Copy_of_Simone configuration

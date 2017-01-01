@@ -13,10 +13,6 @@
             <sourceRootList/>
             <confList>
                 <confElem>
-                    <name>Simone</name>
-                    <type>1</type>
-                </confElem>
-                <confElem>
                     <name>Release</name>
                     <type>1</type>
                 </confElem>
@@ -26,6 +22,10 @@
                 </confElem>
                 <confElem>
                     <name>Debug</name>
+                    <type>1</type>
+                </confElem>
+                <confElem>
+                    <name>Copy_of_Simone</name>
                     <type>1</type>
                 </confElem>
             </confList>
