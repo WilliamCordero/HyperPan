@@ -26,7 +26,7 @@ $ sudo make install
 $ sudo make uninstall
 ```
 
-### Run example
+### Example
 ```
 $ ./hyperpan 6x6 -v13
 ```
