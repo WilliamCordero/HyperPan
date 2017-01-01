@@ -23,7 +23,7 @@ AS=as
 # Macros
 CND_PLATFORM=MinGW-Windows
 CND_DLIB_EXT=dll
-CND_CONF=Copy_of_Simone
+CND_CONF=Simone
 CND_DISTDIR=dist
 CND_BUILDDIR=build
 

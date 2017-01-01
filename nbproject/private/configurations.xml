@@ -118,7 +118,7 @@
         </environment>
       </runprofile>
     </conf>
-    <conf name="Copy_of_Simone" type="1">
+    <conf name="Simone" type="1">
       <toolsSet>
         <developmentServer>localhost</developmentServer>
         <platform>3</platform>

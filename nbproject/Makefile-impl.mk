@@ -31,7 +31,7 @@ DEFAULTCONF=Release
 CONF=${DEFAULTCONF}
 
 # All Configurations
-ALLCONFS=Release OverLook Debug Copy_of_Simone 
+ALLCONFS=Release OverLook Debug Simone 
 
 
 # build

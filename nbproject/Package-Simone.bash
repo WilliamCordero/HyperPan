@@ -7,7 +7,7 @@
 # Macros
 TOP=`pwd`
 CND_PLATFORM=MinGW-Windows
-CND_CONF=Copy_of_Simone
+CND_CONF=Simone
 CND_DISTDIR=dist
 CND_BUILDDIR=build
 CND_DLIB_EXT=dll
