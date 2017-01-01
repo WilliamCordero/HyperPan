@@ -69,8 +69,6 @@ Options:
 
 Mandatory or optional arguments to long options are also mandatory or optional
 for any corresponding short options.
-
-Report bugs to William Cordero <william.cordero@gmail.com>.
 ```
 
 ### Verbose levels
@@ -83,3 +81,8 @@ L_TRGR 0b00010000 //16
 L_SLVE 0b00100000 //32
 L_OUTP 0b01000000 //64
 ```
+
+### Bugs
+Report bugs to [William Cordero]william.cordero@gmail.com).
+
+### License
