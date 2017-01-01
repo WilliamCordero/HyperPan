@@ -83,6 +83,6 @@ L_OUTP 0b01000000 //64
 ```
 
 ### Bugs
-Report bugs to [William Cordero]william.cordero@gmail.com).
+Report bugs to [William Cordero](william.cordero@gmail.com).
 
 ### License
