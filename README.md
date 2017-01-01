@@ -109,6 +109,10 @@ Mandatory or optional arguments to long options are also mandatory or optional
 for any corresponding short options.
 ```
 
+### Schematics
+![schematics](HyperPan/doc/hyperpan_schem.svg)
+
+
 ### Verbose levels
 ```
 L_INFO 0B00000001 //1  Generic Info
