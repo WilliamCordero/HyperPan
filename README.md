@@ -16,6 +16,11 @@
 $ make
 ```
 
+### Install
+```
+$ make install
+```
+
 ### Usage
 ```
 Usage: hyperpan [OPTION...]
