@@ -1,10 +1,12 @@
 # HyperPan Control Software
 
-> .
+> •
+
 > [William Cordero Photo](http://williamcordero.com)
 
 > [william.cordero@gmail.com](william.cordero@gmail.com)
-> .
+
+> •
 
 ### Dependencies
 - [bcm2835](http://www.airspayce.com/mikem/bcm2835/)
