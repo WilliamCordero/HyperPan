@@ -27,11 +27,11 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 PROJECTNAME=HyperPan
 
 # Active Configuration
-DEFAULTCONF=Debug
+DEFAULTCONF=Simone
 CONF=${DEFAULTCONF}
 
 # All Configurations
-ALLCONFS=Debug Release OverLook Simone 
+ALLCONFS=Simone Release OverLook Debug 
 
 
 # build
