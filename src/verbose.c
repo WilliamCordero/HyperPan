@@ -36,7 +36,7 @@ static struct argp_option options[]={
     {"width",  'w',"WIDTH",  0,"Sensor width(Def:15.6mm)"},
     {"vwidth", 'x',"VWIDTH", 0,"Virtual sensor width(Def:60mm)"},
     {"vheight",'y',"VHEIGHT",0,"Virtual sensor height(Def:60mm)"},
-    {"slow",  'z',0,         0,"Low speed"},
+    {"slow",   'z',0,        0,"Low speed"},
     {0}
 };
 static error_t parse_opt(int key,char *arg,struct argp_state *state){
@@ -129,8 +129,10 @@ int verbose(int level,char *str,...){
         va_end(args);
         printf("\n");
     }
+}
+int save(char *str,...){
+    va_list args;
     if(a->file){
-        if(level!=L_OUTP)fprintf(out,"# ");
         va_start(args,str);
         vfprintf(out,str,args);
         va_end(args);

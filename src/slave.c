@@ -27,42 +27,53 @@ int slave_stop(){
     if(a->file)fclose(out);
     if(a->load)fclose(in);
 }
-int get_int(FILE *src){
-    char c,s[255];
-    int i=-1;
-    do{
-        s[++i]=getc(src);
-        if(s[i]=='#')while(getc(src)!='\n');
-    }while(s[i]!=' '&&s[i]!='\n');
+long get_long(FILE *src){
+    int c,i;
+    char s[32];
+    while(((c=getc(src))!=EOF)&&(c!=' ')&&(c!='\n'))s[i++]=c;
     s[i]=0;
-    verbose(L_SLVE," -->%s<--",s);
+    if(c==EOF)return -1;
+    return atol(s);
 }
 int slave_read(){
-    verbose(L_INFO,"hola mundo");
-    get_int(in);
+    int i;
+    verbose(L_SLVE,"%s:",slv_name);
+    while((i=get_long(in))>=0){
+        switch(i){
+            case    ACT_NOP:break;
+            case     ACT_ON:w_init();break;
+            case    ACT_OFF:w_close();break;
+            case  ACT_SLEEP:w_delayMicroseconds(get_long(in));break;
+            case  ACT_WRITE:w_gpio_write(get_long(in),get_long(in));break;
+            case   ACT_FSEL:w_gpio_fsel(get_long(in),get_long(in));break;
+            case ACT_SETPUD:w_gpio_set_pud(get_long(in),get_long(in));break;
+        }
+    }
 }
 int w_init(){
-    verbose(L_SLVE,"%u",I_ON);
-    return bcm2835_init();
+    save("%u",ACT_ON);
+    if(!a->dummy)return bcm2835_init();
+    else return 1;
 }
 int w_close(){
-    verbose(L_OUTP,"%u",I_OFF);
-    return bcm2835_close();
+    save("%u",ACT_OFF);
+    if(!a->dummy)return bcm2835_close();
+    else return 1;
 }
 int w_delayMicroseconds(uint64_t micros){
-    verbose(L_OUTP,"%u %u",I_SLEEP,micros);
-    bcm2835_delayMicroseconds(micros);
+    save("%u %u",ACT_SLEEP,micros);
+    if(!a->dummy)bcm2835_delayMicroseconds(micros);
 }
 int w_gpio_write(uint8_t pin,uint8_t on){
-    verbose(L_OUTP,"%u %u %u",I_WRITE,pin,on);
-    bcm2835_gpio_write(pin,on);
+    save("%u %u %u",ACT_WRITE,pin,on);
+    if(!a->dummy)bcm2835_gpio_write(pin,on);
 }
 int w_gpio_fsel(uint8_t pin,uint8_t mode){
-    verbose(L_OUTP,"%u %u %u",I_FSEL,pin,mode);
-    bcm2835_gpio_fsel(pin,mode);
+    save("%u %u %u",ACT_FSEL,pin,mode);
+    if(!a->dummy)bcm2835_gpio_fsel(pin,mode);
 }
 int w_gpio_set_pud(uint8_t pin,uint8_t pud){
-    verbose(L_OUTP,"%u %u %u",I_SETPUD,pin,pud);
-    bcm2835_gpio_set_pud(pin,pud);
+    save("%u %u %u",ACT_SETPUD,pin,pud);
+    if(!a->dummy)bcm2835_gpio_set_pud(pin,pud);
 }
 

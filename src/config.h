@@ -51,14 +51,6 @@ extern "C" {
 #define       L_OUTP 0b01000000 //64
 //#define       L_OUTP 0b10000000 //128
 #define       L_TEST 0b00000000 //
-//SLAVE INSTRUCTIONS
-#define        I_NOP 0
-#define         I_ON 1
-#define        I_OFF 2
-#define      I_SLEEP 3
-#define      I_WRITE 4
-#define       I_FSEL 5
-#define     I_SETPUD 6
 //DEFAULT ARGS
 #define      D_LEVEL 9     //DEFAULT VERVOSE LEVEL
 #define      D_FOCAL 50.0  //DEFAULT FOCAL LENGH
@@ -70,23 +62,31 @@ extern "C" {
 //#define       D_FILE "out" //DEFAULT FILE NAME
 #define      D_DUMMY 0     //DEFAULT DUMMY
 //ACTIONS
-#define     ACT_TEST 0
-#define  ACT_VIRTUAL 1
-#define   ACT_SPHERE 2
-#define    ACT_SLAVE 3
-#define      ACT_XXX 4
-#define       ACT_35 10
-#define     ACT_6x45 11
-#define     ACT_45x6 12
-#define      ACT_6x6 13
-#define      ACT_6x7 14
-#define      ACT_7x6 15
-#define      ACT_6x8 16
-#define      ACT_8x6 17
-#define      ACT_6x9 18
-#define      ACT_9x6 19
-#define     ACT_6x17 20
-#define     ACT_17x6 21
+//SLAVE INSTRUCTIONS
+#define      ACT_NOP 0
+#define       ACT_ON 1
+#define      ACT_OFF 2
+#define    ACT_SLEEP 3
+#define    ACT_WRITE 4
+#define     ACT_FSEL 5
+#define   ACT_SETPUD 6
+#define     ACT_TEST 10
+#define  ACT_VIRTUAL 11
+#define   ACT_SPHERE 12
+#define    ACT_SLAVE 13
+#define      ACT_XXX 99
+#define       ACT_35 100
+#define     ACT_6x45 101
+#define     ACT_45x6 102
+#define      ACT_6x6 103
+#define      ACT_6x7 104
+#define      ACT_7x6 105
+#define      ACT_6x8 106
+#define      ACT_8x6 107
+#define      ACT_6x9 108
+#define      ACT_9x6 109
+#define     ACT_6x17 110
+#define     ACT_17x6 111
 //MOVEMENT SPEED
 #define      MIN_DEF 40    //40
 #define      MAX_DEF 230   //230

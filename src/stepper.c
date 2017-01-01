@@ -57,7 +57,7 @@ stepper stepper_init(int sleep,int step,int dir,int m0,int m1,int mode,int steps
     tmp.steps=steps;
     stepper_mode(tmp,mode);
     verbose(L_STPR,"%s: ☆: 1/%d",tmp.name=name,mode);
-    if(!a->dummy)stepper_on(tmp);
+    stepper_on(tmp);
     return tmp;
 }
 int stepper_on(stepper motor){

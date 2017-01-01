@@ -29,6 +29,7 @@ typedef struct args{
 struct args *a;
 int verbose_init(int argc,char**argv);
 int verbose(int level,char *str,...);
+int save(char *str,...);
 int warning(char *str,...);
 int error(char *str,...);
 int alert_led();
