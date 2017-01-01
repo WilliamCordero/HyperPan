@@ -6,7 +6,9 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
-#define M 1000000
+#define      VERSION "HyperPan 0.62";
+#define      BUG_REP "William Cordero <william.cordero@gmail.com>";
+#define            M 1000000
 //STEPPER CONFIGURATION
 #define    RHO_SLEEP 22    //GPIO 22
 #define     RHO_STEP 27    //GPIO 27
@@ -98,8 +100,6 @@ extern "C" {
 #define     MAX_FAST 40
 #define  BORDER_FAST 1000
 //ARGP
-#define      VERSION "HyperPan 0.61";
-#define      BUG_REP "William Cordero <william.cordero@gmail.com>";
 #define     ARGS_DOC "virtual|sphere|slave|35|6x45|45x6|6x6|6x7|7x6|6x8|8x6|6x9|9x6|6x17|17x6"
 #define     HELP_DOC "\n\
  * HyperPan Control Software.\n\

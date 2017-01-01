@@ -1,3 +1,6 @@
-# HyperPan
+* HyperPan Control Software.
+  William Cordero Photo
+  http://williamcordero.com
+  https://github.com/WilliamCordero/HyperPan
 
-HyperPan Control Software.
+Report bugs to William Cordero <william.cordero@gmail.com>
