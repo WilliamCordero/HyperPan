@@ -19,7 +19,7 @@ int camera_init(char *name){
     verbose(L_CAMR,"%s: ★:",cam->name=name);
 }
 int camera_on(){
-    if(!w_init()){fprintf(stderr,"|> χχ: bcm2835 missing.\n");exit(1);}
+    if(!w_init())error("bcm2835 missing");
     sphere_init(stepper_init(RHO_SLEEP,RHO_STEP,RHO_DIR,RHO_M0,RHO_M1,RHO_MODE,RHO_STEPS,"ρ"),
                 stepper_init(THETA_SLEEP,THETA_STEP,THETA_DIR,THETA_M0,THETA_M1,THETA_MODE,THETA_STEPS,"θ"),
                 stepper_init(PHI_SLEEP,PHI_STEP,PHI_DIR,PHI_M0,PHI_M1,PHI_MODE,PHI_STEPS,"φ"),

@@ -145,7 +145,6 @@ int warning(char *str,...){
 }
 int error(char *str,...){
     va_list args;
-    alert_led();alert_led();
     fprintf(stderr,"# χχ: ");
     va_start(args,str);
     vfprintf(stderr,str,args);printf("\n");
