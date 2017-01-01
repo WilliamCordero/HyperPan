@@ -11,6 +11,12 @@
 ### Dependencies
 - [bcm2835](http://www.airspayce.com/mikem/bcm2835/)
 
+### Build
+```
+$ make
+```
+
+### Usage
 ```
 Usage: hyperpan [OPTION...]
             virtual|sphere|slave|35|6x45|45x6|6x6|6x7|7x6|6x8|8x6|6x9|9x6|6x17|17x6
