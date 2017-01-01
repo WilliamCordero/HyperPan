@@ -14,6 +14,7 @@
 #include "config.h"
 #include "slave.h"
 #include "verbose.h"
+#include "camera.h"
 const char *argp_program_version=VERSION;
 const char *argp_program_bug_address=BUG_REP;
 static char doc[]=HELP_DOC;
@@ -26,6 +27,7 @@ static struct argp_option options[]={
     {"focal",  'f',"FOCAL",  0,"Focal length(Def:50mm)"},
     {"save",   'g',"FILE",   0,"Save to file"},
     {"height", 'h',"HEIGHT", 0,"Sensor height(Def:23.5mm)"},
+    {"load",   'l',"FILE",   0,"Load file"},
     {"motion", 'm',0,        0,"No shutter"},
     {"overlap",'o',"OVERLAP",0,"Overlap area(Def:0.375)"},
     {"quiet",  'q',0,        0,"Quiet output"},
@@ -49,6 +51,7 @@ static error_t parse_opt(int key,char *arg,struct argp_state *state){
     case 'f':a->focal=atof(arg);break;
     case 'g':a->file=arg;break;
     case 'h':a->height=atof(arg);break;
+    case 'l':a->load=arg;break;
     case 'm':a->shutter=0;break;
     case 'o':a->overlap=atof(arg);break;
     case 'q':a->level=L_NONE;break;
@@ -66,6 +69,7 @@ static error_t parse_opt(int key,char *arg,struct argp_state *state){
                  if(!strcmp(arg,"test"))   a->action=ACT_TEST;
             else if(!strcmp(arg,"virtual"))a->action=ACT_VIRTUAL;
             else if(!strcmp(arg,"sphere")) a->action=ACT_SPHERE;
+            else if(!strcmp(arg,"slave"))  a->action=ACT_SLAVE;
             else if(!strcmp(arg,"35"))     a->action=ACT_35;
             else if(!strcmp(arg,"6x45"))   a->action=ACT_6x45;
             else if(!strcmp(arg,"45x6"))   a->action=ACT_45x6;
@@ -91,7 +95,6 @@ static error_t parse_opt(int key,char *arg,struct argp_state *state){
 }
 static struct argp argp={options,parse_opt,args_doc,doc};
 int verbose_init(int argc,char**argv){
-    if(!bcm2835_init()){fprintf(stderr,"|> χχ: bcm2835 missing.\n");exit(1);}
     a=(struct args*)malloc(sizeof(struct args));
     a->focus=MF;
     a->speed=SPEED;
@@ -99,6 +102,7 @@ int verbose_init(int argc,char**argv){
     a->level=D_LEVEL;
     a->focal=D_FOCAL;
     a->file=0;
+    a->load=0;
     a->width=D_WIDTH;
     a->height=D_HEIGHT;
     a->overlap=D_OVERLAP;
@@ -112,24 +116,21 @@ int verbose_init(int argc,char**argv){
     argp_parse(&argp,argc,argv,0,0,a);
     slave_init("λ");
     verbose(L_INFO,"α: %s",a->dummy?"dummy mode":"");
-    alert_led();
-}
-int verbose_stop(){
-    verbose(L_INFO,"ω:");alert_led();
-    bcm2835_close();
+    camera_action();
+    verbose(L_INFO,"ω:");
     slave_stop();
 }
 int verbose(int level,char *str,...){
     va_list args;
     if(level&a->level){
-        printf("# ");
+        if(level!=L_OUTP)printf("# ");
         va_start(args,str);
         vprintf(str,args);
         va_end(args);
         printf("\n");
     }
     if(a->file){
-        fprintf(out,"# ");
+        if(level!=L_OUTP)fprintf(out,"# ");
         va_start(args,str);
         vfprintf(out,str,args);
         va_end(args);
@@ -157,11 +158,11 @@ int error(char *str,...){
 }
 int alert_led(){
     int i;
-    bcm2835_gpio_fsel(ALERT_GPIO,BCM2835_GPIO_FSEL_OUTP);
+    w_gpio_fsel(ALERT_GPIO,BCM2835_GPIO_FSEL_OUTP);
     for(i=0;i<3;i++){
-        bcm2835_gpio_write(ALERT_GPIO,HIGH);
-        bcm2835_delayMicroseconds(ALERT_BLINK);
-        bcm2835_gpio_write(ALERT_GPIO,LOW);
-        bcm2835_delayMicroseconds(ALERT_BLINK);
+        w_gpio_write(ALERT_GPIO,HIGH);
+        w_delayMicroseconds(ALERT_BLINK);
+        w_gpio_write(ALERT_GPIO,LOW);
+        w_delayMicroseconds(ALERT_BLINK);
     }
 }

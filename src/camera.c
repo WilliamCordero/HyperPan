@@ -16,6 +16,7 @@
 #include "stepper.h"
 #include "sphere.h"
 #include "camera.h"
+#include "slave.h"
 double r2d(double r){return r*(180/M_PI);}
 double d2r(double d){return d*(M_PI/180);}
 int camera_init(char *name){
@@ -23,6 +24,7 @@ int camera_init(char *name){
     verbose(L_CAMR,"%s: ★:",cam->name=name);
 }
 int camera_on(){
+    if(!w_init()){fprintf(stderr,"|> χχ: bcm2835 missing.\n");exit(1);}
     sphere_init(stepper_init(RHO_SLEEP,RHO_STEP,RHO_DIR,RHO_M0,RHO_M1,RHO_MODE,RHO_STEPS,"ρ"),
                 stepper_init(THETA_SLEEP,THETA_STEP,THETA_DIR,THETA_M0,THETA_M1,THETA_MODE,THETA_STEPS,"θ"),
                 stepper_init(PHI_SLEEP,PHI_STEP,PHI_DIR,PHI_M0,PHI_M1,PHI_MODE,PHI_STEPS,"φ"),
@@ -35,8 +37,13 @@ int camera_off(){
     stepper_off(sphere->st_rho);
     stepper_off(sphere->st_theta);
     stepper_off(sphere->st_phi);
+    w_close();
 }
 int camera_action(){
+    switch(a->action){
+        case ACT_SLAVE:break;
+        default: camera_on();
+    }
     switch(a->action){
         case      ACT_35:camera_vshot(a->focal,a->height,a->width,a->overlap,36,24);break;
         case    ACT_6x45:camera_vshot(a->focal,a->height,a->width,a->overlap,45,60);break;
@@ -51,9 +58,14 @@ int camera_action(){
         case    ACT_6x17:camera_vshot(a->focal,a->height,a->width,a->overlap,170,60);break;
         case    ACT_17x6:camera_vshot(a->focal,a->height,a->width,a->overlap,60,170);break;
         case    ACT_TEST:camera_test();break;
+        case   ACT_SLAVE:slave_read();break;
         case ACT_VIRTUAL:camera_vshot(a->focal,a->height,a->width,a->overlap,a->vheight,a->vwidth);break;
         case  ACT_SPHERE:camera_sphere(a->focal,a->height,a->width,a->overlap);break;
         case     ACT_XXX:warning("Not Implemented yet");break;
+    }
+    switch(a->action){
+        case ACT_SLAVE:break;
+        default: camera_off();
     }
 }
 int camera_vshot(double f,double v,double h,double o,double vv,double vh){

@@ -48,8 +48,17 @@ extern "C" {
 #define       L_CAMR 0b00001000 //8
 #define       L_TRGR 0b00010000 //16
 #define       L_SLVE 0b00100000 //32
-#define       L_TEST 0b00000000 //128
-
+#define       L_OUTP 0b01000000 //64
+//#define       L_OUTP 0b10000000 //128
+#define       L_TEST 0b00000000 //
+//SLAVE INSTRUCTIONS
+#define        I_NOP 0
+#define         I_ON 1
+#define        I_OFF 2
+#define      I_SLEEP 3
+#define      I_WRITE 4
+#define       I_FSEL 5
+#define     I_SETPUD 6
 //DEFAULT ARGS
 #define      D_LEVEL 9     //DEFAULT VERVOSE LEVEL
 #define      D_FOCAL 50.0  //DEFAULT FOCAL LENGH
@@ -64,7 +73,8 @@ extern "C" {
 #define     ACT_TEST 0
 #define  ACT_VIRTUAL 1
 #define   ACT_SPHERE 2
-#define      ACT_XXX 3
+#define    ACT_SLAVE 3
+#define      ACT_XXX 4
 #define       ACT_35 10
 #define     ACT_6x45 11
 #define     ACT_45x6 12
@@ -87,11 +97,10 @@ extern "C" {
 #define     MIN_FAST 40
 #define     MAX_FAST 40
 #define  BORDER_FAST 1000
-
 //ARGP
 #define      VERSION "HyperPan 0.61";
 #define      BUG_REP "William Cordero <william.cordero@gmail.com>";
-#define     ARGS_DOC "virtual|sphere|35|6x45|45x6|6x6|6x7|7x6|6x8|8x6|6x9|9x6|6x17|17x6"
+#define     ARGS_DOC "virtual|sphere|slave|35|6x45|45x6|6x6|6x7|7x6|6x8|8x6|6x9|9x6|6x17|17x6"
 #define     HELP_DOC "\n\
  * HyperPan Control Software.\n\
    William Cordero Photo\n\
@@ -100,6 +109,7 @@ extern "C" {
 Actions:\n\n\
    virtual\tCustom size virtual sensor\n\
    sphere\tCover the entire area\n\
+   slave\tSlave mode\n\
    35\t\tFull Frame    24x36mm\n\
    6x6\t\tMedium Format 60x60mm\n\
    6x45 45x6\tMedium Format 60x45mm\n\

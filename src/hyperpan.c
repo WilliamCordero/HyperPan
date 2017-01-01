@@ -5,9 +5,5 @@
 #include "camera.h"
 int main(int argc,char**argv){
     verbose_init(argc,argv);
-    camera_on();
-    camera_action();
-    camera_off();
-    verbose_stop();
     return 0;
 }

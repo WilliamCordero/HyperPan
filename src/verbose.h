@@ -15,7 +15,8 @@ typedef struct args{
     int border;
     int focus;
     int shutter;
-   char *file;    
+   char *file;
+   char *load;
  double focal;
  double width;
  double height;
@@ -27,7 +28,6 @@ typedef struct args{
 }args;
 struct args *a;
 int verbose_init(int argc,char**argv);
-int verbose_stop();
 int verbose(int level,char *str,...);
 int warning(char *str,...);
 int error(char *str,...);
