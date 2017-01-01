@@ -1,6 +1,7 @@
-**HyperPan Control Software**
+# HyperPan Control Software
 
 > [William Cordero Photo](http://williamcordero.com)
+
 > [william.cordero@gmail.com](william.cordero@gmail.com)
 
 ```
