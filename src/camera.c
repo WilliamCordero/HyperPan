@@ -5,11 +5,6 @@
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
-#ifndef  BCM_DUMMY
-#  include <bcm2835.h>
-#else  //BCM_DUMMY
-#  include "dummy/bcm_dummy.h"
-#endif //BCM_DUMMY
 #include "config.h"
 #include "verbose.h"
 #include "trigger.h"

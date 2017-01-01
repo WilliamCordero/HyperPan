@@ -6,11 +6,6 @@
 #include <string.h>
 #include <stdarg.h>
 #include <argp.h>
-#ifndef  BCM_DUMMY
-#  include <bcm2835.h>
-#else  //BCM_DUMMY
-#  include "dummy/bcm_dummy.h"
-#endif //BCM_DUMMY
 #include "config.h"
 #include "slave.h"
 #include "verbose.h"
@@ -160,7 +155,7 @@ int error(char *str,...){
 }
 int alert_led(){
     int i;
-    w_gpio_fsel(ALERT_GPIO,BCM2835_GPIO_FSEL_OUTP);
+    w_gpio_fsel(ALERT_GPIO,GPIO_FSEL_OUTP);
     for(i=0;i<3;i++){
         w_gpio_write(ALERT_GPIO,HIGH);
         w_delayMicroseconds(ALERT_BLINK);

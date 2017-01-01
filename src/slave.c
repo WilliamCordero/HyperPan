@@ -12,6 +12,7 @@
 #include "config.h"
 #include "verbose.h"
 #include "slave.h"
+char *slv_name;
 int slave_init(char *name){
     slv_name=name;
     if(a->file){
@@ -27,13 +28,11 @@ int slave_stop(){
     if(a->file)fclose(out);
     if(a->load)fclose(in);
 }
-long get_long(FILE *src){
-    int c,i;
-    char s[32];
-    while(((c=getc(src))!=EOF)&&(c!=' ')&&(c!='\n'))s[i++]=c;
-    s[i]=0;
+long long get_long(FILE *src){
+    int c,i;char s[32];
+    while(((c=getc(src))!=EOF)&&(c!=' ')&&(c!='\n'))s[i++]=c;s[i]=0;
     if(c==EOF)return -1;
-    return atol(s);
+    return atoll(s);
 }
 int slave_read(){
     int i;
@@ -60,20 +59,19 @@ int w_close(){
     if(!a->dummy)return bcm2835_close();
     else return 1;
 }
-int w_delayMicroseconds(uint64_t micros){
+int w_delayMicroseconds(unsigned long long micros){
     save("%u %u",ACT_SLEEP,micros);
     if(!a->dummy)bcm2835_delayMicroseconds(micros);
 }
-int w_gpio_write(uint8_t pin,uint8_t on){
+int w_gpio_write(unsigned char pin,unsigned char on){
     save("%u %u %u",ACT_WRITE,pin,on);
     if(!a->dummy)bcm2835_gpio_write(pin,on);
 }
-int w_gpio_fsel(uint8_t pin,uint8_t mode){
+int w_gpio_fsel(unsigned char pin,unsigned char mode){
     save("%u %u %u",ACT_FSEL,pin,mode);
     if(!a->dummy)bcm2835_gpio_fsel(pin,mode);
 }
-int w_gpio_set_pud(uint8_t pin,uint8_t pud){
+int w_gpio_set_pud(unsigned char pin,unsigned char pud){
     save("%u %u %u",ACT_SETPUD,pin,pud);
     if(!a->dummy)bcm2835_gpio_set_pud(pin,pud);
 }
-

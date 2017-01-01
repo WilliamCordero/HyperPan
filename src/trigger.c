@@ -4,11 +4,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#ifndef  BCM_DUMMY
-#  include <bcm2835.h>
-#else  //BCM_DUMMY
-#  include "dummy/bcm_dummy.h"
-#endif //BCM_DUMMY
 #include "config.h"
 #include "trigger.h"
 #include "verbose.h"
@@ -16,9 +11,9 @@
 int trigger_init(char *name){
     trigger=(struct trig*)malloc(sizeof(struct trig));
     trigger->shutter=SHUTTER;
-    w_gpio_fsel(SHUTTER,BCM2835_GPIO_FSEL_OUTP);
+    w_gpio_fsel(SHUTTER,GPIO_FSEL_OUTP);
     trigger->focus=FOCUS;
-    w_gpio_fsel(FOCUS,BCM2835_GPIO_FSEL_OUTP);
+    w_gpio_fsel(FOCUS,GPIO_FSEL_OUTP);
     trigger->shutter_speed=a->speed;
     trigger->shutter_delay=a->delay;
     trigger->focus_mode=a->focus;

@@ -6,25 +6,20 @@
 #include <string.h>
 #include <math.h>
 #include <argp.h>
-#ifndef  BCM_DUMMY
-#  include <bcm2835.h>
-#else  //BCM_DUMMY
-#  include "dummy/bcm_dummy.h"
-#endif //BCM_DUMMY
 #include "config.h"
-#include "stepper.h"
 #include "verbose.h"
 #include "slave.h"
+#include "stepper.h"
 int stepper_mode(stepper motor,int mode){
     switch(mode){ //M0
         case 2:case 16:
-            w_gpio_fsel(motor.m0,BCM2835_GPIO_FSEL_OUTP);
+            w_gpio_fsel(motor.m0,GPIO_FSEL_OUTP);
             w_gpio_write(motor.m0,HIGH);break;
         case 4:case 32:
-            w_gpio_fsel(motor.m0,BCM2835_GPIO_FSEL_INPT);
-            w_gpio_set_pud(motor.m0,BCM2835_GPIO_PUD_OFF);break;
+            w_gpio_fsel(motor.m0,GPIO_FSEL_INPT);
+            w_gpio_set_pud(motor.m0,GPIO_PUD_OFF);break;
         default:
-            w_gpio_fsel(motor.m0,BCM2835_GPIO_FSEL_OUTP);
+            w_gpio_fsel(motor.m0,GPIO_FSEL_OUTP);
             w_gpio_write(motor.m0,LOW);
     }
     switch(mode){ //M1
@@ -40,17 +35,17 @@ int stepper_mode(stepper motor,int mode){
 }
 stepper stepper_init(int sleep,int step,int dir,int m0,int m1,int mode,int steps,char *name){
     stepper tmp;
-    w_gpio_fsel(sleep,BCM2835_GPIO_FSEL_OUTP);
+    w_gpio_fsel(sleep,GPIO_FSEL_OUTP);
     w_gpio_write(sleep,LOW);
     tmp.sleep=sleep;
-    w_gpio_fsel(step,BCM2835_GPIO_FSEL_OUTP);
+    w_gpio_fsel(step,GPIO_FSEL_OUTP);
     w_gpio_write(step,LOW);
     tmp.step=step;
-    w_gpio_fsel(dir,BCM2835_GPIO_FSEL_OUTP);
+    w_gpio_fsel(dir,GPIO_FSEL_OUTP);
     w_gpio_write(dir,LOW);
     tmp.dir=dir;    
     tmp.m0=m0;    
-    w_gpio_fsel(m1,BCM2835_GPIO_FSEL_OUTP);
+    w_gpio_fsel(m1,GPIO_FSEL_OUTP);
     w_gpio_write(m1,LOW);
     tmp.m1=m1;
     tmp.mode=mode;
