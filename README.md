@@ -1,8 +1,6 @@
 **HyperPan Control Software**
 
-> William Cordero Photo
-> http://williamcordero.com
-> https://github.com/WilliamCordero/HyperPan
+> [William Cordero Photo](http://williamcordero.com)
 
 '''
 root@will_pi: $./hyperpan -?
@@ -55,5 +53,3 @@ for any corresponding short options.
 
 Report bugs to William Cordero <william.cordero@gmail.com>.
 '''
-
-Report bugs to William Cordero <william.cordero@gmail.com>
