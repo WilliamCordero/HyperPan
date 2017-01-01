@@ -111,13 +111,13 @@ for any corresponding short options.
 
 ### Verbose levels
 ```
-L_INFO 0b00000001 //1
-L_STPR 0b00000010 //2 
-L_SPHR 0b00000100 //4
-L_CAMR 0b00001000 //8
-L_TRGR 0b00010000 //16
-L_SLVE 0b00100000 //32
-L_OUTP 0b01000000 //64
+L_INFO 0B00000001 //1  Generic Info
+L_STPR 0B00000010 //2  Steppers
+L_SPHR 0B00000100 //4  Sphere
+L_CAMR 0B00001000 //8  Camera
+L_TRGR 0B00010000 //16 Trigger
+L_SLVE 0B00100000 //32 Slave
+L_OUTP 0B01000000 //64 Output
 ```
 
 ### Bugs
