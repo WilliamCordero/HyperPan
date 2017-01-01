@@ -1,13 +1,11 @@
 # HyperPan Control Software
 
->
 > [William Cordero Photo](http://williamcordero.com)
-
 > [william.cordero@gmail.com](william.cordero@gmail.com)
->
 
 ### Dependencies
 - [bcm2835](http://www.airspayce.com/mikem/bcm2835/)
+
 ```
 Usage: hyperpan [OPTION...]
             virtual|sphere|slave|35|6x45|45x6|6x6|6x7|7x6|6x8|8x6|6x9|9x6|6x17|17x6
