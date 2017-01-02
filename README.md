@@ -30,8 +30,7 @@ $ sudo make uninstall
 ```
 $ ./hyperpan 6x6 -v13 -s0.008
 ```
-<div>
-  <div>
+
 ```
 # α: 
 # ο: ★:
@@ -59,17 +58,11 @@ $ ./hyperpan 6x6 -v13 -s0.008
 # ο: ↝: 0.00:ρ  -90.00:θ  -90.00:φ
 # ω:
 ```
-  </div>
-<br>  
-  <div>
-```
-ο: ↝: 0.00:ρ   21.49:θ    7.74:φ
-ο: ↝: 0.00:ρ   21.49:θ   23.23:φ
-ο: ↝: 0.00:ρ  -90.00:θ  -90.00:φ
-ω:
-```
-  </div>
-</div>
+
+<video width="800" height="800" controls>
+  <source src="http://misc.williamcordero.com/zip/HyperPan_0.62_3.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
 
 ### Usage
 ```
