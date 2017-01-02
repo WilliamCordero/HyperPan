@@ -76,7 +76,6 @@ for any corresponding short options.
 ```
 $ ./hyperpan 6x6 -v13
 ```
-> <img src="http://misc.williamcordero.com/zip/HyperPan_0.62.gif" />
 > ![HyperPan](http://misc.williamcordero.com/zip/HyperPan_0.62.gif)
 ```
 # α: 
@@ -108,10 +107,6 @@ $ ./hyperpan 6x6 -v13
 
 ### Schematics
 > ![Schematics](http://misc.williamcordero.com/zip/hyperpan_schematics.svg)
-<p align="center">
-<!--<img width="600" src="https://rawgit.com/WilliamCordero/HyperPan/master/doc/hyperpan_schematics.svg" />-->
-<img width="600" src="http://misc.williamcordero.com/zip/hyperpan_schematics.svg" />
-</p>
 
 ### Verbose levels
 ```
