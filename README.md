@@ -60,7 +60,7 @@ $ ./hyperpan 6x6 -v13 -s0.008
 ```
 
 <p align="center">
-<img width="600" src="http://misc.williamcordero.com/zip/HyperPan_0.62.gif" />
+<img src="http://misc.williamcordero.com/zip/HyperPan_0.62.gif" />
 </p>
 
 
