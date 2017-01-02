@@ -59,10 +59,10 @@ $ ./hyperpan 6x6 -v13 -s0.008
 # ω:
 ```
 
-<video width="800" height="800" controls>
-  <source src="http://misc.williamcordero.com/zip/HyperPan_0.62_3.mp4" type="video/mp4">
-Your browser does not support the video tag.
-</video>
+<p align="center">
+<img width="600" src="http://misc.williamcordero.com/zip/HyperPan_0.62.gif" />
+</p>
+
 
 ### Usage
 ```
