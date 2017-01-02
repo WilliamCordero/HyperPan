@@ -12,8 +12,8 @@ CND_ARTIFACT_DIR_Release=dist/Release/GNU-Linux
 CND_ARTIFACT_NAME_Release=hyperpan
 CND_ARTIFACT_PATH_Release=dist/Release/GNU-Linux/hyperpan
 CND_PACKAGE_DIR_Release=dist/Release/GNU-Linux/package
-CND_PACKAGE_NAME_Release=hyperpan.tar
-CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux/package/hyperpan.tar
+CND_PACKAGE_NAME_Release=hyperpan.deb
+CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux/package/hyperpan.deb
 # Debug configuration
 CND_PLATFORM_Debug=GNU-Linux
 CND_ARTIFACT_DIR_Debug=dist/Debug/GNU-Linux
