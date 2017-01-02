@@ -112,6 +112,8 @@ for any corresponding short options.
 ### Schematics
 ![schematics](https://rawgithub.com/WilliamCordero/HyperPan/master/doc/hyperpan_schematics.svg)
 
+![test](https://raw.githubusercontent.com/WilliamCordero/HyperPan/master/doc/hyperpan_schematics.svg)
+
 ### Verbose levels
 ```
 L_INFO 0B00000001 //1  Generic Info
