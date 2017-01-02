@@ -70,7 +70,7 @@ or optional for any corresponding short options.
 
 ### Example
 ```
-$ ./hyperpan 6x6 -v13
+$ hyperpan 6x6 -v13
 ```
 > ![HyperPan](http://misc.williamcordero.com/zip/HyperPan_0.62.gif)
 ```
