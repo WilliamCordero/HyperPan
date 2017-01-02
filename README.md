@@ -111,7 +111,7 @@ for any corresponding short options.
 
 ### Schematics
 <p align="center">
-![test2](https://rawgit.com/WilliamCordero/HyperPan/master/doc/hyperpan_schematics.svg)
+<img src ="https://rawgit.com/WilliamCordero/HyperPan/master/doc/hyperpan_schematics.svg" />
 </p>
 
 ### Verbose levels
