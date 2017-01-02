@@ -30,7 +30,7 @@ $ sudo make uninstall
 ```
 $ ./hyperpan 6x6 -v13
 ```
-
+> <img src="http://misc.williamcordero.com/zip/HyperPan_0.62.gif" />
 ```
 # α: 
 # ο: ★:
@@ -58,11 +58,6 @@ $ ./hyperpan 6x6 -v13
 # ο: ↝: 0.00:ρ  -90.00:θ  -90.00:φ
 # ω:
 ```
-> <img src="http://misc.williamcordero.com/zip/HyperPan_0.62.gif" />
-
-<p align="center">
-<img src="http://misc.williamcordero.com/zip/HyperPan_0.62.gif" />
-</p>
 
 ### Usage
 ```
