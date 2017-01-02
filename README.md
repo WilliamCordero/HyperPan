@@ -1,6 +1,7 @@
 # HyperPan Control Software
 [William Cordero Photo](http://williamcordero.com)<br>
 [william.cordero@gmail.com](william.cordero@gmail.com)
+
 --
 
 ### Dependencies
