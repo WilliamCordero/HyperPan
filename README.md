@@ -63,6 +63,7 @@ $ ./hyperpan 6x6 -v13 -s0.008
 <img src="http://misc.williamcordero.com/zip/HyperPan_0.62_1.gif" />
 </p>
 
+![test](http://misc.williamcordero.com/zip/HyperPan_0.62_1.gif)
 
 ### Usage
 ```
