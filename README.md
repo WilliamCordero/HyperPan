@@ -28,7 +28,7 @@ $ sudo make uninstall
 
 ### Example
 ```
-$ ./hyperpan 6x6 -v13 -s0.008
+$ ./hyperpan 6x6 -v13
 ```
 
 ```
@@ -58,6 +58,7 @@ $ ./hyperpan 6x6 -v13 -s0.008
 # ο: ↝: 0.00:ρ  -90.00:θ  -90.00:φ
 # ω:
 ```
+> <img src="http://misc.williamcordero.com/zip/HyperPan_0.62.gif" />
 
 <p align="center">
 <img src="http://misc.williamcordero.com/zip/HyperPan_0.62.gif" />
