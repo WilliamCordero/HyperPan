@@ -19,6 +19,7 @@ $ sudo make uninstall
 ```
 
 ### Usage
+>
 ```
 Usage: hyperpan [OPTION...]
             virtual|sphere|slave|35|6x45|45x6|6x6|6x7|7x6|6x8|8x6|6x9|9x6|6x17|17x6
@@ -64,8 +65,8 @@ Options:
       --usage                Give a short usage message
   -V, --version              Print program version
 
-Mandatory or optional arguments to long options are also mandatory or optional
-for any corresponding short options.
+Mandatory or optional arguments to long options are also mandatory
+or optional for any corresponding short options.
 ```
 
 ### Example
@@ -101,6 +102,7 @@ $ ./hyperpan 6x6 -v13
 # ο: ↝: 0.00:ρ  -90.00:θ  -90.00:φ
 # ω:
 ```
+
 
 ### Schematics
 ---
