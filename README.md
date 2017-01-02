@@ -110,8 +110,11 @@ for any corresponding short options.
 ```
 
 ### Schematics
-![schematics](https://raw.githubusercontent.com/WilliamCordero/HyperPan/master/doc/hyperpan_schem.png)
+![schematics](https://raw.githubusercontent.com/WilliamCordero/HyperPan/master/doc/hyperpan_schem.svg)
 
+https://raw.githubusercontent.com/WilliamCordero/HyperPan/master/doc/hyperpan_schem.svg
+https://rawgithub.com/WilliamCordero/HyperPan/master/doc/hyperpan_schem.svg
+https://rawgithub.com/potherca/StackOverflow/gh-pages/question.13808020.include-an-svg-hosted-on-github-in-markdown/controllers_brief.svg
 
 ### Verbose levels
 ```
