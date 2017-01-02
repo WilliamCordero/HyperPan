@@ -110,7 +110,7 @@ for any corresponding short options.
 ```
 
 ### Schematics
-![schematics](https://rawgithub.com/WilliamCordero/HyperPan/master/doc/hyperpan_schem.svg)
+![schematics](https://rawgithub.com/WilliamCordero/HyperPan/master/doc/hyperpan_schem.png)
 
 ### Verbose levels
 ```
