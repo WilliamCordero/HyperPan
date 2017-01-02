@@ -14,14 +14,6 @@ CND_ARTIFACT_PATH_Release=dist/Release/GNU-Linux/hyperpan
 CND_PACKAGE_DIR_Release=dist/Release/GNU-Linux/package
 CND_PACKAGE_NAME_Release=hyperpan.tar
 CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux/package/hyperpan.tar
-# OverLook configuration
-CND_PLATFORM_OverLook=GNU-Linux
-CND_ARTIFACT_DIR_OverLook=dist/OverLook/GNU-Linux
-CND_ARTIFACT_NAME_OverLook=hyperpan
-CND_ARTIFACT_PATH_OverLook=dist/OverLook/GNU-Linux/hyperpan
-CND_PACKAGE_DIR_OverLook=dist/OverLook/GNU-Linux/package
-CND_PACKAGE_NAME_OverLook=hyperpan.tar
-CND_PACKAGE_PATH_OverLook=dist/OverLook/GNU-Linux/package/hyperpan.tar
 # Debug configuration
 CND_PLATFORM_Debug=GNU-Linux
 CND_ARTIFACT_DIR_Debug=dist/Debug/GNU-Linux
@@ -30,6 +22,14 @@ CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-Linux/hyperpan
 CND_PACKAGE_DIR_Debug=dist/Debug/GNU-Linux/package
 CND_PACKAGE_NAME_Debug=hyperpan.tar
 CND_PACKAGE_PATH_Debug=dist/Debug/GNU-Linux/package/hyperpan.tar
+# OverLook configuration
+CND_PLATFORM_OverLook=GNU-Linux
+CND_ARTIFACT_DIR_OverLook=dist/OverLook/GNU-Linux
+CND_ARTIFACT_NAME_OverLook=hyperpan
+CND_ARTIFACT_PATH_OverLook=dist/OverLook/GNU-Linux/hyperpan
+CND_PACKAGE_DIR_OverLook=dist/OverLook/GNU-Linux/package
+CND_PACKAGE_NAME_OverLook=hyperpan.tar
+CND_PACKAGE_PATH_OverLook=dist/OverLook/GNU-Linux/package/hyperpan.tar
 # Simone configuration
 CND_PLATFORM_Simone=MinGW-Windows
 CND_ARTIFACT_DIR_Simone=dist/Simone/MinGW-Windows

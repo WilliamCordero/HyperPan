@@ -17,11 +17,11 @@
                     <type>1</type>
                 </confElem>
                 <confElem>
-                    <name>OverLook</name>
+                    <name>Debug</name>
                     <type>1</type>
                 </confElem>
                 <confElem>
-                    <name>Debug</name>
+                    <name>OverLook</name>
                     <type>1</type>
                 </confElem>
                 <confElem>

@@ -127,10 +127,15 @@ help: .help-post
 .help-post: .help-impl
 # Add your post 'help' code here...
 
-
-
 # include project implementation makefile
 include nbproject/Makefile-impl.mk
 
 # include project make variables
 include nbproject/Makefile-variables.mk
+
+install: build
+	${CP} ${CND_DISTDIR}/${CONF}/${CND_PLATFORM_${CONF}}/hyperpan /usr/bin/hyperpan
+	
+uninstall:
+	rm -f /usr/bin/hyperpan
+

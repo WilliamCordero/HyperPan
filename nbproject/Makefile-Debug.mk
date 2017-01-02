@@ -67,47 +67,47 @@ LDLIBSOPTIONS=-lbcm2835
 
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/hyperpan: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
-	${LINK.c} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/hyperpan ${OBJECTFILES} ${LDLIBSOPTIONS}
+	${LINK.c} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/hyperpan ${OBJECTFILES} ${LDLIBSOPTIONS} -lm
 
 ${OBJECTDIR}/src/camera.o: nbproject/Makefile-${CND_CONF}.mk src/camera.c 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/camera.o src/camera.c
+	$(COMPILE.c) -O2 -D_GNU_SOURCE -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/camera.o src/camera.c
 
 ${OBJECTDIR}/src/dummy/bcm_dummy.o: nbproject/Makefile-${CND_CONF}.mk src/dummy/bcm_dummy.c 
 	${MKDIR} -p ${OBJECTDIR}/src/dummy
 	${RM} "$@.d"
-	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/dummy/bcm_dummy.o src/dummy/bcm_dummy.c
+	$(COMPILE.c) -O2 -D_GNU_SOURCE -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/dummy/bcm_dummy.o src/dummy/bcm_dummy.c
 
 ${OBJECTDIR}/src/hyperpan.o: nbproject/Makefile-${CND_CONF}.mk src/hyperpan.c 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/hyperpan.o src/hyperpan.c
+	$(COMPILE.c) -O2 -D_GNU_SOURCE -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/hyperpan.o src/hyperpan.c
 
 ${OBJECTDIR}/src/slave.o: nbproject/Makefile-${CND_CONF}.mk src/slave.c 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/slave.o src/slave.c
+	$(COMPILE.c) -O2 -D_GNU_SOURCE -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/slave.o src/slave.c
 
 ${OBJECTDIR}/src/sphere.o: nbproject/Makefile-${CND_CONF}.mk src/sphere.c 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/sphere.o src/sphere.c
+	$(COMPILE.c) -O2 -D_GNU_SOURCE -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/sphere.o src/sphere.c
 
 ${OBJECTDIR}/src/stepper.o: nbproject/Makefile-${CND_CONF}.mk src/stepper.c 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/stepper.o src/stepper.c
+	$(COMPILE.c) -O2 -D_GNU_SOURCE -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/stepper.o src/stepper.c
 
 ${OBJECTDIR}/src/trigger.o: nbproject/Makefile-${CND_CONF}.mk src/trigger.c 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/trigger.o src/trigger.c
+	$(COMPILE.c) -O2 -D_GNU_SOURCE -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/trigger.o src/trigger.c
 
 ${OBJECTDIR}/src/verbose.o: nbproject/Makefile-${CND_CONF}.mk src/verbose.c 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/verbose.o src/verbose.c
+	$(COMPILE.c) -O2 -D_GNU_SOURCE -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/verbose.o src/verbose.c
 
 # Subprojects
 .build-subprojects:
