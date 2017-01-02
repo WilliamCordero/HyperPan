@@ -108,7 +108,7 @@ $ ./hyperpan 6x6 -v13
 
 #### Verbose levels
 ```
-L_INFO 0B00000001 //1  Generic Info
+L_INFO 0B00000001 //1  Info
 L_STPR 0B00000010 //2  Steppers
 L_SPHR 0B00000100 //4  Sphere
 L_CAMR 0B00001000 //8  Camera
