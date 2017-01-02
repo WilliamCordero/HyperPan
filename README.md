@@ -60,10 +60,10 @@ $ ./hyperpan 6x6 -v13 -s0.008
 ```
 
 <p align="center">
-<img src="http://misc.williamcordero.com/zip/HyperPan_0.62_1.gif" />
+<img src="http://misc.williamcordero.com/zip/HyperPan_0.62_2.gif" />
 </p>
 
-![test](http://misc.williamcordero.com/zip/HyperPan_0.62_1.gif)
+![test](http://misc.williamcordero.com/zip/HyperPan_0.62_2.gif)
 
 ### Usage
 ```
