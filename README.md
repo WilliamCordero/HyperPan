@@ -28,9 +28,10 @@ $ sudo make uninstall
 
 ### Example
 ```
-$ ./hyperpan 6x6 -v13
+$ ./hyperpan 6x6 -v13 -s0.008
 ```
-
+Console | Video
+------- | -------------
 ```
 # α: 
 # ο: ★:
@@ -57,7 +58,7 @@ $ ./hyperpan 6x6 -v13
 # ο: ↝: 0.00:ρ   21.49:θ   23.23:φ
 # ο: ↝: 0.00:ρ  -90.00:θ  -90.00:φ
 # ω:
-```
+```|hola mundo
 
 ### Usage
 ```
