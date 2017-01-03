@@ -69,8 +69,13 @@ or optional for any corresponding short options.
 ```
 
 ### Example
+
+<p align="justify">
+Emulating a 60mm•60mm image sensor format with an APC-S sensor(23.5mm•15.6mm) and using a 50mm lens.
+<p>
+
 ```
-$ hyperpan 6x6 -v13
+$ hyperpan 6x6 -v13 -f50 -w23.5 -h15.6 
 ```
 > ![HyperPan](http://misc.williamcordero.com/zip/HyperPan_0.62.gif)
 ```
