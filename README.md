@@ -105,7 +105,7 @@ $ hyperpan 6x6 -v13
 ### Schematics
 > ![Schematics](http://misc.williamcordero.com/zip/hyperpan_schematics.svg)
 
-### Hardware Configurations
+#### Hardware Configurations
 ```
 src/config.h
 ```
