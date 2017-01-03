@@ -149,7 +149,7 @@ BORDER_SLOW 2
 ```
 
 <p align="justify">
-In <code>src/config.h</code> you can also find <code>#define</code> for the default arguments, for example:
+In <code>src/config.h</code> you can also find some <code>#define</code> for the default arguments, for example:
 </p>
 
 ```
