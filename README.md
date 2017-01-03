@@ -106,10 +106,10 @@ $ hyperpan 6x6 -v13
 > ![Schematics](http://misc.williamcordero.com/zip/hyperpan_schematics.svg)
 
 ### Hardware Configurations
-
+```
 src/config.h
-
-For each stepper motor there are a set of #defines with the respective configuration. Which GPIO pin are connected at which pin on the stepper driver, and most important the microstepping mode and the number of native steps per rotation, which is the product of the native motor steps by the gear multiplier, in this case the motor has 200 steps, and we are using a 16T gear on the motor and a 128T what makes an 8X multiplier.
+```
+For each stepper motor there are a set of #defines with the respective configuration. Which GPIO pin are connected at which pin on the stepper driver and most important the microstepping mode and the number of native steps per rotation, which is the product of the native motor steps by the gear multiplier, in this case the motor has 200 steps, and we are using a 16T gear on the motor and a 128T what makes an 8X multiplier.
 
 ```
 THETA_SLEEP 12    //GPIO 12
