@@ -110,7 +110,7 @@ $ hyperpan 6x6 -v13
 src/config.h
 ```
 <p align="justify">
-For each stepper motor there are a set of #defines with the respective configuration. Which GPIO pins are connected at which pins on the stepper driver([DRV8834](https://www.pololu.com/file/0J617/drv8834.pdf)) and most important, the microstepping mode and the number of native steps per rotation, which is the product of the native motor steps by the gear multiplier, in this case the motor has 200 steps and we are using a 16T gear on the motor and a 128T what makes an 8X multiplier.
+For each stepper motor there are a set of #defines with the respective configuration. Which GPIO pins are connected at which pins on the stepper driver(<a href="https://www.pololu.com/file/0J617/drv8834.pdf">DRV8834</a>) and most important, the microstepping mode and the number of native steps per rotation, which is the product of the native motor steps by the gear multiplier, in this case the motor has 200 steps and we are using a 16T gear on the motor and a 128T what makes an 8X multiplier.
 </p>
 
 ```
