@@ -124,9 +124,9 @@ THETA_MODE  32    //MICROSTEP MODE 1/32
 THETA_STEPS 200*8 //STEPS PER ROTATION
 ```
 
-<p align="justify">
+<div style="text-align: justify;">
 In this file there are also some #defines to control the motor's speed and movement, there are three sets; one for default mode(`_DEF`), another used with the argument `-c` for Fast Mode(`_FAST`) and the last, used with the argument `-z` for Slow mode(`_SLOW`).
-</p>
+</div>
 
 - `MIN` is the minimum time in microseconds for the faster steps, this can't be lower to the time require by the combination of stepper/driver/raspberry to operate without losing steps.
 - `MAX` is the maximum time in microseconds for the slower steps.
