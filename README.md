@@ -140,12 +140,12 @@ Increase in speed also increase the vibrations, if you want a smooth movement, s
 MIN_DEF     40
 MAX_DEF     230
 BORDER_DEF  14
-MIN_SLOW    200
-MAX_SLOW    400
-BORDER_SLOW 2
 MIN_FAST    40
 MAX_FAST    40
 BORDER_FAST 1000
+MIN_SLOW    200
+MAX_SLOW    400
+BORDER_SLOW 2
 ```
 
 #### Verbose levels
