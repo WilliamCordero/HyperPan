@@ -111,7 +111,7 @@ src/config.h
 ```
 
 <p align="justify">
-For each stepper motor there are a set of <code>#defines</code> with the respective configuration. Which GPIO pins are connected at which pins on the stepper driver(<a href="https://www.pololu.com/file/0J617/drv8834.pdf" target="_blank">DRV8834</a>) and most important, the microstepping mode and the number of native steps per rotation, which is the product of the native motor steps by the gear multiplier, in this case the motor has 200 steps and we are using a 16T gear on the motor and a 128T what makes an 8X multiplier.
+For each stepper motor there are a set of <code>#define</code> with the respective configuration. Which GPIO pins are connected at which pins on the stepper driver(<a href="https://www.pololu.com/file/0J617/drv8834.pdf" target="_blank">DRV8834</a>) and most important, the microstepping mode and the number of native steps per rotation, which is the product of the native motor steps by the gear multiplier, in this case the motor has 200 steps and we are using a 16T gear on the motor and a 128T what makes an 8X multiplier.
 </p>
 
 ```
@@ -125,7 +125,7 @@ THETA_STEPS 200*8 //STEPS PER ROTATION
 ```
 
 <p align="justify">
-In this file there are also some <code>#defines</code> to control the motor's speed and movement, there are three sets; one for default mode(<code>_DEF</code>), another used with the argument <code>-c</code> for Fast Mode(<code>_FAST</code>) and the last, used with the argument <code>-z<code> for Slow mode(<code>_SLOW</code>).
+In this file there are also some <code>#define</code> to control the motor's speed and movement, there are three sets; one for default mode(<code>_DEF</code>), another used with the argument <code>-c</code> for Fast Mode(<code>_FAST</code>) and the last, used with the argument <code>-z<code> for Slow mode(<code>_SLOW</code>).
 </p>
 
 - `MIN` is the minimum time in microseconds for the faster steps, this can't be lower to the time require by the combination of stepper/driver/raspberry to operate without losing steps.
