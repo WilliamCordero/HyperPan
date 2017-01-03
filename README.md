@@ -125,7 +125,7 @@ THETA_STEPS 200*8 //STEPS PER ROTATION
 ```
 
 <p align="justify">
-In this file there are also some <code>#define</code> to control the motor's speed and movement, there are three sets; one for default mode(<code>_DEF</code>), another used with the argument <code>-c</code> for Fast Mode(<code>_FAST</code>) and the last, used with the argument <code>-z</code> for Slow mode(<code>_SLOW</code>).
+In this file there are also some <code>#define</code> to control the motor's speed and movement, there are three sets; one for default mode(<code>_DEF</code>), another used with the argument <code>-c</code> for Fast Mode(<code>_FAST</code>) and the last, used with the argument <code>-z</code> for Slow Mode(<code>_SLOW</code>).
 </p>
 
 - `MIN` is the minimum time in microseconds for the faster steps, this can't be lower to the time require by the combination of stepper/driver/raspberry to operate without losing steps.
@@ -146,6 +146,14 @@ BORDER_FAST 1000
 MIN_SLOW    200
 MAX_SLOW    400
 BORDER_SLOW 2
+```
+
+<p align="justify">
+In <code>src/config.h</code> you can also find <code>#define</code> for the default arguments, for example:
+</p>
+
+```
+D_FOCAL     50.0  //DEFAULT FOCAL LENGH 50mm
 ```
 
 #### Verbose levels
