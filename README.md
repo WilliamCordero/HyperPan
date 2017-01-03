@@ -122,9 +122,13 @@ THETA_M1    13    //GPIO 13
 THETA_MODE  32    //MICROSTEP MODE 1/32
 THETA_STEPS 200*8 //STEPS PER ROTATION
 ```
-In this file there are also some #defines to control the motor's speed and movement, there are three sets; one for default mode(_DEF), another for Fast Mode(-c)(_FAST) and the last for Slow mode(-z)(_SLOW).
+In this file there are also some #defines to control the motor's speed and movement, there are three sets; one for default mode(_DEF), another used with the argument '-c' for Fast Mode(_FAST) and the last, used with the argument '-z' for Slow mode(_SLOW).
+
 - MIN is the minimum time in microseconds for the faster steps, this can't be lower to the time require by the combination of stepper/driver/raspberry to operate without losing steps.
 - MAX is the maximum time in microseconds for the slower steps.
+- BORDER is the part of each travel used to accelerate and decelerate(total_travel/BORDER).
+
+Increase in speed also increase the vibrations, if you want a smooth movement, set a high value for MAX and a low value for BORDER, if you want a faster movement set a low value for MAX, as lower as MIN and a high value for BORDER
 
 ```
 MIN_DEF     40
