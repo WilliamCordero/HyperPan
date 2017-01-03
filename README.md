@@ -71,7 +71,7 @@ or optional for any corresponding short options.
 ### Example
 
 <p align="justify">
-Emulating a 60mm•60mm image sensor format with an APC-S sensor(23.5mm•15.6mm) and using a 50mm lens.
+Emulating a 60mm•60mm image sensor format with an APS-C sensor(23.5mm•15.6mm) and using a 50mm lens.
 <p>
 
 ```
