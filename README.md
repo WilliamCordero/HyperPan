@@ -109,8 +109,9 @@ $ hyperpan 6x6 -v13
 ```
 src/config.h
 ```
+
 <p align="justify">
-For each stepper motor there are a set of #defines with the respective configuration. Which GPIO pins are connected at which pins on the stepper driver(<a href="https://www.pololu.com/file/0J617/drv8834.pdf" target="_blank">DRV8834</a>) and most important, the microstepping mode and the number of native steps per rotation, which is the product of the native motor steps by the gear multiplier, in this case the motor has 200 steps and we are using a 16T gear on the motor and a 128T what makes an 8X multiplier.
+For each stepper motor there are a set of `#defines` with the respective configuration. Which GPIO pins are connected at which pins on the stepper driver(<a href="https://www.pololu.com/file/0J617/drv8834.pdf" target="_blank">DRV8834</a>) and most important, the microstepping mode and the number of native steps per rotation, which is the product of the native motor steps by the gear multiplier, in this case the motor has 200 steps and we are using a 16T gear on the motor and a 128T what makes an 8X multiplier.
 </p>
 
 ```
@@ -122,15 +123,19 @@ THETA_M1    13    //GPIO 13
 THETA_MODE  32    //MICROSTEP MODE 1/32
 THETA_STEPS 200*8 //STEPS PER ROTATION
 ```
+
 <p align="justify">
-In this file there are also some #defines to control the motor's speed and movement, there are three sets; one for default mode(_DEF), another used with the argument '-c' for Fast Mode(_FAST) and the last, used with the argument '-z' for Slow mode(_SLOW).
+In this file there are also some #defines to control the motor's speed and movement, there are three sets; one for default mode(`_DEF`), another used with the argument `-c` for Fast Mode(`_FAST`) and the last, used with the argument `-z` for Slow mode(`_SLOW`).
 </p>
-- MIN is the minimum time in microseconds for the faster steps, this can't be lower to the time require by the combination of stepper/driver/raspberry to operate without losing steps.
-- MAX is the maximum time in microseconds for the slower steps.
-- BORDER is the part of each travel used to accelerate and decelerate(total_travel/BORDER).
+
+- `MIN` is the minimum time in microseconds for the faster steps, this can't be lower to the time require by the combination of stepper/driver/raspberry to operate without losing steps.
+- `MAX` is the maximum time in microseconds for the slower steps.
+- `BORDER` is the part of each travel used to accelerate and decelerate(total_travel/`BORDER`).
+
 <p align="justify">
-Increase in speed also increase the vibrations, if you want a smooth movement, set a high value for MAX and a low value for BORDER, if you want a faster movement set a low value for MAX, as lower as MIN and a high value for BORDER
+Increase in speed also increase the vibrations, if you want a smooth movement, set a high value for `MAX` and a low value for `BORDER`, if you want a faster movement set a low value for `MAX`, as lower as `MIN` and a high value for `BORDER`
 </p>
+
 ```
 MIN_DEF     40
 MAX_DEF     230
