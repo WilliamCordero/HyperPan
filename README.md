@@ -69,12 +69,12 @@ Mandatory or optional arguments to long options are also mandatory
 or optional for any corresponding short options.
 ```
 
-#### Actions
+### Actions
 <p align="justify">
 There are three main action types:
 </p>
 
-##### virtual
+#### virtual
 <p align="justify">
 Emulates a virtual sensor using one smaller, the arguments <code>-w WIDTH</code> and <code>-h HEIGHT</code> set the size of the native sensor on the camera and <code>-x WIDTH</code> and <code>-y HEIGHT</code> set the virtual sensor size.
 </p>
@@ -82,12 +82,12 @@ Emulates a virtual sensor using one smaller, the arguments <code>-w WIDTH</code>
 Actions <code>35</code>, <code>6x45</code>, <code>45x6</code>, <code>6x6</code>, <code>6x7</code>, <code>7x6</code>, <code>6x8</code>, <code>8x6</code>, <code>6x9</code>, <code>9x6</code>, <code>6x17</code> and <code>17x6</code> are aliases to their respective sensor formats.
 </p>
 
-##### sphere
+#### sphere
 <p align="justify">
 Cover the entire area. For virtual tours or 360° photography. More wide the lens, less number of shots.
 </p>
 
-##### slave
+#### slave
 <p align="justify">
 <code>-g FILE</code> save a sequence path into a file, the dummy mode(<code>-d</code>) could be useful in this cases.
 </p>
@@ -101,7 +101,7 @@ $ cat path | hyperpan slave
 ```
 $ hyperpan slave -l path 
 ```
-#### Control
+### Control
 <p align="justify">
 In order to calculate the correct angles of view set <code>-f FOCAL</code> to the focal length on the camera.
 </p>
@@ -138,7 +138,7 @@ L_SLVE 0B00100000 //32 Slave
 L_OUTP 0B01000000 //64 Output
 ```
 
-#### Example
+### Example
 
 <p align="justify">
 Using a 50mm lens, emulate a 60mm•60mm image sensor format with an APS-C sensor(23.5mm•15.6mm).
