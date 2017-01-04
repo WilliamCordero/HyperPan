@@ -130,7 +130,7 @@ THETA_STEPS 200*8 //STEPS PER ROTATION
 ```
 
 <p align="justify">
-In this file there are also some <code>#define</code> to control the motor's speed and movement, there are three sets; one for default mode(<code>_DEF</code>), another used with the argument <code>-c</code> for Fast Mode(<code>_FAST</code>) and the last, used with the argument <code>-z</code> for Slow Mode(<code>_SLOW</code>).
+In this file there are also some <code>#define</code> to control the motor's speed and movement, there are three sets; one for default mode(<code>_DEF</code>), another used with the argument <code>-c</code> for Fast Mode(<code>_FAST</code>) and the last one, used with the argument <code>-z</code> for Slow Mode(<code>_SLOW</code>).
 </p>
 
 - `MIN` is the minimum time in microseconds for the faster steps, this can't be lower to the time require by the combination of stepper/driver/raspberry to operate without losing steps.
