@@ -77,7 +77,7 @@ There are three main action types:
 
 <p align="justify">
 This action emulates a bigger virtual sensor using a small one, use the arguments <code>-w WIDTH</code> and <code>-h HEIGHT</code> to set the width and height of the native sensor on the camera, and <code>-x WIDTH</code> and <code>-y HEIGHT</code> to set the virtual sensor size.
-The actions <code>35</code>, <code>6x45</code>, <code>45x6</code>, <code>6x6</code>, <code>6x7</code>, <code>7x6</code>, <code>6x8</code>, <code>8x6</code>, <code>6x9</code>, <code>9x6</code>, <code>6x17</code> and <code>17x6</code> are aliases to the respective sensor formats.
+The actions: <code>35</code>, <code>6x45</code>, <code>45x6</code>, <code>6x6</code>, <code>6x7</code>, <code>7x6</code>, <code>6x8</code>, <code>8x6</code>, <code>6x9</code>, <code>9x6</code>, <code>6x17</code> and <code>17x6</code> are aliases to their respective sensor formats.
 </p>
 
 ##### sphere
