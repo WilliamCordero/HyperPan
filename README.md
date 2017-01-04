@@ -70,9 +70,6 @@ or optional for any corresponding short options.
 ```
 
 ### Actions
-<p align="justify">
-There are three main action types:
-</p>
 
 #### virtual
 <p align="justify">
