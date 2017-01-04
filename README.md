@@ -171,6 +171,11 @@ L_OUTP 0B01000000 //64 Output
 ### Circuit diagram
 > ![Schematics](http://misc.williamcordero.com/zip/hyperpan_schematics.svg)
 
+### Spherical Coordinates
+
+![Schematics](http://misc.williamcordero.com/zip/3D_Spherical.svg)
+![Schematics](http://misc.williamcordero.com/zip/theta.svg)
+![Schematics](http://misc.williamcordero.com/zip/phi.svg)
 
 ### Bugs
 ---
