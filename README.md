@@ -236,8 +236,10 @@ In <code>src/config.h</code> you can also find some <code>#define</code> for the
 D_FOCAL     50.0  //DEFAULT FOCAL LENGH 50mm
 ```
 
+#### Circuit diagram
+> ![Schematics](http://misc.williamcordero.com/zip/hyperpan_schematics.svg)
 
-#### Spherical Coordinates Reference
+#### Spherical Coordinates
 
 <img height="200" width="200" src="http://misc.williamcordero.com/zip/spherical.svg">
 <img height="200" width="200" src="http://misc.williamcordero.com/zip/phi_1.svg">
@@ -245,10 +247,6 @@ D_FOCAL     50.0  //DEFAULT FOCAL LENGH 50mm
 <img height="200" width="200" src="http://misc.williamcordero.com/zip/sphere.svg">
 
 *[Spherical Coordinate System](https://en.wikipedia.org/wiki/Spherical_coordinate_system)
-
-#### Circuit diagram
-> ![Schematics](http://misc.williamcordero.com/zip/hyperpan_schematics.svg)
-
 
 ### Bugs
 ---
