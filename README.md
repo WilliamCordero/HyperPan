@@ -186,7 +186,6 @@ and most important, the microstepping mode <code>1/32-step</code> and the number
 which is the product of the motor steps and the gear multiplier, in this case the
 <a href="http://www.omc-stepperonline.com/download/pdf/17HS19-2004S1.pdf" target="_blank">motor</a>
 has 200 steps and we are using a 16T gear on the motor and a 128T what makes an 8X multiplier.
-For microstepping we are using 1/32-step mode.
 </p>
 
 ```
