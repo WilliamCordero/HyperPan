@@ -82,6 +82,10 @@ The actions <code>35</code>, <code>6x45</code>, <code>45x6</code>, <code>6x6</co
 
 ##### sphere
 
+<p align="justify">
+Sphere cover the entire area, for virtual tours or 360 photography, this mode has better results with wide-angle lens.
+</p>
+
 ##### slave
 
 #### Verbose levels
