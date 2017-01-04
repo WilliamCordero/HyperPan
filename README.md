@@ -5,12 +5,12 @@
 ### Dependencies
 - [bcm2835](http://www.airspayce.com/mikem/bcm2835/)
 
-### Build
+### Building
 ```
 $ make
 ```
 
-### Install / Uninstall
+### Install & Uninstall
 ```
 $ sudo make install
 ```
