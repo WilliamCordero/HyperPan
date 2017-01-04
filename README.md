@@ -173,9 +173,9 @@ L_OUTP 0B01000000 //64 Output
 
 ### Spherical Coordinates
 
-<img height="200" width="200" src="http://misc.williamcordero.com/zip/3D_Spherical.svg">
-<img height="200" width="200" src="http://misc.williamcordero.com/zip/theta.svg">
-<img height="200" width="200" src="http://misc.williamcordero.com/zip/phi.svg">
+<img height="200" width="200" src="http://misc.williamcordero.com/zip/spherical.svg">
+<img height="200" width="200" src="http://misc.williamcordero.com/zip/theta_1.svg">
+<img height="200" width="200" src="http://misc.williamcordero.com/zip/phi_1.svg">
 
 
 ### Bugs
