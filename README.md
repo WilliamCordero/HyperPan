@@ -83,7 +83,7 @@ The actions: <code>35</code>, <code>6x45</code>, <code>45x6</code>, <code>6x6</c
 ##### sphere
 
 <p align="justify">
-Sphere cover the entire area, for virtual tours or 360 photography, this action has better results with wide-angle lens.
+Sphere cover the entire area, for virtual tours or 360° photography, this action has better results with wide-angle lens.
 </p>
 
 ##### slave
