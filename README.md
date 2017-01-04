@@ -146,7 +146,7 @@ $ hyperpan 6x6 -v13 -f50 -h23.5 -w15.6
 ```
 > ![HyperPan](http://misc.williamcordero.com/zip/HyperPan_0.62.gif)
 ```
-# α: 
+# α:
 # ο: ★:
 # δ: ★:
 # δ:     focal:  50.00 mm
