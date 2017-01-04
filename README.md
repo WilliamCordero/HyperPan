@@ -73,16 +73,16 @@ or optional for any corresponding short options.
 There are three main types of actions:
 </p>
 
-##### Virtual
+##### virtual
 
 <p align="justify">
 This Action emulates a bigger virtual sensor using a small one, use the arguments <code>-w</code> and <code>-h</code> to set the width and height of the native sensor on the camera, and <code>-x</code> and <code>-y</code> to set the virtual sensor size.
-The actions 35, 6x45, 45x6, 6x6, 6x7, 7x6, 6x8, 8x6, 6x9, 9x6 ,6x17 and 17x6 are aliases to the respective sensor formats.
+The actions <code>35</code>, <code>6x45</code>, <code>45x6</code>, <code>6x6</code>, <code>6x7</code>, <code>7x6</code>, <code>6x8</code>, <code>8x6</code>, <code>6x9</code>, <code>9x6</code>, <code>6x17</code> and <code>17x6</code> are aliases to the respective sensor formats.
 </p>
 
-##### Sphere
+##### sphere
 
-##### Slave
+##### slave
 
 #### Verbose levels
 ```
