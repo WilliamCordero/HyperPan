@@ -75,7 +75,7 @@ or optional for any corresponding short options.
 
 ##### Slave
 
-##### Verbose levels
+#### Verbose levels
 ```
 L_INFO 0B00000001 //1  Info
 L_STPR 0B00000010 //2  Steppers
