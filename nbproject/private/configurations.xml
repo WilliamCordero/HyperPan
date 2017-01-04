@@ -33,8 +33,9 @@
           <runcommandpicklistitem>"${OUTPUT_PATH}" virtual</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" 35 -v255 -c</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" 35 -v13</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" 6x6 -v13 -f50 -h23.5 -w15.6 -d</runcommandpicklistitem>
         </runcommandpicklist>
-        <runcommand>"${OUTPUT_PATH}" 35 -v13</runcommand>
+        <runcommand>"${OUTPUT_PATH}" 6x6 -v13 -f50 -h23.5 -w15.6 -d</runcommand>
         <rundir></rundir>
         <buildfirst>true</buildfirst>
         <console-type>2</console-type>
