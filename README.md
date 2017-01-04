@@ -112,7 +112,7 @@ In order to calculate the correct angles of view, <code>hyperpan</code> needs to
 For a smooth ride use <code>-z</code>, also <code>-b SEC</code> do a pause before every shot.
 </p>
 <p align="justify">
-<code>-s SEC</code> set the shutter speed.
+<code>-s SEC</code> set the trigger speed.
 </p>
 <p align="justify">
 <code>-a</code> activate the AutoFocus before every shot, use <code>-b SEC</code> to allow the AutoFocus some time to work.
