@@ -102,7 +102,7 @@ $ hyperpan slave -l path
 ```
 #### Arguments
 <p align="justify">
-<code>hyperpan</code> needs to know the focal length(<code>-f FOCAL</code>) used in order to calculate the correct angles of view, <code>-o OVERLAP</code> set the overlap between shots.
+<code>hyperpan</code> needs to know the focal length(<code>-f FOCAL</code>) used on the lens in the camera in order to calculate the correct angles of view, <code>-o OVERLAP</code> set the overlap between shots.
 </p>
 <p align="justify">
 By default <code>hyperpan</code> minimize vibration by limiting speed and acceleration, when you need speed and vibration is not a problem (e.g. flash photography) the argument <code>-c</code> set the maximum speed available, for a smooth ride use <code>-z</code>, also <code>-b SEC</code> do a pause before every shot.
