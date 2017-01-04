@@ -2,6 +2,7 @@
 [William Cordero Photo](http://williamcordero.com) <[william.cordero@gmail.com](william.cordero@gmail.com)>
 
 --
+
 ### Dependencies
 - [bcm2835](http://www.airspayce.com/mikem/bcm2835/)
 
@@ -67,53 +68,51 @@ Options:
 Mandatory or optional arguments to long options are also mandatory
 or optional for any corresponding short options.
 ```
-#### Actions
 
+#### Actions
 <p align="justify">
 There are three main action types:
 </p>
 
 ##### virtual
-
 <p align="justify">
-Emulates a bigger virtual sensor using a small one, use the arguments <code>-w WIDTH</code> and <code>-h HEIGHT</code> to set the size of the native sensor on the camera, and <code>-x WIDTH</code> and <code>-y HEIGHT</code> to set the virtual sensor size.
+Emulates a virtual sensor using one smaller, the arguments <code>-w WIDTH</code> and <code>-h HEIGHT</code> set the size of the native sensor on the camera and <code>-x WIDTH</code> and <code>-y HEIGHT</code> set the virtual sensor size.
 </p>
 <p align="justify">
-The actions: <code>35</code>, <code>6x45</code>, <code>45x6</code>, <code>6x6</code>, <code>6x7</code>, <code>7x6</code>, <code>6x8</code>, <code>8x6</code>, <code>6x9</code>, <code>9x6</code>, <code>6x17</code> and <code>17x6</code> are aliases to their respective sensor formats.
+The actions <code>35</code>, <code>6x45</code>, <code>45x6</code>, <code>6x6</code>, <code>6x7</code>, <code>7x6</code>, <code>6x8</code>, <code>8x6</code>, <code>6x9</code>, <code>9x6</code>, <code>6x17</code> and <code>17x6</code> are aliases to their respective sensor formats.
 </p>
 
 ##### sphere
-
 <p align="justify">
-Sphere cover the entire area, for virtual tours or 360° photography, this action has better results with wide-angle lens.
+Cover the entire area. For virtual tours or 360° photography. More wide the lens, less number of shots.
 </p>
 
 ##### slave
 <p align="justify">
-The argument <code>-g FILE</code> save a sequence into a file, the dummy mode(<code>-d</code>) could be useful in this cases.
+<code>-g FILE</code> save a sequence path into a file, the dummy mode(<code>-d</code>) could be useful in this cases.
 </p>
 ```
 $ hyperpan 35 -d -g path 
 ```
-Slave action allows hardware control through standard input(<code>stdin</code>) or loading a file(<code>-l FILE</code>)
+<code>slave</code> allows control through the standard input(<code>stdin</code>) or loading a file(<code>-l FILE</code>)
 ```
 $ cat path | hyperpan slave
 ```
 ```
 $ hyperpan slave -l path 
 ```
-#### Arguments
+#### Control
 <p align="justify">
-<code>hyperpan</code> needs to know the focal length(<code>-f FOCAL</code>) used on the lens in the camera in order to calculate the correct angles of view, <code>-o OVERLAP</code> set the overlap between shots.
+In order to calculate the correct angles of view, <code>hyperpan</code> needs to know the focal length(<code>-f FOCAL</code>) on the lens. <code>-o OVERLAP</code> set the overlap between shots, <code>0.375</code> by default.
 </p>
 <p align="justify">
-By default <code>hyperpan</code> minimize vibration by limiting speed and acceleration, when you need speed and vibration is not a problem (e.g. flash photography) the argument <code>-c</code> set the maximum speed available, for a smooth ride use <code>-z</code>, also <code>-b SEC</code> do a pause before every shot.
+<code>hyperpan</code> minimize vibration by limiting speed and acceleration, when you need speed and vibration is not a problem (e.g. flash photography) <code>-c</code> set the maximum speed available, for a smooth ride use <code>-z</code>, also <code>-b SEC</code> do a pause before every shot.
 </p>
 <p align="justify">
-The argument <code>-s SEC</code> set the shutter speed, <code>-a</code> activate the autofocus before every shot, use <code>-b SEC</code> to allow the autofocus some time to work.
+<code>-s SEC</code> set the shutter speed, <code>-a</code> activate the AutoFocus before every shot, use <code>-b SEC</code> to allow the AutoFocus some time to work.
 </p>
 <p align="justify">
-The argument <code>-m</code> turn off the camera trigger.
+<code>-m</code> turn off the camera shutter.
 </p>
 
 #### Verbose
