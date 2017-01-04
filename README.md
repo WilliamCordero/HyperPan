@@ -114,7 +114,10 @@ The argument <code>-s SEC</code> set the shutter speed, <code>-a</code> activate
 The argument <code>-m</code> turn off the camera trigger.
 </p>
 
-#### Verbose levels
+#### Verbose
+
+<code>-v LEVEL</code>
+
 ```
 L_INFO 0B00000001 //1  Info
 L_STPR 0B00000010 //2  Steppers
