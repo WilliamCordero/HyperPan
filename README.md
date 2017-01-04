@@ -103,7 +103,7 @@ $ hyperpan slave -l path
 ```
 #### Control
 <p align="justify">
-In order to calculate the correct angles of view, <code>hyperpan</code> needs to know the focal length(<code>-f FOCAL</code>) on the lens.
+In order to calculate the correct angles of view set <code>-f FOCAL</code> to the focal length on the camera.
 </p>
 <p align="justify">
 <code>-o OVERLAP</code> set the overlap between shots, <code>0.375</code> by default.
