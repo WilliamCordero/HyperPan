@@ -76,7 +76,7 @@ There are three main types of actions:
 ##### virtual
 
 <p align="justify">
-This Action emulates a bigger virtual sensor using a small one, use the arguments <code>-w</code> and <code>-h</code> to set the width and height of the native sensor on the camera, and <code>-x</code> and <code>-y</code> to set the virtual sensor size.
+This action emulates a bigger virtual sensor using a small one, use the arguments <code>-w</code> and <code>-h</code> to set the width and height of the native sensor on the camera, and <code>-x</code> and <code>-y</code> to set the virtual sensor size.
 The actions <code>35</code>, <code>6x45</code>, <code>45x6</code>, <code>6x6</code>, <code>6x7</code>, <code>7x6</code>, <code>6x8</code>, <code>8x6</code>, <code>6x9</code>, <code>9x6</code>, <code>6x17</code> and <code>17x6</code> are aliases to the respective sensor formats.
 </p>
 
