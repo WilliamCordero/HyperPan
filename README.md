@@ -87,8 +87,9 @@ Sphere cover the entire area, for virtual tours or 360° photography, this actio
 </p>
 
 ##### slave
-
+<p align="justify">
 The argument <code>-g FILE</code> save a sequence into a file, the dummy mode(<code>-d</code>) could be useful in this cases.
+</p>
 ```
 $ hyperpan 35 -d -g path 
 ```
@@ -99,7 +100,18 @@ $ cat path | hyperpan slave
 ```
 $ hyperpan slave -l path 
 ```
+#### Arguments
+<p align="justify">
+<code>hyperpan</code> needs to know the focal length(<code>-f FOCAL</code>) used in order to calculate the correct angles of view, <code>-o OVERLAP</code> set the overlap between shots.
+</p>
+<p align="justify">
+By default <code>hyperpan</code> minimize vibration by limiting speed and acceleration, when you need speed and vibrations are not a problem (for example flash photography) the argument <code>-c</code> set the maximum speed available, for a smooth ride use <code>-z</code>.
+</p>
 
+-m, --motion               No shutter
+-a, --auto                 Auto Focus On
+-b, --delay=DELAY          Shutter delay
+-s, --speed=SPEED          Shutter speed(Def:0.5s)
 
 #### Verbose levels
 ```
