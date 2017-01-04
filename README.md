@@ -168,9 +168,6 @@ L_SLVE 0B00100000 //32 Slave
 L_OUTP 0B01000000 //64 Output
 ```
 
-#### Circuit diagram
-> ![Schematics](http://misc.williamcordero.com/zip/hyperpan_schematics.svg)
-
 #### Spherical Coordinates Reference
 
 <img height="200" width="200" src="http://misc.williamcordero.com/zip/spherical.svg">
@@ -179,6 +176,10 @@ L_OUTP 0B01000000 //64 Output
 <img height="200" width="200" src="http://misc.williamcordero.com/zip/sphere.svg">
 
 *[Spherical Coordinate System](https://en.wikipedia.org/wiki/Spherical_coordinate_system)
+
+#### Circuit diagram
+> ![Schematics](http://misc.williamcordero.com/zip/hyperpan_schematics.svg)
+
 
 ### Bugs
 ---
