@@ -88,17 +88,18 @@ Sphere cover the entire area, for virtual tours or 360 photography, this action 
 
 ##### slave
 
-The argument <code>-g FILE</code> save a path into a file, in this cases the dummy mode(<code>-d</code>) could be useful.
+The argument <code>-g FILE</code> save a sequence into a file, the dummy mode(<code>-d</code>) could be useful in this cases.
 ```
 $ hyperpan 35 -d -g path 
 ```
-To load a previous saved path:
-```
-$ hyperpan slave -l path 
-```
+Slave action allows hardware control through standard input(<code>stdin</code>) or loading a file(<code>-l FILE</code>)
 ```
 $ cat path | hyperpan slave
 ```
+```
+$ hyperpan slave -l path 
+```
+
 
 #### Verbose levels
 ```
