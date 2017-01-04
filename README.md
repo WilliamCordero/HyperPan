@@ -116,7 +116,7 @@ src/config.h
 ```
 
 <p align="justify">
-For each stepper motor there are a set of <code>#define</code> with the respective configuration. Which GPIO pins are connected at which pins on the stepper driver(<a href="https://www.pololu.com/file/0J617/drv8834.pdf" target="_blank">DRV8834</a>) and most important, the microstepping mode and the number of native steps per rotation, which is the product of the native motor steps by the gear multiplier, in this case the <a href="http://www.omc-stepperonline.com/download/pdf/17HS19-2004S1.pdf" target="_blank">motor</a> has 200 steps and we are using a 16T gear on the motor and a 128T what makes an 8X multiplier.
+For each stepper motor there are a set of <code>#define</code> with the respective configuration. Which GPIO pins are connected at which pins on the stepper driver(<a href="https://www.pololu.com/file/0J617/drv8834.pdf" target="_blank">DRV8834</a>) and most important, the microstepping mode and the number of native steps per rotation, which is the product of the native motor steps by the gear multiplier, in this case the <a href="http://www.omc-stepperonline.com/download/pdf/17HS19-2004S1.pdf" target="_blank">motor</a> has 200 steps and we are using a 16T gear on the motor and a 128T what makes an 8X multiplier, and we are using 1/32-step mode for mircrostep.
 </p>
 
 ```
