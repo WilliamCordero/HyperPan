@@ -88,9 +88,7 @@ Sphere cover the entire area, for virtual tours or 360 photography, this action 
 
 ##### slave
 
-The slave action allows control by standard input or loading a file(<code>-l FILE</code>).
-
-The argument <code>-g FILE</code> set the file name where to save a path, in this cases the dummy mode(<code>-d</code>) is useful.
+The argument <code>-g FILE</code> save a path into a file, in this cases the dummy mode(<code>-d</code>) could be useful.
 ```
 $ hyperpan 35 -d -g path 
 ```
