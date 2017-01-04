@@ -45,17 +45,17 @@ Actions:
 Options:
 
   -a, --auto                 Auto Focus On
-  -b, --delay=DELAY          Shutter delay
+  -b, --delay=DELAY          Trigger delay
   -c, --fast                 High speed
   -d, --dummy                Dummy mode
   -f, --focal=FOCAL          Focal length(Def:50mm)
   -g, --save=FILE            Save to file
   -h, --height=HEIGHT        Sensor height(Def:23.5mm)
   -l, --load=FILE            Load file
-  -m, --motion               No shutter
+  -m, --motion               No trigger
   -o, --overlap=OVERLAP      Overlap area(Def:0.375)
   -q, --quiet                Quiet output
-  -s, --speed=SPEED          Shutter speed(Def:0.5s)
+  -s, --speed=SPEED          Trigger speed(Def:0.5s)
   -v, --verbose=LEVEL        Verbose level
   -w, --width=WIDTH          Sensor width(Def:15.6mm)
   -x, --vwidth=VWIDTH        Virtual sensor width(Def:60mm)
