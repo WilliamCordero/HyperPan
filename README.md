@@ -79,7 +79,7 @@ There are three main action types:
 Emulates a virtual sensor using one smaller, the arguments <code>-w WIDTH</code> and <code>-h HEIGHT</code> set the size of the native sensor on the camera and <code>-x WIDTH</code> and <code>-y HEIGHT</code> set the virtual sensor size.
 </p>
 <p align="justify">
-The actions <code>35</code>, <code>6x45</code>, <code>45x6</code>, <code>6x6</code>, <code>6x7</code>, <code>7x6</code>, <code>6x8</code>, <code>8x6</code>, <code>6x9</code>, <code>9x6</code>, <code>6x17</code> and <code>17x6</code> are aliases to their respective sensor formats.
+Actions <code>35</code>, <code>6x45</code>, <code>45x6</code>, <code>6x6</code>, <code>6x7</code>, <code>7x6</code>, <code>6x8</code>, <code>8x6</code>, <code>6x9</code>, <code>9x6</code>, <code>6x17</code> and <code>17x6</code> are aliases to their respective sensor formats.
 </p>
 
 ##### sphere
@@ -112,7 +112,7 @@ In order to calculate the correct angles of view, <code>hyperpan</code> needs to
 <code>-s SEC</code> set the shutter speed, <code>-a</code> activate the AutoFocus before every shot, use <code>-b SEC</code> to allow the AutoFocus some time to work.
 </p>
 <p align="justify">
-<code>-m</code> turn off the camera shutter.
+<code>-m</code> turn off the camera trigger.
 </p>
 
 #### Verbose
