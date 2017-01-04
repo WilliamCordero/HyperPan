@@ -181,11 +181,11 @@ src/config.h
 <p align="justify">
 For each stepper motor there are a set of <code>#define</code> with their respective configuration. 
 Which GPIO pins are connected at which pins on the stepper driver
-(<a href="https://www.pololu.com/file/0J617/drv8834.pdf" target="_blank">DRV8834</a>)
-and most important, the microstepping mode <code>1/32-step</code> and the number of native steps per rotation,
-which is the product of the motor steps and the gear multiplier, in this case the
+(<a href="https://www.pololu.com/file/0J617/drv8834.pdf" target="_blank">DRV8834</a>),
+the microstepping mode <code>1/32-step</code> and the steps per rotation, which is the
+product of the motor steps and the gear multiplier, in this case the
 <a href="http://www.omc-stepperonline.com/download/pdf/17HS19-2004S1.pdf" target="_blank">motor</a>
-has 200 steps and we are using a 16T gear on the motor and a 128T what makes an 8X multiplier.
+has 200 steps with 8X multiplier (128T/16T gears).
 </p>
 
 ```
@@ -199,7 +199,10 @@ THETA_STEPS 200*8 //STEPS PER ROTATION
 ```
 
 <p align="justify">
-In this file there are also some <code>#define</code> to control the motor's speed and movement, there are three sets; one for default mode(<code>_DEF</code>), another used with the argument <code>-c</code> for Fast Mode(<code>_FAST</code>) and the last one, used with the argument <code>-z</code> for Slow Mode(<code>_SLOW</code>).
+There are also some <code>#define</code> to control the motor's speed and acceleration,
+there are three sets; one for default mode(<code>_DEF</code>), another used with the 
+argument <code>-c</code> for Fast Mode(<code>_FAST</code>) and the last one, used 
+with the argument <code>-z</code> for Slow Mode(<code>_SLOW</code>).
 </p>
 
 - `MIN` is the minimum time in microseconds for the faster steps, this can't be lower to the time require by the combination of stepper/driver/raspberry to operate without losing steps.
@@ -207,7 +210,10 @@ In this file there are also some <code>#define</code> to control the motor's spe
 - `BORDER` is the part of each travel used to accelerate and decelerate(total_travel/`BORDER`).
 
 <p align="justify">
-Increasing the speed also increase vibrations, if you want a faster movement set a low value for <code>MAX</code>, as low as <code>MIN</code> and a high value for <code>BORDER</code>, or, if you want a smooth movement, set a high value for <code>MIN</code> and <code>MAX</code> and a low value for <code>BORDER</code>.
+Increasing the speed also increase vibrations, if you want a faster movement set
+a low value for <code>MAX</code>, as low as <code>MIN</code> and a high value for
+<code>BORDER</code>, or, if you want a smooth movement, set a high value for 
+<code>MIN</code> and <code>MAX</code> and a low value for <code>BORDER</code>.
 </p>
 
 ```
