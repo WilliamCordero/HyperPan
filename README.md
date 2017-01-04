@@ -106,10 +106,6 @@ $ hyperpan 6x6 -v13 -f50 -h23.5 -w15.6
 # ω:
 ```
 
-
-### Schematics
-> ![Schematics](http://misc.williamcordero.com/zip/hyperpan_schematics.svg)
-
 #### Hardware Configurations
 ```
 src/config.h
@@ -171,6 +167,10 @@ L_TRGR 0B00010000 //16 Trigger
 L_SLVE 0B00100000 //32 Slave
 L_OUTP 0B01000000 //64 Output
 ```
+
+### Circuit diagram
+> ![Schematics](http://misc.williamcordero.com/zip/hyperpan_schematics.svg)
+
 
 ### Bugs
 ---
