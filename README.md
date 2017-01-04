@@ -75,7 +75,7 @@ Using a 50mm lens, emulate a 60mm•60mm image sensor format with an APS-C senso
 </p>
 
 ```
-$ hyperpan 6x6 -v13 -f50 -w23.5 -h15.6 
+$ hyperpan 6x6 -v13 -f50 -h23.5 -w15.6 
 ```
 > ![HyperPan](http://misc.williamcordero.com/zip/HyperPan_0.62.gif)
 ```
