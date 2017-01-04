@@ -83,10 +83,24 @@ The actions <code>35</code>, <code>6x45</code>, <code>45x6</code>, <code>6x6</co
 ##### sphere
 
 <p align="justify">
-Sphere cover the entire area, for virtual tours or 360 photography, this mode has better results with wide-angle lens.
+Sphere cover the entire area, for virtual tours or 360 photography, this action has better results with wide-angle lens.
 </p>
 
 ##### slave
+
+The slave action allows control by the standard input or loading a file(<code>-l</code>).
+
+The argument <code>-g</code> set the file name where to save a path, in this cases the dummy mode(<code>-d</code>) is useful.
+```
+$ hyperpan 35 -d -g path 
+```
+To load a previous saved path:
+```
+$ hyperpan slave -l path 
+```
+```
+$ cat path | hyperpan slave
+```
 
 #### Verbose levels
 ```
