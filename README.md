@@ -67,8 +67,26 @@ Options:
 Mandatory or optional arguments to long options are also mandatory
 or optional for any corresponding short options.
 ```
+#### Actions
 
-### Example
+##### Virtual
+
+##### Sphere
+
+##### Slave
+
+##### Verbose levels
+```
+L_INFO 0B00000001 //1  Info
+L_STPR 0B00000010 //2  Steppers
+L_SPHR 0B00000100 //4  Sphere
+L_CAMR 0B00001000 //8  Camera
+L_TRGR 0B00010000 //16 Trigger
+L_SLVE 0B00100000 //32 Slave
+L_OUTP 0B01000000 //64 Output
+```
+
+#### Example
 
 <p align="justify">
 Using a 50mm lens, emulate a 60mm•60mm image sensor format with an APS-C sensor(23.5mm•15.6mm).
@@ -106,7 +124,7 @@ $ hyperpan 6x6 -v13 -f50 -h23.5 -w15.6
 # ω:
 ```
 
-#### Hardware Configurations
+### Hardware Configuration
 ```
 src/config.h
 ```
@@ -157,16 +175,6 @@ In <code>src/config.h</code> you can also find some <code>#define</code> for the
 D_FOCAL     50.0  //DEFAULT FOCAL LENGH 50mm
 ```
 
-#### Verbose levels
-```
-L_INFO 0B00000001 //1  Info
-L_STPR 0B00000010 //2  Steppers
-L_SPHR 0B00000100 //4  Sphere
-L_CAMR 0B00001000 //8  Camera
-L_TRGR 0B00010000 //16 Trigger
-L_SLVE 0B00100000 //32 Slave
-L_OUTP 0B01000000 //64 Output
-```
 
 #### Spherical Coordinates Reference
 
