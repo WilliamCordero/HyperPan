@@ -68,6 +68,47 @@
                    projectFiles="false">
       <itemPath>Makefile</itemPath>
     </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+    <itemPath>LICENSE</itemPath>
   </logicalFolder>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
@@ -120,6 +161,8 @@
           <packInfoListElem name="Description" value="..." mandatory="false"/>
         </packInfoList>
       </packaging>
+      <item path="LICENSE" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/camera.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="src/camera.h" ex="false" tool="3" flavor2="0">
@@ -180,6 +223,8 @@
           <commandLine>-lm</commandLine>
         </linkerTool>
       </compileType>
+      <item path="LICENSE" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/camera.c" ex="false" tool="0" flavor2="9">
       </item>
       <item path="src/camera.h" ex="false" tool="3" flavor2="0">
@@ -230,6 +275,8 @@
           </linkerLibItems>
         </linkerTool>
       </compileType>
+      <item path="LICENSE" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/camera.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="src/camera.h" ex="false" tool="3" flavor2="0">
@@ -280,6 +327,8 @@
           </linkerLibItems>
         </linkerTool>
       </compileType>
+      <item path="LICENSE" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/camera.c" ex="false" tool="0" flavor2="9">
       </item>
       <item path="src/camera.h" ex="false" tool="3" flavor2="0">
