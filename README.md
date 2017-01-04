@@ -168,10 +168,10 @@ L_SLVE 0B00100000 //32 Slave
 L_OUTP 0B01000000 //64 Output
 ```
 
-### Circuit diagram
+#### Circuit diagram
 > ![Schematics](http://misc.williamcordero.com/zip/hyperpan_schematics.svg)
 
-## Spherical Coordinates Reference
+#### Spherical Coordinates Reference
 
 <img height="200" width="200" src="http://misc.williamcordero.com/zip/spherical.svg">
 <img height="200" width="200" src="http://misc.williamcordero.com/zip/theta_1.svg">
