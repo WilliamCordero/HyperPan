@@ -138,7 +138,7 @@ In this file there are also some <code>#define</code> to control the motor's spe
 - `BORDER` is the part of each travel used to accelerate and decelerate(total_travel/`BORDER`).
 
 <p align="justify">
-Increase in speed also increase vibrations, if you want a faster movement set a low value for <code>MAX</code>, as low as <code>MIN</code> and a high value for <code>BORDER</code>, or if you want a smooth movement, set a high value for <code>MIN</code> and <code>MAX</code> and a low value for <code>BORDER</code>.
+Increasing the speed also increase vibrations, if you want a faster movement set a low value for <code>MAX</code>, as low as <code>MIN</code> and a high value for <code>BORDER</code>, or if you want a smooth movement, set a high value for <code>MIN</code> and <code>MAX</code> and a low value for <code>BORDER</code>.
 </p>
 
 ```
