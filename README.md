@@ -174,8 +174,8 @@ L_OUTP 0B01000000 //64 Output
 #### Spherical Coordinates Reference
 
 <img height="200" width="200" src="http://misc.williamcordero.com/zip/spherical.svg">
-<img height="200" width="200" src="http://misc.williamcordero.com/zip/theta_1.svg">
 <img height="200" width="200" src="http://misc.williamcordero.com/zip/phi_1.svg">
+<img height="200" width="200" src="http://misc.williamcordero.com/zip/theta_1.svg">
 <img height="200" width="200" src="http://misc.williamcordero.com/zip/sphere.svg">
 
 *[Spherical Coordinate System](https://en.wikipedia.org/wiki/Spherical_coordinate_system)
