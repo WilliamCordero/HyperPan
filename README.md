@@ -91,7 +91,7 @@ Cover the entire area. For virtual tours or 360° photography. More wide the len
 ```
 $ hyperpan 35 -d -g path 
 ```
-<code>slave</code> allows control through the standard input(<code>stdin</code>) or loading a file(<code>-l FILE</code>)
+<code>slave</code> allows control through the standard input(<code>stdin</code>) or loading a file(<code>-l FILE</code>).
 ```
 $ cat path | hyperpan slave
 ```
@@ -106,7 +106,7 @@ In order to calculate the correct angles of view set <code>-f FOCAL</code> to th
 <code>-o OVERLAP</code> set the overlap between shots, <code>0.375</code> by default.
 </p>
 <p align="justify">
-<code>hyperpan</code> minimize vibration by limiting speed and acceleration, when you need speed and vibration is not a problem (e.g. flash photography) <code>-c</code> set the maximum speed available
+<code>hyperpan</code> minimize vibration by limiting speed and acceleration, when you need speed and vibration is not a problem (e.g. flash photography) <code>-c</code> set the maximum speed available.
 </p>
 <p align="justify">
 For a smooth ride use <code>-z</code>, also <code>-b SEC</code> do a pause before every shot.
@@ -115,7 +115,7 @@ For a smooth ride use <code>-z</code>, also <code>-b SEC</code> do a pause befor
 <code>-s SEC</code> set the trigger speed.
 </p>
 <p align="justify">
-<code>-a</code> activate the AutoFocus before every shot, use <code>-b SEC</code> to allow the AutoFocus some time to work.
+<code>-a</code> activate AutoFocus before every shot, use <code>-b SEC</code> to allow the AutoFocus some time to work.
 </p>
 <p align="justify">
 <code>-m</code> turn off the camera trigger.
