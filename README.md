@@ -10,7 +10,7 @@
 $ make
 ```
 
-### Install & Uninstall
+### Installing & Uninstalling
 ```
 $ sudo make install
 ```
