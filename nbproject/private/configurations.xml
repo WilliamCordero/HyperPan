@@ -24,18 +24,18 @@
       </nativedebugger>
       <runprofile version="9">
         <runcommandpicklist>
-          <runcommandpicklistitem>"${OUTPUT_PATH}" 35 -d</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" 35 </runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" test -v16</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" virtual</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" 35 -v255 -c</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" 6x6 -v13 -f50 -h23.5 -w15.6 -d</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" 35 -v13</runcommandpicklistitem>
-          <runcommandpicklistitem>"${OUTPUT_PATH}" 6x6 -v13</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" 6x6 -v13 -c</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" 6x6 -v13 </runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" 6x6 -v13</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" 6x6 -f85 -v13 </runcommandpicklistitem>
         </runcommandpicklist>
-        <runcommand>"${OUTPUT_PATH}" 6x6 -v13</runcommand>
+        <runcommand>"${OUTPUT_PATH}" 6x6 -f85 -v13</runcommand>
         <rundir></rundir>
         <buildfirst>true</buildfirst>
         <console-type>2</console-type>
