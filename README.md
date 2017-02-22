@@ -238,6 +238,7 @@ D_FOCAL     50.0  //DEFAULT FOCAL LENGH 50mm
 
 #### Circuit diagram
 > ![Schematics](http://misc.williamcordero.com/zip/hyperpan_schematics.svg)
+> [Rasberry Pi 3 PCB Hat](https://go.aisler.net/williamcordero/hyperpan/hyperpan)
 
 #### Spherical Coordinates
 
