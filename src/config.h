@@ -10,33 +10,33 @@ extern "C" {
 #define      BUG_REP "William Cordero <william.cordero@gmail.com>";
 #define            M 1000000
 //STEPPER CONFIGURATION
-#define    RHO_SLEEP 22    //GPIO 22
-#define     RHO_STEP 27    //GPIO 27
+#define    RHO_SLEEP 14    //GPIO 22
+#define     RHO_STEP 15    //GPIO 27
 #define      RHO_DIR 18    //GPIO 18
-#define       RHO_M0 24    //GPIO 24
-#define       RHO_M1 23    //GPIO 23
+#define       RHO_M0 23    //GPIO 24
+#define       RHO_M1 24    //GPIO 23
 #define     RHO_MODE 32    //MICROSTEP MODE 1/32
 #define    RHO_STEPS 200*8 //STEPS PER ROTATION
-#define  THETA_SLEEP 12    //GPIO 12
-#define   THETA_STEP 6     //GPIO 6
-#define    THETA_DIR 5     //GPIO 5
-#define     THETA_M0 16    //GPIO 16
-#define     THETA_M1 13    //GPIO 13
+#define  THETA_SLEEP 27    //GPIO 12
+#define   THETA_STEP 17    //GPIO 6
+#define    THETA_DIR 4     //GPIO 5
+#define     THETA_M0 10    //GPIO 16
+#define     THETA_M1 22    //GPIO 13
 #define   THETA_MODE 32    //MICROSTEP MODE 1/32
 #define  THETA_STEPS 200*8 //STEPS PER ROTATION
-#define    PHI_SLEEP 22    //GPIO 22
-#define     PHI_STEP 27    //GPIO 27
-#define      PHI_DIR 18    //GPIO 18
-#define       PHI_M0 24    //GPIO 24
-#define       PHI_M1 23    //GPIO 23
+#define    PHI_SLEEP 5     //GPIO 22
+#define     PHI_STEP 11    //GPIO 27
+#define      PHI_DIR 9     //GPIO 18
+#define       PHI_M0 13    //GPIO 24
+#define       PHI_M1 6    //GPIO 23
 #define     PHI_MODE 32    //MICROSTEP MODE 1/32
 #define    PHI_STEPS 200*8 //STEPS PER ROTATION
 //ALERT LED
-#define   ALERT_GPIO 21    //GPIO 21
+#define   ALERT_GPIO 19    //GPIO 21
 #define  ALERT_BLINK 20000 //MILISEC
 //TRIGGER CONFIGURATION
-#define      SHUTTER 4     //GPIO 17
-#define        FOCUS 17    //GPIO 4
+#define      SHUTTER 2     //GPIO 4
+#define        FOCUS 3     //GPIO 17
 #define        SPEED 0.5   //1/125
 #define        DELAY 0.0   //DELAY BEFORE SHOT
 #define           AF 1     //AUTO FOCUS 
