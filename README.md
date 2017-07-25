@@ -95,6 +95,7 @@ $ hyperpan 35 -d -g path
 ```
 $ cat path | hyperpan slave
 ```
+
 ```
 $ hyperpan slave -l path 
 ```
