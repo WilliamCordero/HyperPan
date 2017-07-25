@@ -88,10 +88,13 @@ Cover the entire area. For virtual tours or 360° photography. More wide the len
 <p align="justify">
 <code>-g FILE</code> save a sequence path into a file, the dummy mode(<code>-d</code>) could be useful in this cases.
 </p>
+
 ```
 $ hyperpan 35 -d -g path 
 ```
+
 <code>slave</code> allows control through the standard input(<code>stdin</code>) or loading a file(<code>-l FILE</code>).
+
 ```
 $ cat path | hyperpan slave
 ```
@@ -99,6 +102,7 @@ $ cat path | hyperpan slave
 ```
 $ hyperpan slave -l path 
 ```
+
 ### Control
 <p align="justify">
 In order to calculate the correct angles of view set <code>-f FOCAL</code> to the focal length on the camera.
