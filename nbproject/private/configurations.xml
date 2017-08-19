@@ -4,7 +4,7 @@
   <confs>
     <conf name="Release" type="1">
       <toolsSet>
-        <developmentServer>root@192.168.43.35:22</developmentServer>
+        <developmentServer>root@192.168.43.253:22</developmentServer>
         <platform>2</platform>
       </toolsSet>
       <dbx_gdbdebugger version="1">
@@ -24,18 +24,18 @@
       </nativedebugger>
       <runprofile version="9">
         <runcommandpicklist>
-          <runcommandpicklistitem>"${OUTPUT_PATH}" 35 </runcommandpicklistitem>
-          <runcommandpicklistitem>"${OUTPUT_PATH}" test -v16</runcommandpicklistitem>
-          <runcommandpicklistitem>"${OUTPUT_PATH}" virtual</runcommandpicklistitem>
-          <runcommandpicklistitem>"${OUTPUT_PATH}" 35 -v255 -c</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" 6x6 -v13 -f50 -h23.5 -w15.6 -d</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" 35 -v13</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" 6x6 -v13 -c</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" 6x6 -v13 </runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" 6x6 -v13</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" 6x6 -f85 -v13 </runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" 6x6 -f85 -v13 -d</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" 6x6 -f85 -v13</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" 35 -f85 -v13</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" 6x6 -f35 -v13</runcommandpicklistitem>
         </runcommandpicklist>
-        <runcommand>"${OUTPUT_PATH}" 6x6 -f85 -v13</runcommand>
+        <runcommand>"${OUTPUT_PATH}" 6x6 -f35 -v13</runcommand>
         <rundir></rundir>
         <buildfirst>true</buildfirst>
         <console-type>2</console-type>
@@ -47,7 +47,7 @@
     </conf>
     <conf name="Debug" type="1">
       <toolsSet>
-        <developmentServer>root@192.168.43.35:22</developmentServer>
+        <developmentServer>root@192.168.43.253:22</developmentServer>
         <platform>2</platform>
       </toolsSet>
       <dbx_gdbdebugger version="1">
@@ -68,17 +68,18 @@
       </nativedebugger>
       <runprofile version="9">
         <runcommandpicklist>
-          <runcommandpicklistitem>"${OUTPUT_PATH}" "arg 1" "arg 2" "arg 3" "arg 4"</runcommandpicklistitem>
-          <runcommandpicklistitem>"${OUTPUT_PATH}"</runcommandpicklistitem>
-          <runcommandpicklistitem>"${OUTPUT_PATH}" virtual -f35</runcommandpicklistitem>
-          <runcommandpicklistitem>"${OUTPUT_PATH}" 35 -d</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" 35 </runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" test -v16</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" virtual</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" 35 -v255 -c</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" 35 -v13</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" 6x6 -v13</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" sphere -v13 -f 12</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" sphere -v13 -f 12 </runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" sphere -v13 -f 12 -c</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" sphere -v13 -f 12 -c -m</runcommandpicklistitem>
         </runcommandpicklist>
-        <runcommand>"${OUTPUT_PATH}" 35 -v13</runcommand>
+        <runcommand>"${OUTPUT_PATH}" sphere -v13 -f 12 -c -m</runcommand>
         <rundir></rundir>
         <buildfirst>true</buildfirst>
         <console-type>2</console-type>
