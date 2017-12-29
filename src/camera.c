@@ -28,7 +28,7 @@ int camera_on(){
     camera_init("δ");
 }
 int camera_off(){
-    go(0,OFFSET,OFFSET);
+//    go(0,OFFSET,OFFSET);
     stepper_off(sphere->st_rho);
     stepper_off(sphere->st_theta);
     stepper_off(sphere->st_phi);
@@ -106,5 +106,17 @@ int camera_sphere(double f,double v,double h,double o){
     }
 }
 int camera_test(){
-    go(0,90,90);
+//    go(0,-90,-90);
+//    go(0,  0,-90);
+//    go(0, 90,-90);
+//    go(0,180,-90);
+//    go(0,270,-90);
+
+    go(0,-90,-90);
+    go(0,-90,  0);
+//    go(0,-90,  0);
+//    go(0,-90, 90);
+//    go(0,-90,180);
+//    go(0,-90,270);
+//    go(0,0,0);
 }

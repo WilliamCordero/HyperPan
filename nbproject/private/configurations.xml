@@ -4,7 +4,7 @@
   <confs>
     <conf name="Release" type="1">
       <toolsSet>
-        <developmentServer>pi@192.168.41.51:22</developmentServer>
+        <developmentServer>root@192.168.43.107:22</developmentServer>
         <platform>2</platform>
       </toolsSet>
       <dbx_gdbdebugger version="1">
@@ -24,7 +24,6 @@
       </nativedebugger>
       <runprofile version="9">
         <runcommandpicklist>
-          <runcommandpicklistitem>"${OUTPUT_PATH}" 6x6 -v13 -f50 -h23.5 -w15.6 -d</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" 35 -v13</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" 6x6 -v13 -c</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" 6x6 -v13 </runcommandpicklistitem>
@@ -34,8 +33,9 @@
           <runcommandpicklistitem>"${OUTPUT_PATH}" 6x6 -f85 -v13</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" 6x6 -f35 -v13</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" 35 -f85 -v13</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" test</runcommandpicklistitem>
         </runcommandpicklist>
-        <runcommand>"${OUTPUT_PATH}" 35 -f85 -v13</runcommand>
+        <runcommand>"${OUTPUT_PATH}" test</runcommand>
         <rundir></rundir>
         <buildfirst>true</buildfirst>
         <console-type>2</console-type>
