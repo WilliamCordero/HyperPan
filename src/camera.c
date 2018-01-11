@@ -28,7 +28,7 @@ int camera_on(){
     camera_init("δ");
 }
 int camera_off(){
-//    go(0,OFFSET,OFFSET);
+    go(0,OFFSET,OFFSET);
     stepper_off(sphere->st_rho);
     stepper_off(sphere->st_theta);
     stepper_off(sphere->st_phi);

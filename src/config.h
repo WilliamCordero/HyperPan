@@ -28,7 +28,7 @@ extern "C" {
 #define     PHI_STEP 11    //GPIO 27
 #define      PHI_DIR 9     //GPIO 18
 #define       PHI_M0 13    //GPIO 24
-#define       PHI_M1 6    //GPIO 23
+#define       PHI_M1 6     //GPIO 23
 #define     PHI_MODE 32    //MICROSTEP MODE 1/32
 #define    PHI_STEPS 200*8 //STEPS PER ROTATION
 //ALERT LED
