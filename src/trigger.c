@@ -27,14 +27,16 @@ int trigger_shot(double speed){
             w_gpio_write(trigger->focus,HIGH);
         }
         if(trigger->shutter_delay){
-            verbose(L_TRGR,"%s: ⇴: %.0fμs",trigger->name,trigger->shutter_delay*M);
+            verbose(L_TRGR,"%s: d: %.0fμs",trigger->name,trigger->shutter_delay*M);
             w_delayMicroseconds(trigger->shutter_delay*M);
         }
         verbose(L_TRGR,"%s: ↯: %.0fμs",trigger->name,speed?speed:trigger->shutter_speed*M);
+        w_gpio_write(trigger->focus,HIGH);
         w_gpio_write(trigger->shutter,HIGH);
         w_delayMicroseconds(speed?speed:trigger->shutter_speed*M);
         w_gpio_write(trigger->shutter,LOW);
-        if(trigger->focus_mode)w_gpio_write(trigger->focus,LOW);
+//        if(trigger->focus_mode)w_gpio_write(trigger->focus,LOW);
+        w_gpio_write(trigger->focus,LOW);
     }
 }
 int trigger_wakeup(){

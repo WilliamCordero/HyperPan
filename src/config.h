@@ -90,7 +90,7 @@ extern "C" {
 #define     ACT_6x17 110
 #define     ACT_17x6 111
 //MOVEMENT SPEED
-#define      MIN_DEF 100    //40
+#define      MIN_DEF 150    //40
 #define      MAX_DEF 230   //230
 #define   BORDER_DEF 14    //14
 #define     MIN_SLOW 200
