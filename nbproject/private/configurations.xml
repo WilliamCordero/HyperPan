@@ -24,18 +24,18 @@
       </nativedebugger>
       <runprofile version="9">
         <runcommandpicklist>
-          <runcommandpicklistitem>"${OUTPUT_PATH}" 6x6 -f120  -s1 -v13</runcommandpicklistitem>
-          <runcommandpicklistitem>"${OUTPUT_PATH}" 35 -f85 -s1 -v255</runcommandpicklistitem>
-          <runcommandpicklistitem>"${OUTPUT_PATH}" 35 -f85  -b1  -v255</runcommandpicklistitem>
-          <runcommandpicklistitem>"${OUTPUT_PATH}" 35 -f85  -a -b1  -v255</runcommandpicklistitem>
-          <runcommandpicklistitem>"${OUTPUT_PATH}" 35 -f85  -a -b2  -v255</runcommandpicklistitem>
-          <runcommandpicklistitem>"${OUTPUT_PATH}" 35 -f85 -b1  -v255</runcommandpicklistitem>
-          <runcommandpicklistitem>"${OUTPUT_PATH}" 35 -f85  -a -b4  -v255</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" test</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" 35 -f85 -s1 -b1 -a -v255</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" 35 -f85 -b1 -v29</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" 35 -f -b1 -v29</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" 35 -f200 -b1 -v29</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" 35 -f200  -v29</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" 35 -f160  -v29</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" 6x6 -f160  -v29</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" 6x6 -f160  -v29 -z</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" 6x6 -f160  -v29 </runcommandpicklistitem>
         </runcommandpicklist>
-        <runcommand>"${OUTPUT_PATH}" 35 -f85 -b1 -v29</runcommand>
+        <runcommand>"${OUTPUT_PATH}" 6x6 -f160  -v29</runcommand>
         <rundir></rundir>
         <buildfirst>true</buildfirst>
         <console-type>2</console-type>
